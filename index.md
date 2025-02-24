@@ -15,12 +15,12 @@
 ---
 
 ## Project Plan: Autonomous Warehouse Goods Transportation System (Turtlebot Demonstration & Future Scope)
----
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Our project is a phased endeavor, beginning with a focused demonstration using Turtlebots and culminating in a comprehensive system design for real-world warehouse applications. The initial phase aims to create a functional, small-scale autonomous goods transportation system. This phase addresses the research question: "Can we effectively implement a simplified autonomous goods transportation system using Turtlebots, demonstrating core functionalities like navigation, product identification, and simulated delivery in a controlled environment?" We intend to show the feasibility of basic autonomous navigation, barcode scanning, and task execution within a confined, simulated warehouse setting.
 
 Building upon this foundational work, the future scope of our project targets the development of a robust and adaptable system for large-scale warehouse deployment. This phase seeks to answer the research question: "How can we scale and enhance the autonomous goods transportation system to achieve robust, efficient, and adaptable operation in real-world warehouse environments, addressing challenges related to scale, dynamism, and advanced sensor integration?" This phase will involve integrating advanced sensors, implementing sophisticated control algorithms, and designing user-friendly interfaces for real-time monitoring and control.
 
-### Figure Communicating the Idea & Sensor Integration:
+### Figures Communicating the Idea & Sensor Integration:
 ![Project Figure](Team_Diagram.png) 
 ![Flowchart1](diagram-export-2-24-2025-3_19_14-PM.png)
 ![Flowchart1](diagram-export-2-24-2025-3_20_55-PM.png)
