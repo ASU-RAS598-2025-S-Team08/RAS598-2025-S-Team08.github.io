@@ -21,9 +21,12 @@ Our project is a phased endeavor, beginning with a focused demonstration using T
 Building upon this foundational work, the future scope of our project targets the development of a robust and adaptable system for large-scale warehouse deployment. This phase seeks to answer the research question: "How can we scale and enhance the autonomous goods transportation system to achieve robust, efficient, and adaptable operation in real-world warehouse environments, addressing challenges related to scale, dynamism, and advanced sensor integration?" This phase will involve integrating advanced sensors, implementing sophisticated control algorithms, and designing user-friendly interfaces for real-time monitoring and control.
 
 ## Figures Communicating the Idea & Sensor Integration:
+Basic Ideology
 ![Project Figure](Team_Diagram.png) 
-For a simple Turtlebot Demonstration:  ![Flowchart1](diagram-export-2-24-2025-3_19_14-PM.png)
-For Future Scope Demonstration: ![Flowchart1](diagram-export-2-24-2025-3_20_55-PM.png)
+For a simple Turtlebot Demonstration:  
+![Flowchart1](diagram-export-2-24-2025-3_19_14-PM.png)
+For Future Scope Demonstration:
+![Flowchart1](diagram-export-2-24-2025-3_20_55-PM.png)
 
 ## Sensor Integration
 Sensors play a critical role in ensuring the robot’s ability to navigate and handle products correctly. During the demonstration and testing phases, the following sensors will be used:
