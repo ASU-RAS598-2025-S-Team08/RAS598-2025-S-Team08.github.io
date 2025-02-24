@@ -13,7 +13,7 @@
 - **Class**: RAS598 - Experimentation and Deployment of Robotic Systems
 - **Professor**: Daniel M. Aukes
 
-Project Plan: Autonomous Warehouse Goods Transportation System (Turtlebot Demonstration & Future Scope)
+## Project Plan: Autonomous Warehouse Goods Transportation System (Turtlebot Demonstration & Future Scope)
 
 1. Project Overview and Research Question
 The goal of this project is to develop a robotic system capable of autonomously transporting goods within a warehouse. The robot will be responsible for identifying products, navigating obstacles, and delivering items to specific storage locations. The key research question this project aims to answer is:
