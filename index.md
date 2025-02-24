@@ -22,6 +22,34 @@ re.
 ### Figure Communicating the Idea & Sensor Integration:
 ![Project Figure](Team_Diagram.png) 
 
+```mermaid
+graph TD
+    A[Goods Source] --> B(Barcode Scanner);
+    B --> C{Product Identified?};
+    C -- Yes --> D[Navigation (LiDAR)];
+    C -- No --> E[Manual Intervention];
+    D --> F[Simulated Delivery];
+    F --> G[Webviz Visualization];
+    E --> G;
+graph TD
+    A[Goods Source] --> B(Barcode/QR Scanner);
+    B --> C{Product Identified?};
+    C -- Yes --> D(Weight/Size Sensors);
+    C -- No --> E[Manual Intervention/Error Handling];
+    D --> F{Verification Successful?};
+    F -- Yes --> G[Path Planning & Navigation (LiDAR/3D Camera)];
+    F -- No --> E;
+    G --> H[Autonomous Vehicle (AV) Movement];
+    H --> I[Obstacle Avoidance (LiDAR/3D Camera)];
+    I --> J[Storage Location];
+    J --> K[Real-Time Data Visualization (Webviz/Node-RED)];
+    K --> L[Data Storage (MySQL)];
+    L --> M[Warehouse Management System (WMS)];
+    M --> N[Dynamic Storage Allocation];
+    N --> G;
+    E --> K;
+
+
 ### Sensor Integration
 Sensors play a critical role in ensuring the robot’s ability to navigate and handle products correctly. During the demonstration and testing phases, the following sensors will be used:
 LiDAR & 3D Cameras: These will be used for real-time navigation and obstacle avoidance. They provide spatial awareness of the robot’s environment, enabling it to detect and avoid obstacles in its path.
