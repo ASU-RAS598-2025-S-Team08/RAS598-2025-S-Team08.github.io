@@ -22,6 +22,8 @@ How can we design and implement an autonomous robotic system that efficiently an
 
 This system will leverage advanced sensors (LiDAR, 3D cameras, barcode scanners) and real-time data integration to ensure seamless navigation and precise goods handling. The project will demonstrate its core capabilities through a small-scale demonstration using TurtleBots, with plans for scaling up to more advanced systems in the future.
 
+![Project Figure: Could not be loaded](C:\Users\halon\OneDrive\Documents\ASU\RAS598\Team_Diagram.png)
+
 2. Figure Communicating the Idea & Sensor Integration:
 3. Sensor Integration
    
