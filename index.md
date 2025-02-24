@@ -48,7 +48,7 @@ graph TD
     M --> N[Dynamic Storage Allocation];
     N --> G;
     E --> K;
-
+```mermaid
 
 ### Sensor Integration
 Sensors play a critical role in ensuring the robot’s ability to navigate and handle products correctly. During the demonstration and testing phases, the following sensors will be used:
