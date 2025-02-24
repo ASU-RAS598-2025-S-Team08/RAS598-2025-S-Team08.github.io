@@ -14,18 +14,18 @@
 - **Professor**: Daniel M. Aukes
 ---
 
-## Project Plan: Autonomous Warehouse Goods Transportation System (Turtlebot Demonstration & Future Scope)
--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# Project Plan: Autonomous Warehouse Goods Transportation System (Turtlebot Demonstration & Future Scope)
+
 Our project is a phased endeavor, beginning with a focused demonstration using Turtlebots and culminating in a comprehensive system design for real-world warehouse applications. The initial phase aims to create a functional, small-scale autonomous goods transportation system. This phase addresses the research question: "Can we effectively implement a simplified autonomous goods transportation system using Turtlebots, demonstrating core functionalities like navigation, product identification, and simulated delivery in a controlled environment?" We intend to show the feasibility of basic autonomous navigation, barcode scanning, and task execution within a confined, simulated warehouse setting.
 
 Building upon this foundational work, the future scope of our project targets the development of a robust and adaptable system for large-scale warehouse deployment. This phase seeks to answer the research question: "How can we scale and enhance the autonomous goods transportation system to achieve robust, efficient, and adaptable operation in real-world warehouse environments, addressing challenges related to scale, dynamism, and advanced sensor integration?" This phase will involve integrating advanced sensors, implementing sophisticated control algorithms, and designing user-friendly interfaces for real-time monitoring and control.
 
-### Figures Communicating the Idea & Sensor Integration:
+## Figures Communicating the Idea & Sensor Integration:
 ![Project Figure](Team_Diagram.png) 
-![Flowchart1](diagram-export-2-24-2025-3_19_14-PM.png)
-![Flowchart1](diagram-export-2-24-2025-3_20_55-PM.png)
+For a simple Turtlebot Demonstration:  ![Flowchart1](diagram-export-2-24-2025-3_19_14-PM.png)
+For Future Scope Demonstration: ![Flowchart1](diagram-export-2-24-2025-3_20_55-PM.png)
 
-### Sensor Integration
+## Sensor Integration
 Sensors play a critical role in ensuring the robot’s ability to navigate and handle products correctly. During the demonstration and testing phases, the following sensors will be used:
 * LiDAR & 3D Cameras: These will be used for real-time navigation and obstacle avoidance. They provide spatial awareness of the robot’s environment, enabling it to detect and avoid obstacles in its path.
 * Barcode/QR Code Scanners: These sensors will be used for product identification, allowing the robot to recognize the goods being transported and confirm that the right item is taken to the correct location.
@@ -46,7 +46,7 @@ Future Scope:
 * Testing will involve validating sensor accuracy, reliability, and fault tolerance.
 * The final demonstration will show the system's ability to adapt to dynamic environmental changes using sensor data.
 
-### Interaction:
+## Interaction:
 To influence the behavior of the robot and allow for seamless interaction, we plan to develop a web-based interface. 
 
 Turtlebot Demonstration: 
@@ -61,13 +61,13 @@ Future Scope:
 - AR overlays will enhance situational awareness for human operators.
 - Mockup: A professional-looking web dashboard with a 3D map of the warehouse, interactive sensor data graphs, product inventory management, task assignment, and error logs.
 
-### Control and Autonomy:
+## Control and Autonomy:
 The robot’s control system will be based on a feedback loop that integrates sensor data to make decisions. The steps involved include:
 
-#### Sensor Feedback:
+### Sensor Feedback:
 + Real-time data from the LiDAR, barcode scanner, and weight sensors will be used to assess the environment, identify goods, and verify the appropriate product for transportation.
 + Higher-Level Decision-Making: A decision-making algorithm will process the sensor data and use it to determine the next actions of the robot, including navigation decisions (e.g., avoiding obstacles) and task decisions (e.g., which item to transport to which location).
-#### Autonomy: 
+### Autonomy: 
 The robot will operate autonomously based on pre-programmed logic and real-time feedback, adjusting its path and tasks without human intervention.
 
 Turtlebot Demonstration:
@@ -82,7 +82,7 @@ Future Scope:
 - AI-driven demand prediction will optimize storage allocation.
 - Multi-agent coordination will be implemented for multiple robots.
 
-### Preparation Needs:
+## Preparation Needs:
 
 To succeed in this project, several knowledge areas and skills must be covered:
 - Hardware Integration: We need to understand how to integrate various sensors with the robot hardware, such as connecting barcode scanners and weight sensors to the robot’s control system.
@@ -92,7 +92,7 @@ To succeed in this project, several knowledge areas and skills must be covered:
 
 In class, topics related to ROS2, sensor integration, and web-based control systems will be crucial. Additionally, we may need specific guidance on using Node-Red or Azure Twin for the user interface.
 
-### Final Demonstration:
+## Final Demonstration:
 
 Turtlebot Demonstration:
 - The Turtlebot will autonomously navigate a simulated warehouse, scan barcodes, and deliver simulated products.
@@ -101,7 +101,7 @@ Turtlebot Demonstration:
 - Environmental variability: The Turtlebot will handle minor variations in the environment.
 - Testing: We will track navigation accuracy and task completion.
 
-### Impact:
+## Impact:
 
 This project will have significant learning and practical implications:
 * It will deepen our understanding of autonomous robotic systems, particularly in warehouse automation.
@@ -109,14 +109,14 @@ This project will have significant learning and practical implications:
 * By developing the project from prototype to small-scale demonstration, we will learn how to scale and optimize robotic systems for real-world applications, making it applicable for future developments in industrial settings.
 * The work may also contribute to the development of new technologies in warehouse automation and autonomous logistics, providing valuable insights for further research.
 
-### Advising:
+## Advising:
 For this project, we will seek advising from Dr. Aukes (or another faculty member with expertise in automation). The advising will focus on:
 * ROS2 for robot control and sensor integration.
 * Guidance on Webviz, Node-Red, or Azure Twin for developing the web-based monitoring and control system.
 * Assistance with hardware integration and sensor selection (e.g., LiDAR, barcode scanners, weight sensors).
 Dr. Aukes (or another advisor) will be expected to provide access to specialized hardware, advice on troubleshooting issues, and mentoring in developing the project’s autonomy and sensor integration. We will aim to meet with the advisor on a regular basis (e.g., weekly or bi-weekly) to track progress and refine our approach.
 
-### Weekly Milestones (Weeks 7-16):
+## Weekly Milestones (Weeks 7-16):
 
 | Week | Hardware Integration | Interface Development | Sensors | Controls & Autonomy |
 |------|----------------------|-----------------------|---------|-----------------------|
