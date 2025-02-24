@@ -29,7 +29,7 @@ For a simple Turtlebot Demonstration:
 ![FC1](diagram-export-2-24-2025-3_19_14-PM.png)
 
 For Future Scope Demonstration:
-![FC2](diagram-export-2-24-2025-3_20_55-PM.png){ width=2000 }{ height = 2000}
+![FC2](diagram-export-2-24-2025-3_20_55-PM.png)
 
 ## Sensor Integration
 Sensors play a critical role in ensuring the robot’s ability to navigate and handle products correctly. During the demonstration and testing phases, the following sensors will be used:
