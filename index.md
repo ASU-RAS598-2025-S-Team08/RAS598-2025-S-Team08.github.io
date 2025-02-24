@@ -1,5 +1,4 @@
-# Project Name: Picking and delivering objects using an autonomous robot
-
+# Project Name: Autonomous Goods Transportation System
 ## Team Information
 - **Team Number**: Team 08
 - **Team Members**:
