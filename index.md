@@ -75,6 +75,7 @@ The robot’s control system will be based on a feedback loop that integrates se
 ### Sensor Feedback:
 + Real-time data from the LiDAR, barcode scanner, and weight sensors will be used to assess the environment, identify goods, and verify the appropriate product for transportation.
 + Higher-Level Decision-Making: A decision-making algorithm will process the sensor data and use it to determine the next actions of the robot, including navigation decisions (e.g., avoiding obstacles) and task decisions (e.g., which item to transport to which location).
+
 ### Autonomy: 
 The robot will operate autonomously based on pre-programmed logic and real-time feedback, adjusting its path and tasks without human intervention.
 
