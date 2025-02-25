@@ -14,7 +14,7 @@
 - **Professor**: Daniel M. Aukes
 ---
 
-# Project Plan: Autonomous Warehouse Goods Transportation System (Turtlebot Demonstration & Future Scope)
+# Project Plan (Turtlebot Demonstration & Future Scope)
 
 The goal of this project is to develop a robotic system capable of autonomously transporting goods within a warehouse. The robot will be responsible for identifying products, navigating obstacles, and delivering items to specific storage locations. The key research question this project aims to answer is:
 How can we design and implement an autonomous robotic system that efficiently and accurately transports goods in a dynamic, obstacle-rich warehouse environment?
@@ -23,13 +23,13 @@ This system will leverage advanced sensors (LiDAR, 3D cameras, barcode scanners)
 
 ## Figures Communicating the Idea & Sensor Integration:
 
-Basic Ideology
+### Basic Ideology
 ![Project Figure](Team_Diagram.png) 
 
-For a simple Turtlebot Demonstration:  
+### For a simple Turtlebot Demonstration:  
 ![FC1](diagram-export-2-24-2025-3_19_14-PM.png)
 
-For Future Scope Demonstration:
+### For Future Scope Demonstration:
 ![FC2](diagram-export-2-24-2025-3_20_55-PM.png)
 
 ## Sensor Integration
