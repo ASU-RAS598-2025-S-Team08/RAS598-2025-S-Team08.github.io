@@ -12,6 +12,7 @@
 - **University**: Arizona State University
 - **Class**: RAS598 - Experimentation and Deployment of Robotic Systems
 - **Professor**: Daniel M. Aukes
+
 ---
 
 # Project Plan (Turtlebot Demonstration & Future Scope)
