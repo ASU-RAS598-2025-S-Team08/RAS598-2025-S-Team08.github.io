@@ -30,9 +30,6 @@ This system will leverage advanced sensors (LiDAR, 3D cameras, barcode scanners)
 ### For a simple Turtlebot Demonstration:  
 ![FC1](diagram-export-2-24-2025-3_19_14-PM.png)
 
-### For Future Scope Demonstration:
-![FC2](diagram-export-2-24-2025-3_20_55-PM.png)
-
 ## Sensor Integration
 Sensors play a critical role in ensuring the robot’s ability to navigate and handle products correctly. During the demonstration and testing phases, the following sensors will be used:
 * LiDAR & 3D Cameras: These will be used for real-time navigation and obstacle avoidance. They provide spatial awareness of the robot’s environment, enabling it to detect and avoid obstacles in its path.
@@ -110,7 +107,8 @@ Turtlebot Demonstration:
 - Environmental variability: The Turtlebot will handle minor variations in the environment.
 - Testing: We will track navigation accuracy and task completion.
 
-![GenImg1](DALL·E_2025-02-24_16.31.32_-_A_realistic_industrial_warehouse_scenario_featuring_autonomous_forklifts_following_color-specific_paths_on_the_floor._The_warehouse_is_equipped_with_l.jpg)
+### Sample Illustration: 
+![GenImg1](md1.jpg)
 
 ## Impact:
 
@@ -119,6 +117,9 @@ This project will have significant learning and practical implications:
 * We will gain experience in sensor integration, data processing, and control systems, which are essential skills in robotics and AI.
 * By developing the project from prototype to small-scale demonstration, we will learn how to scale and optimize robotic systems for real-world applications, making it applicable for future developments in industrial settings.
 * The work may also contribute to the development of new technologies in warehouse automation and autonomous logistics, providing valuable insights for further research.
+
+### Sample Illustration: 
+![GenImg2](md2.jpg)
 
 ## Advising:
 For this project, we will seek advising from Dr. Aukes (or another faculty member with expertise in automation). The advising will focus on:
@@ -207,3 +208,6 @@ In the future scope, we aim to design a system suited for:
 - Autonomous Charging Stations: Robots will be programmed to dock at charging points when battery levels drop below a threshold.
 - Battery Health Monitoring: Using predictive maintenance to prevent sudden battery failures.
 - Optimized Power Usage: Implementing energy-efficient path planning and task scheduling.
+
+### For Future Scope Demonstration:
+![FC2](diagram-export-2-24-2025-3_20_55-PM.png)
