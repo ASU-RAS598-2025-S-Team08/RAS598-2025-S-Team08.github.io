@@ -66,6 +66,9 @@ Future Scope:
 - AR overlays will enhance situational awareness for human operators.
 - Mockup: A professional-looking web dashboard with a 3D map of the warehouse, interactive sensor data graphs, product inventory management, task assignment, and error logs.
 
+### Sample Illustration: 
+![GenImg1](md1.jpg)
+
 ## Control and Autonomy:
 The robot’s control system will be based on a feedback loop that integrates sensor data to make decisions. The steps involved include:
 
