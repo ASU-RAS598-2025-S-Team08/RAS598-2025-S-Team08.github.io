@@ -22,7 +22,7 @@ How can we design and implement an autonomous robotic system that efficiently an
 
 This system will leverage advanced sensors (LiDAR, 3D cameras, barcode scanners) and real-time data integration to ensure seamless navigation and precise goods handling. The project will demonstrate its core capabilities through a small-scale demonstration using TurtleBots, with plans for scaling up to more advanced systems in the future.
 
-## Figures Communicating the Idea & Sensor Integration:
+## Figures Communicating the Idea:
 
 ### Basic Ideology
 ![Project Figure](Team_Diagram.png) 
@@ -66,9 +66,6 @@ Future Scope:
 - AR overlays will enhance situational awareness for human operators.
 - Mockup: A professional-looking web dashboard with a 3D map of the warehouse, interactive sensor data graphs, product inventory management, task assignment, and error logs.
 
-### Sample Illustration: 
-![GenImg1](md1.jpg)
-
 ## Control and Autonomy:
 The robot’s control system will be based on a feedback loop that integrates sensor data to make decisions. The steps involved include:
 
@@ -101,6 +98,9 @@ To succeed in this project, several knowledge areas and skills must be covered:
 
 In class, topics related to ROS2, sensor integration, and web-based control systems will be crucial. Additionally, we may need specific guidance on using Node-Red or Azure Twin for the user interface.
 
+### Sample Illustration: 
+![GenImg2](md2.jpg)
+
 ## Final Demonstration:
 
 Turtlebot Demonstration:
@@ -117,9 +117,6 @@ This project will have significant learning and practical implications:
 * We will gain experience in sensor integration, data processing, and control systems, which are essential skills in robotics and AI.
 * By developing the project from prototype to small-scale demonstration, we will learn how to scale and optimize robotic systems for real-world applications, making it applicable for future developments in industrial settings.
 * The work may also contribute to the development of new technologies in warehouse automation and autonomous logistics, providing valuable insights for further research.
-
-### Sample Illustration: 
-![GenImg2](md2.jpg)
 
 ## Advising:
 For this project, we will seek advising from Dr. Aukes (or another faculty member with expertise in automation). The advising will focus on:
