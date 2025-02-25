@@ -110,7 +110,7 @@ Turtlebot Demonstration:
 - Environmental variability: The Turtlebot will handle minor variations in the environment.
 - Testing: We will track navigation accuracy and task completion.
 
-![GenImg1](DALL·E 2025-02-24 16.31.32 - A realistic industrial warehouse scenario featuring autonomous forklifts following color-specific paths on the floor. The warehouse is equipped with l.jpg)
+![GenImg1](DALL·E_2025-02-24_16.31.32_-_A_realistic_industrial_warehouse_scenario_featuring_autonomous_forklifts_following_color-specific_paths_on_the_floor._The_warehouse_is_equipped_with_l.jpg)
 
 ## Impact:
 
