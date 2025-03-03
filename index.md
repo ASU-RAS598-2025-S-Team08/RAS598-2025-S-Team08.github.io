@@ -4,6 +4,7 @@
 - **Team Members**:
   - Ha Long Truong
   - Yashwanth Gowda
+  - Bhavya M Shah
   
 ## Semester and Year:
 - **Semester**: Spring 2025
@@ -142,6 +143,21 @@ Dr. Aukes (or another advisor) will be expected to provide access to specialized
 | 14   | Planning full scale robot design | Design full scale dashboard | Planning system wide sensor implementation | Planning advanced control architecture |
 | 15   | Planning full scale warehouse simulation | Database testing and implementation | Sensor fusion design | control architecture testing |
 | 16   | Documentation and final testing | Finalize Dashboard and database | Final sensor testing | Final control testing |
+
+% Please add the following required packages to your document preamble:
+% \usepackage[table,xcdraw]{xcolor}
+% Beamer presentation requires \usepackage{colortbl} instead of \usepackage[table,xcdraw]{xcolor}
+\begin{table}[]
+\begin{tabular}{ccccccccccccc}
+\textbf{STEPS}                               & \textbf{Jan 13 - Jan 20}  & \textbf{Jan 20 - Jan 27}  & \textbf{Jan 27 - Feb 03}  & \textbf{Feb 03 - Feb 10}  & \textbf{Feb 10 - Feb 17}  & \textbf{Feb 17 - Feb 24}  & \textbf{Feb 24 - Mar 03}  & \textbf{Mar 03 - Mar 10}  & \textbf{Mar 10 - Mar 17}  & \textbf{Mar 17 - Mar 24}  & \textbf{Mar 24 - Mar 24}  & \textbf{Mar 24 - Apr 07}  \\
+{\color[HTML]{FF0000} Learning ROS 2 Basics} & {\color[HTML]{FF0000} 🤩} & {\color[HTML]{FF0000} 🤩} & {\color[HTML]{FF0000} 🤩} & {\color[HTML]{FF0000} 🤩} & {\color[HTML]{FF0000} 🤩} & {\color[HTML]{FF0000} 🤩} & {\color[HTML]{FF0000} }   & {\color[HTML]{FF0000} }   & {\color[HTML]{FF0000} }   & {\color[HTML]{FF0000} }   & {\color[HTML]{FF0000} }   & {\color[HTML]{FF0000} }   \\
+{\color[HTML]{008000} Hardware Setup}        & {\color[HTML]{008000} }   & {\color[HTML]{008000} }   & {\color[HTML]{008000} }   & {\color[HTML]{008000} }   & {\color[HTML]{008000} }   & {\color[HTML]{008000} 🤩} & {\color[HTML]{008000} 🤩} & {\color[HTML]{008000} }   & {\color[HTML]{008000} }   & {\color[HTML]{008000} }   & {\color[HTML]{008000} }   & {\color[HTML]{008000} }   \\
+{\color[HTML]{0000FF} Data Collection}       & {\color[HTML]{0000FF} }   & {\color[HTML]{0000FF} }   & {\color[HTML]{0000FF} }   & {\color[HTML]{0000FF} }   & {\color[HTML]{0000FF} }   & {\color[HTML]{0000FF} }   & {\color[HTML]{0000FF} 🤩} & {\color[HTML]{0000FF} 🤩} & {\color[HTML]{0000FF} }   & {\color[HTML]{0000FF} }   & {\color[HTML]{0000FF} }   & {\color[HTML]{0000FF} }   \\
+{\color[HTML]{EE82EE} Sensor Fusion}         & {\color[HTML]{EE82EE} }   & {\color[HTML]{EE82EE} }   & {\color[HTML]{EE82EE} }   & {\color[HTML]{EE82EE} }   & {\color[HTML]{EE82EE} }   & {\color[HTML]{EE82EE} }   & {\color[HTML]{EE82EE} }   & {\color[HTML]{EE82EE} 🤩} & {\color[HTML]{EE82EE} 🤩} & {\color[HTML]{EE82EE} }   & {\color[HTML]{EE82EE} }   & {\color[HTML]{EE82EE} }   \\
+{\color[HTML]{FFA500} Autonomy}              & {\color[HTML]{FFA500} }   & {\color[HTML]{FFA500} }   & {\color[HTML]{FFA500} }   & {\color[HTML]{FFA500} }   & {\color[HTML]{FFA500} }   & {\color[HTML]{FFA500} }   & {\color[HTML]{FFA500} }   & {\color[HTML]{FFA500} }   & {\color[HTML]{FFA500} 🤩} & {\color[HTML]{FFA500} 🤩} & {\color[HTML]{FFA500} 🤩} & {\color[HTML]{FFA500} }   \\
+{\color[HTML]{800080} Demonstration}         & {\color[HTML]{800080} }   & {\color[HTML]{800080} }   & {\color[HTML]{800080} }   & {\color[HTML]{800080} }   & {\color[HTML]{800080} }   & {\color[HTML]{800080} }   & {\color[HTML]{800080} }   & {\color[HTML]{800080} }   & {\color[HTML]{800080} }   & {\color[HTML]{800080} }   & {\color[HTML]{800080} 🤩} & {\color[HTML]{800080} 🤩}
+\end{tabular}
+\end{table}
 
 ## Potential Areas for Further Elaboration:
 1. Specific Metrics for Evaluation
