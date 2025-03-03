@@ -129,35 +129,17 @@ For this project, we will seek advising from Dr. Aukes (or another faculty membe
 * Assistance with hardware integration and sensor selection (e.g., LiDAR, barcode scanners, weight sensors).
 Dr. Aukes (or another advisor) will be expected to provide access to specialized hardware, advice on troubleshooting issues, and mentoring in developing the project’s autonomy and sensor integration. We will aim to meet with the advisor on a regular basis (e.g., weekly or bi-weekly) to track progress and refine our approach.
 
-## Weekly Milestones (Weeks 7-16):
+# Gantt Chart for the Project
 
-| Week | Hardware Integration | Interface Development | Sensors | Controls & Autonomy |
-|------|----------------------|-----------------------|---------|-----------------------|
-| 7    | Turtlebot setup       | Webviz setup           | LiDAR data acquisition | Basic navigation setup |
-| 8    | Camera mounting       | Node-RED installation   | Barcode scanner integration | Sensor data integration |
-| 9    | Simulated warehouse setup | Basic Dashboard creation | Sensor data filtering | Task execution state machine |
-| 10   | Testing hardware setup | Refine dashboard design | LiDAR navigation testing | Refine Navigation control |
-| 11   | Hardware testing and debugging | Begin Database planning | Barcode testing and Debugging | Task completion testing |
-| 12   | Final turtlebot hardware adjustments | Database Implementation | System wide sensor testing | System wide control testing |
-| 13   | Research advanced sensors | Begin Node-Red/MySQL integration | Research sensor fusion | Research advanced path planning |
-| 14   | Planning full scale robot design | Design full scale dashboard | Planning system wide sensor implementation | Planning advanced control architecture |
-| 15   | Planning full scale warehouse simulation | Database testing and implementation | Sensor fusion design | control architecture testing |
-| 16   | Documentation and final testing | Finalize Dashboard and database | Final sensor testing | Final control testing |
+| STEPS                | Jan 13 - Jan 20 | Jan 20 - Jan 27 | Jan 27 - Feb 03 | Feb 03 - Feb 10 | Feb 10 - Feb 17 | Feb 17 - Feb 24 | Feb 24 - Mar 03 | Mar 03 - Mar 10 | Mar 10 - Mar 17 | Mar 17 - Mar 24 | Mar 24 - Apr 07 |
+|----------------------|----------------|----------------|----------------|----------------|----------------|----------------|----------------|----------------|----------------|----------------|----------------|
+| **Learning ROS 2 Basics**  | 😍 | 😍 | 😍 | 😍 | 😍 | 😍 | 😍 | 😍 | 😍 |    |    |
+| **Hardware Setup**        |    |    |    |    |    |    |    |    |    |    |    |
+| **Data Collection**       |    |    |    |    |    |    | 😍 | 😍 | 😍 |    |    |
+| **Sensor Fusion**         |    |    |    |    |    |    |    | 😍 | 😍 | 😍 |    |
+| **Autonomy**              |    |    |    |    |    |    |    |    | 😍 | 😍 | 😍 |
+| **Demonstration**         |    |    |    |    |    |    |    |    |    |    | 😍 |
 
-% Please add the following required packages to your document preamble:
-% \usepackage[table,xcdraw]{xcolor}
-% Beamer presentation requires \usepackage{colortbl} instead of \usepackage[table,xcdraw]{xcolor}
-\begin{table}[]
-\begin{tabular}{ccccccccccccc}
-\textbf{STEPS}                               & \textbf{Jan 13 - Jan 20}  & \textbf{Jan 20 - Jan 27}  & \textbf{Jan 27 - Feb 03}  & \textbf{Feb 03 - Feb 10}  & \textbf{Feb 10 - Feb 17}  & \textbf{Feb 17 - Feb 24}  & \textbf{Feb 24 - Mar 03}  & \textbf{Mar 03 - Mar 10}  & \textbf{Mar 10 - Mar 17}  & \textbf{Mar 17 - Mar 24}  & \textbf{Mar 24 - Mar 24}  & \textbf{Mar 24 - Apr 07}  \\
-{\color[HTML]{FF0000} Learning ROS 2 Basics} & {\color[HTML]{FF0000} 🤩} & {\color[HTML]{FF0000} 🤩} & {\color[HTML]{FF0000} 🤩} & {\color[HTML]{FF0000} 🤩} & {\color[HTML]{FF0000} 🤩} & {\color[HTML]{FF0000} 🤩} & {\color[HTML]{FF0000} }   & {\color[HTML]{FF0000} }   & {\color[HTML]{FF0000} }   & {\color[HTML]{FF0000} }   & {\color[HTML]{FF0000} }   & {\color[HTML]{FF0000} }   \\
-{\color[HTML]{008000} Hardware Setup}        & {\color[HTML]{008000} }   & {\color[HTML]{008000} }   & {\color[HTML]{008000} }   & {\color[HTML]{008000} }   & {\color[HTML]{008000} }   & {\color[HTML]{008000} 🤩} & {\color[HTML]{008000} 🤩} & {\color[HTML]{008000} }   & {\color[HTML]{008000} }   & {\color[HTML]{008000} }   & {\color[HTML]{008000} }   & {\color[HTML]{008000} }   \\
-{\color[HTML]{0000FF} Data Collection}       & {\color[HTML]{0000FF} }   & {\color[HTML]{0000FF} }   & {\color[HTML]{0000FF} }   & {\color[HTML]{0000FF} }   & {\color[HTML]{0000FF} }   & {\color[HTML]{0000FF} }   & {\color[HTML]{0000FF} 🤩} & {\color[HTML]{0000FF} 🤩} & {\color[HTML]{0000FF} }   & {\color[HTML]{0000FF} }   & {\color[HTML]{0000FF} }   & {\color[HTML]{0000FF} }   \\
-{\color[HTML]{EE82EE} Sensor Fusion}         & {\color[HTML]{EE82EE} }   & {\color[HTML]{EE82EE} }   & {\color[HTML]{EE82EE} }   & {\color[HTML]{EE82EE} }   & {\color[HTML]{EE82EE} }   & {\color[HTML]{EE82EE} }   & {\color[HTML]{EE82EE} }   & {\color[HTML]{EE82EE} 🤩} & {\color[HTML]{EE82EE} 🤩} & {\color[HTML]{EE82EE} }   & {\color[HTML]{EE82EE} }   & {\color[HTML]{EE82EE} }   \\
-{\color[HTML]{FFA500} Autonomy}              & {\color[HTML]{FFA500} }   & {\color[HTML]{FFA500} }   & {\color[HTML]{FFA500} }   & {\color[HTML]{FFA500} }   & {\color[HTML]{FFA500} }   & {\color[HTML]{FFA500} }   & {\color[HTML]{FFA500} }   & {\color[HTML]{FFA500} }   & {\color[HTML]{FFA500} 🤩} & {\color[HTML]{FFA500} 🤩} & {\color[HTML]{FFA500} 🤩} & {\color[HTML]{FFA500} }   \\
-{\color[HTML]{800080} Demonstration}         & {\color[HTML]{800080} }   & {\color[HTML]{800080} }   & {\color[HTML]{800080} }   & {\color[HTML]{800080} }   & {\color[HTML]{800080} }   & {\color[HTML]{800080} }   & {\color[HTML]{800080} }   & {\color[HTML]{800080} }   & {\color[HTML]{800080} }   & {\color[HTML]{800080} }   & {\color[HTML]{800080} 🤩} & {\color[HTML]{800080} 🤩}
-\end{tabular}
-\end{table}
 
 ## Potential Areas for Further Elaboration:
 1. Specific Metrics for Evaluation
