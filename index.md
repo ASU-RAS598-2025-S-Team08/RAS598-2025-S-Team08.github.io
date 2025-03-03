@@ -206,6 +206,3 @@ In the future scope, we aim to design a system suited for:
 - Autonomous Charging Stations: Robots will be programmed to dock at charging points when battery levels drop below a threshold.
 - Battery Health Monitoring: Using predictive maintenance to prevent sudden battery failures.
 - Optimized Power Usage: Implementing energy-efficient path planning and task scheduling.
-
-### For Future Scope Demonstration:
-![FC2](diagram-export-2-24-2025-3_20_55-PM.png)
