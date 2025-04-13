@@ -1,20 +1,3 @@
-# Project Name: Autonomous Warehouse Patrolling Robot (Turtlebot Demonstration & Future Scope)
-## Team Information
-- **Team Number**: Team 08
-- **Team Members**:
-   - Bhavya M Shah
-   - Ha Long Truong
-   - Yashwanth Gowda
-  
-  
-## Semester and Year:
-- **Semester**: Spring 2025
-
-## University, Class, Professor:
-- **University**: Arizona State University
-- **Class**: RAS598 - Experimentation and Deployment of Robotic Systems
-- **Professor**: Daniel M. Aukes
-
 **Title or Home Page (index.md Update)**
 
 - **Project Name:** Autonomous Warehouse Patrolling Robot
