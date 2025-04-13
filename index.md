@@ -68,7 +68,7 @@ Here's what we've implemented or planned for filtering:
 -   **Depth Camera**: Downsampling + HSV filtering for color-based detection
 -   **IMU**: Complementary filter + EKF integration via `robot_localization`
 
-```mermaid
+
 graph TD
     A1[LiDAR] --> F1[Sensor Fusion (EKF)]
     A2[IMU] --> F1
@@ -80,7 +80,7 @@ graph TD
     N1 --> H1
     H1 --> ACT[Actuator Commands]
     H1 --> GUI[GUI Alerts & Logs]
-...
+
   
 **Integration in ROS2**
 
@@ -96,7 +96,7 @@ Each sensor will be managed through dedicated ROS2 nodes, ensuring modularity, s
   - Ultrasonic proximity markers
 - **Localization**: We employ **AMCL (Adaptive Monte Carlo Localization)** for probabilistic localization based on the occupancy grid map and laser scans.
 
-```mermaid
+
 graph LR
     LiDAR[rplidar_node] -->|/scan| NavStack
     IMU[imu_driver] -->|/imu/data| EKF
@@ -275,7 +275,7 @@ This project pushes us to explore real-world robotic deployments using ROS2, a c
   - Full integration of perception, planning, and interaction modules
 
 **Weekly Milestones (Gantt/Table Format)**
-```mermaid
+
 gantt
     title Project Timeline - Autonomous Warehouse Patrolling Robot
     dateFormat  YYYY-MM-DD
@@ -299,8 +299,7 @@ gantt
     section Testing & Demonstration
     Lab Trials & Data Logging    :         d1, 2025-04-10, 7d
     Final Demo Prep              :         d2, 2025-04-17, 7d
-...
-```mermaid
+
 graph TD
     G1[Robot Sensors] --> G2[ROS Topics]
     G2 --> G3[GUI Backend Node]
@@ -309,7 +308,7 @@ graph TD
     G3 --> G6[Anomaly Alerts]
     G3 --> G7[Manual Control Buttons]
     G3 --> G8[System Logs Export]
-...
+
 ** ROS2 Architecture + GUI Update**
 -----------------------------------
 
