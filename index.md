@@ -21,7 +21,7 @@ This project explores the intersection of autonomous navigation, sensor fusion, 
 
 We now focus more on robust **sensor fusion** and **reactive re-planning**. We scaled back voice control to a future extension due to time constraints. Anomaly detection will focus on static object and human detection using simple depth thresholds, not deep-learning vision.
 
-![Visualization of Idea]([ChatGPTImageApr13,2025,02_46_22PM.png](https://github.com/ASU-RAS598-2025-S-Team08/RAS598-2025-S-Team08.github.io/blob/33126b757ea3b6bbbb79b26a14d8fcb75a1327fb/ChatGPT%20Image%20Apr%2013%2C%202025%2C%2002_46_22%20PM.png)
+![Visualization of Idea]
 
 **Sensor Integration**
 
