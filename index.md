@@ -42,7 +42,7 @@ We will visualize real-time sensor streams in RViz2, calibrate thresholds, and v
 **In final demonstration**:  
 Sensor data will guide navigation, trigger reactive behaviors (e.g., avoid obstacle), and inform the GUI of real-time statuses and anomalies.
 
-![realworldflowchart](real_world_flowchart.png)
+![realworldflowchart](real_world_workflow_chart.png)
 A Flowchart demonstrating the project work.
 
 **Interaction Plan**
