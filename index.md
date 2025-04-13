@@ -17,11 +17,12 @@ Our team aims to design and implement an **Autonomous Warehouse Patrolling Robot
 **Research Question**:  
 _How can low-cost mobile robotics platforms be utilized for reliable autonomous patrolling in indoor environments, combining real-time perception, decision-making, and interactive monitoring?_
 
+![A Visualization](visualization.png)
+A Visualization
+
 This project explores the intersection of autonomous navigation, sensor fusion, real-time anomaly detection, and user interface development.
 
 We now focus more on robust **sensor fusion** and **reactive re-planning**. We scaled back voice control to a future extension due to time constraints. Anomaly detection will focus on static object and human detection using simple depth thresholds, not deep-learning vision.
-
-![Visualization of Idea]
 
 **Sensor Integration**
 
@@ -41,6 +42,9 @@ We will visualize real-time sensor streams in RViz2, calibrate thresholds, and v
 **In final demonstration**:  
 Sensor data will guide navigation, trigger reactive behaviors (e.g., avoid obstacle), and inform the GUI of real-time statuses and anomalies.
 
+![realworldflowchart](real_world_flowchart.png)
+A Flowchart demonstrating the project work.
+
 **Interaction Plan**
 
 We will influence robot behavior through both autonomous logic and manual controls:
@@ -50,14 +54,13 @@ We will influence robot behavior through both autonomous logic and manual contro
   - Visual alerts for anomalies or obstacles
   - Manual override buttons (pause, replan, resume)
   - System logs (distance, battery, alerts)
+
 - **User Overrides**:
   - Keyboard input for debugging
   - (Optional) Voice commands for commands like “start patrol” or “return to base”
 
+![Sample GUI Mockup](sgm1.png)
 Sample GUI Mockup
-![Sample GUI Mockup](ChatGPTImageApr13,2025,02_46_24PM.png)
-
-![Sample GUI Mockup](ChatGPTImageApr13,2025,03_03_23PM.png)
 
 **Control and Autonomy**
 
@@ -143,7 +146,6 @@ We implemented the following for sensor data:
 | **LiDAR** | Clipping to range \[0.2m–3.5m\], outlier rejection, smoothing via rolling mean |
 | **IMU** | Filtered with ROS2 robot_localization EKF using /imu/data |
 | **Depth Camera** | Depth masking to ignore floor reflections and reduce noise; regions-of-interest for anomaly detection |
-| **Ultrasonic** | Threshold filtering + timeout logic to discard stale readings |
 
 All filtered sensor data feeds into:
 
@@ -161,8 +163,6 @@ All filtered sensor data feeds into:
 - **High-Level**: Depth anomalies + patrol planner → path updates and alerts
 
 **ROS2 Node Architecture and Topic Mapping**
-
-Here is a recommended **ROS2 architecture diagram** for your system:
 
 **Node Overview**:
 
