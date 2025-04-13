@@ -135,7 +135,9 @@ This project challenges us to integrate real-world robotics technologies under c
 
 It serves as a testbed for future coursework in robotics, simulation, and industrial automation—and could evolve into a deployable solution for safety inspection or inventory monitoring.
 
-Pushed full autonomy (BT integration) by one week to refine SLAM + costmap tuning.
+And we try to push full autonomy (BT integration) by one week to refine SLAM + costmap tuning.
+
+![flowchart](simplemm.png)
 
 **Sensor Data Conditioning, Filtering, and Utilization**
 
