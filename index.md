@@ -1,23 +1,14 @@
-# Autonomous Warehouse Patrolling Robot
+<div style="text-align: center;"> # Autonomous Warehouse Patrolling Robot
 
 ---
 
 Project Name: Autonomous Warehouse Patrolling Robot
-
----
-
 Team Number: Team 8
-
----
-
 Team Members: Bhavya M Shah, Ha Long Truong, Yashwanth Gowda
 
 ---
 
 Semester and Year: Spring 2025
-
----
-
 University, Class, Professor: Arizona State University, RAS 598, Dr. Aukes
 
 ---
@@ -35,8 +26,8 @@ _How can low-cost mobile robotics platforms be utilized for reliable autonomous 
 
 ---
 
-![A Visualization](visualization.png)
-A Visualization
+<div style="text-align: center;"> ![A Visualization](visualization.png)
+<div style="text-align: center;"> A Visualization
 
 ---
 
@@ -78,8 +69,8 @@ Sensor data will guide navigation, trigger reactive behaviors (e.g., avoid obsta
 
 ---
 
-![realworldflowchart](real_world_workflow_chart.png)
-A Flowchart demonstrating the project work.
+<div style="text-align: center;"> ![realworldflowchart](real_world_workflow_chart.png)
+<div style="text-align: center;"> A Flowchart demonstrating the project work.
 
 ---
 
@@ -105,8 +96,8 @@ We will influence robot behavior through both autonomous logic and manual contro
 
 ---
 
-![Sample GUI Mockup](sgm1.png)
-Sample GUI Mockup
+<div style="text-align: center;"> ![Sample GUI Mockup](sgm1.png)
+<div style="text-align: center;"> Sample GUI Mockup
 
 ---
 
@@ -231,7 +222,7 @@ And we try to push full autonomy (BT integration) by one week to refine SLAM + c
 
 ---
 
-![flowchart](simplemm.png)
+<div style="text-align: center;"> ![flowchart](simplemm.png)
 
 ---
 
@@ -269,7 +260,7 @@ All filtered sensor data feeds into:
 
 ---
 
-![Sensor Fusion](sensor_fusion_flowchart.png)
+<div style="text-align: center;"> ![Sensor Fusion](sensor_fusion_flowchart.png)
 
 ---
 
@@ -297,7 +288,7 @@ All filtered sensor data feeds into:
 
 ---
 
-![Draft ROS2 Node Architecture](ros2_node_architecture_rqt_style.png)
+<div style="text-align: center;"> ![Draft ROS2 Node Architecture](ros2_node_architecture_rqt_style.png)
 
 ---
 
