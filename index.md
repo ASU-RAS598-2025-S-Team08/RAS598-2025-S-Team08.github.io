@@ -46,7 +46,8 @@ Figure 1: Conceptual Overview of Warehouse Patrolling Robot_
 **Sensor Integration**
 
 Sensor integration lies at the core of our Autonomous Warehouse Patrolling Robot’s functionality, enabling perception, localization, navigation, and real-time decision-making. Our approach involves the strategic fusion of multiple sensor modalities, each contributing complementary data that enhances the robot’s understanding of its environment and its ability to operate reliably in dynamic warehouse settings.
-- Acts as the primary sensor for **SLAM (Simultaneous Localization and Mapping)**.
+- Acts as the primary sensor for
+1. **SLAM (Simultaneous Localization and Mapping)**.
     - Provides high-resolution 2D scans of the surroundings to detect **static and dynamic obstacles**, and helps generate occupancy grid maps.
     - LiDAR data will feed into both the **local costmap** for real-time obstacle avoidance and the **global planner** for long-term path navigation.
 2. **Depth Camera:**
@@ -60,13 +61,14 @@ Sensor integration lies at the core of our Autonomous Warehouse Patrolling Robot
 4. **Ultrasonic Sensors:**
     - Placed strategically around the robot to provide **short-range obstacle detection**.
     - Useful for **redundant safety layers**, especially when navigating tight spaces or around unstructured, cluttered areas where other sensors might have blind spots.
-### **Sensor Data Conditioning Update**
 
+### **Sensor Data Conditioning Update**
 Here's what we've implemented or planned for filtering:
 -   **LiDAR**: Median filtering and range clipping to eliminate outliers and wall ghosting
 -   **Depth Camera**: Downsampling + HSV filtering for color-based detection
 -   **IMU**: Complementary filter + EKF integration via `robot_localization`
 
+```mermaid
 graph TD
     A1[LiDAR] --> F1[Sensor Fusion (EKF)]
     A2[IMU] --> F1
@@ -93,6 +95,7 @@ Each sensor will be managed through dedicated ROS2 nodes, ensuring modularity, s
   - Ultrasonic proximity markers
 - **Localization**: We employ **AMCL (Adaptive Monte Carlo Localization)** for probabilistic localization based on the occupancy grid map and laser scans.
 
+```mermaid
 graph LR
     LiDAR[rplidar_node] -->|/scan| NavStack
     IMU[imu_driver] -->|/imu/data| EKF
@@ -271,6 +274,7 @@ This project pushes us to explore real-world robotic deployments using ROS2, a c
   - Full integration of perception, planning, and interaction modules
 
 **Weekly Milestones (Gantt/Table Format)**
+```mermaid
 gantt
     title Project Timeline - Autonomous Warehouse Patrolling Robot
     dateFormat  YYYY-MM-DD
@@ -295,6 +299,7 @@ gantt
     Lab Trials & Data Logging    :         d1, 2025-04-10, 7d
     Final Demo Prep              :         d2, 2025-04-17, 7d
 
+```mermaid
 graph TD
     G1[Robot Sensors] --> G2[ROS Topics]
     G2 --> G3[GUI Backend Node]
