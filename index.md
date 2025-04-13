@@ -26,8 +26,8 @@ _How can low-cost mobile robotics platforms be utilized for reliable autonomous 
 
 ---
 
-<div style="text-align: center;"> ![A Visualization](visualization.png)
-<div style="text-align: center;"> A Visualization
+![A Visualization](visualization.png)
+A Visualization
 
 ---
 
@@ -69,8 +69,8 @@ Sensor data will guide navigation, trigger reactive behaviors (e.g., avoid obsta
 
 ---
 
-<div style="text-align: center;"> ![realworldflowchart](real_world_workflow_chart.png)
-<div style="text-align: center;"> A Flowchart demonstrating the project work.
+![realworldflowchart](real_world_workflow_chart.png)
+A Flowchart demonstrating the project work.
 
 ---
 
@@ -96,8 +96,8 @@ We will influence robot behavior through both autonomous logic and manual contro
 
 ---
 
-<div style="text-align: center;"> ![Sample GUI Mockup](sgm1.png)
-<div style="text-align: center;"> Sample GUI Mockup
+![Sample GUI Mockup](sgm1.png)
+Sample GUI Mockup
 
 ---
 
@@ -222,7 +222,7 @@ And we try to push full autonomy (BT integration) by one week to refine SLAM + c
 
 ---
 
-<div style="text-align: center;"> ![flowchart](simplemm.png)
+![flowchart](simplemm.png)
 
 ---
 
@@ -260,7 +260,7 @@ All filtered sensor data feeds into:
 
 ---
 
-<div style="text-align: center;"> ![Sensor Fusion](sensor_fusion_flowchart.png)
+![Sensor Fusion](sensor_fusion_flowchart.png)
 
 ---
 
@@ -288,7 +288,7 @@ All filtered sensor data feeds into:
 
 ---
 
-<div style="text-align: center;"> ![Draft ROS2 Node Architecture](ros2_node_architecture_rqt_style.png)
+![Draft ROS2 Node Architecture](ros2_node_architecture_rqt_style.png)
 
 ---
 
