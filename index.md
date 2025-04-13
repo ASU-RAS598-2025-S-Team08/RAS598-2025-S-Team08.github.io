@@ -1,10 +1,13 @@
 **Autonomous Warehouse Patrolling Robot**
 
 Project Name: Autonomous Warehouse Patrolling Robot
+
 Team Number: Team 8
+
 Team Members: Bhavya M Shah, Ha Long Truong, Yashwanth Gowda
 
 Semester and Year: Spring 2025
+
 University, Class, Professor: Arizona State University, RAS 598, Dr. Aukes
 
 **Team Project Plan**
@@ -18,7 +21,7 @@ This project explores the intersection of autonomous navigation, sensor fusion, 
 
 We now focus more on robust **sensor fusion** and **reactive re-planning**. We scaled back voice control to a future extension due to time constraints. Anomaly detection will focus on static object and human detection using simple depth thresholds, not deep-learning vision.
 
-![Visualization of Idea](ChatGPT Image Apr 13, 2025, 02_46_22 PM.png)
+![Visualization of Idea](ChatGPTImageApr13,2025,02_46_22PM.png)
 
 **Sensor Integration**
 
@@ -52,9 +55,9 @@ We will influence robot behavior through both autonomous logic and manual contro
   - (Optional) Voice commands for commands like “start patrol” or “return to base”
 
 Sample GUI Mockup
-![Sample GUI Mockup](ChatGPT Image Apr 13, 2025, 02_46_24 PM.png)
+![Sample GUI Mockup](ChatGPTImageApr13,2025,02_46_24PM.png)
 
-![Sample GUI Mockup](ChatGPT Image Apr 13, 2025, 03_03_23 PM.png)
+![Sample GUI Mockup](ChatGPTImageApr13,2025,03_03_23PM.png)
 
 **Control and Autonomy**
 
