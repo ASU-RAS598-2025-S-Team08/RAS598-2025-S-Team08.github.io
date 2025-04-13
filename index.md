@@ -1,332 +1,222 @@
 **Autonomous Warehouse Patrolling Robot**
 
-- **Project Name:** Autonomous Warehouse Patrolling Robot
-- **Team Number:** Team 8
-- **Semester and Year:** Spring 2025
-- **University, Class, Professor:** Arizona State University, RAS 598 Dr. Aukes
+Project Name: Autonomous Warehouse Patrolling Robot
+
+Team Number: Team 8
+
+Team Members: Bhavya M Shah, Ha Long Truong, Yashwanth Gowda
+
+Semester and Year: Spring 2025
+
+University, Class, Professor: Arizona State University, RAS 598, Dr. Aukes
 
 **Team Project Plan**
 
-**High-Level Concept Introduction**
+Our team aims to design and implement an **Autonomous Warehouse Patrolling Robot** using the TurtleBot4 platform and ROS2. This robot will autonomously navigate and patrol indoor warehouse-like environments while detecting anomalies, avoiding obstacles, and reporting real-time status through a custom graphical user interface (GUI).
 
-Our project centers around the design and implementation of an Autonomous Warehouse Patrolling Robot utilizing the TurtleBot4 platform, integrated with the Robot Operating System 2 (ROS2) framework. The overarching goal is to develop a scalable, low-cost robotic solution capable of performing real-time patrolling tasks in structured indoor environments such as warehouses or storage facilities.
+**Research Question**:  
+_How can low-cost mobile robotics platforms be utilized for reliable autonomous patrolling in indoor environments, combining real-time perception, decision-making, and interactive monitoring?_
 
-**Research Question**
+This project explores the intersection of autonomous navigation, sensor fusion, real-time anomaly detection, and user interface development.
 
-How can we leverage low-cost mobile robotics platforms to achieve reliable autonomous patrolling in structured indoor warehouse environments, with real-time anomaly detection and environmental adaptability?
-
-This research question drives us to explore and implement a range of robotics technologies and concepts, particularly focusing on the integration of multiple sensor modalities (such as LiDAR, IMU, depth camera, and odometry), robust control algorithms, and autonomy pipelines that balance reactive behavior (e.g., obstacle avoidance) with deliberative planning (e.g., patrol route optimization).
-
-By simulating realistic warehouse conditions, our project will investigate the following:
-
-- Multi-Sensor Fusion: Combining data from various onboard sensors to generate a coherent model of the robot’s environment and enhance localization, mapping, and situational awareness.
-- Autonomous Navigation & Patrolling: Implementing SLAM (Simultaneous Localization and Mapping) techniques alongside path planning algorithms to enable the robot to patrol pre-defined or dynamically generated routes.
-- Real-Time Anomaly Detection: Using sensory input (such as depth and visual cues) to detect unexpected objects, humans, or hazards in the robot’s path or assigned patrol zones.
-- Interactive System Monitoring: Developing a custom graphical user interface (GUI) to display live robot status, environment mapping, anomaly alerts, and control interfaces for manual override or remote supervision.
-- Environmental Adaptability: Equipping the robot with the capability to adapt its behavior based on changing conditions such as blocked paths, dynamic obstacles, or signal loss, ensuring robustness in real-world applications.
-
-Our approach aims not only to implement a working prototype of a patrolling robot but also to provide a generalized framework for deploying autonomous agents in structured environments. Ultimately, this project aspires to demonstrate how affordable hardware combined with modular software architecture can address real-world operational needs in industrial settings — with potential extensions into areas like inventory monitoring, safety inspection, and collaborative automation.
-
-### **Updated Goal Statement**
-Our core objective remains the same: develop a low-cost, sensor-integrated patrolling robot using ROS2. However, **we've refined our scope** to emphasize:
-
--   Real-time anomaly detection using basic computer vision (instead of deep learning models, for feasibility)
--   Using behavior trees over FSMs due to modularity and integration ease with `ros2_behavior_tree` tools
--   Expanded focus on GUI feedback and user override functionality
-
-*Conceptual Figure**
-Figure 1: Conceptual Overview of Warehouse Patrolling Robot_
-
-- TurtleBot4 with LiDAR, depth camera, IMU, and ultrasonic sensors.
-- Navigation path mapped using SLAM.
-- GUI mockup showing patrol progress, anomaly flags, and data logs.
+We now focus more on robust **sensor fusion** and **reactive re-planning**. We scaled back voice control to a future extension due to time constraints. Anomaly detection will focus on static object and human detection using simple depth thresholds, not deep-learning vision.
 
 **Sensor Integration**
 
-Sensor integration lies at the core of our Autonomous Warehouse Patrolling Robot’s functionality, enabling perception, localization, navigation, and real-time decision-making. Our approach involves the strategic fusion of multiple sensor modalities, each contributing complementary data that enhances the robot’s understanding of its environment and its ability to operate reliably in dynamic warehouse settings.
-- Acts as the primary sensor for
-1. **SLAM (Simultaneous Localization and Mapping)**.
-    - Provides high-resolution 2D scans of the surroundings to detect **static and dynamic obstacles**, and helps generate occupancy grid maps.
-    - LiDAR data will feed into both the **local costmap** for real-time obstacle avoidance and the **global planner** for long-term path navigation.
-2. **Depth Camera:**
-- Used for **object detection** and **human presence recognition**, particularly in areas where traditional LiDAR may not provide sufficient vertical detail.
-    - Supports anomaly detection by flagging unexpected objects in patrol zones.
-    - Enables **3D perception**, helpful for future extensions such as object classification or semantic mapping.
-3. **IMU (Inertial Measurement Unit):**
-    - Provides continuous feedback on the robot's **orientation and angular velocity**.
-    - When fused with odometry and LiDAR data, improves **localization accuracy**, especially in motion-heavy scenarios or sensor dropouts.
-    - Plays a key role in **dead-reckoning** when GPS is not available (as is common indoors).
-4. **Ultrasonic Sensors:**
-    - Placed strategically around the robot to provide **short-range obstacle detection**.
-    - Useful for **redundant safety layers**, especially when navigating tight spaces or around unstructured, cluttered areas where other sensors might have blind spots.
+We integrate a suite of sensors to support localization, perception, and safety. Each sensor contributes distinct yet complementary information:
 
-### **Sensor Data Conditioning Update**
-Here's what we've implemented or planned for filtering:
--   **LiDAR**: Median filtering and range clipping to eliminate outliers and wall ghosting
--   **Depth Camera**: Downsampling + HSV filtering for color-based detection
--   **IMU**: Complementary filter + EKF integration via `robot_localization`
+- **2D LiDAR** for SLAM and obstacle mapping.
+- **Depth Camera** for object and human detection.
+- **IMU** for pose stability during motion.
+- **Ultrasonic Sensors** for short-range obstacle alerts.
 
-```mermaid
-graph TD
-    A1[LiDAR] --> F1[Sensor Fusion (EKF)]
-    A2[IMU] --> F1
-    A3[Depth Camera] --> P1[Anomaly Detection]
-    A4[Ultrasonic Sensors] --> F1
-    F1 --> L1[Localization & Mapping]
-    F1 --> N1[Navigation Stack]
-    P1 --> H1[High-Level Behavior Tree]
-    N1 --> H1
-    H1 --> ACT[Actuator Commands]
-    H1 --> GUI[GUI Alerts & Logs]
+**In code**:  
+Sensor data is streamed through individual ROS2 nodes and fused using the robot_localization package to estimate pose. Filters like moving averages and EKFs are used for smoothing.
 
-  
-**Integration in ROS2**
+**In testing**:  
+We will visualize real-time sensor streams in RViz2, calibrate thresholds, and verify detection algorithms.
 
-Each sensor will be managed through dedicated ROS2 nodes, ensuring modularity, scalability, and real-time communication via ROS topics. Integration strategy includes:
-
-- **Sensor Nodes**: Each sensor runs in its own node or device-specific package (e.g., rplidar_ros2, realsense2_camera, micro_ros).
-- **Sensor Fusion**: Using packages like **robot_localization**, we fuse IMU and odometry with LiDAR-based localization to generate a robust pose estimate (/odom → /map transform).
-- **Filtering**: We apply techniques such as **moving average filters**, **EKFs (Extended Kalman Filters)**, and **range clipping** to clean and refine incoming data streams.
-- **Visualization & Debugging**: During development, we utilize **RViz2** to visualize:
-  - Real-time LiDAR scans and maps
-  - Point clouds from the depth camera
-  - IMU orientation data
-  - Ultrasonic proximity markers
-- **Localization**: We employ **AMCL (Adaptive Monte Carlo Localization)** for probabilistic localization based on the occupancy grid map and laser scans.
-
-```mermaid
-graph LR
-    LiDAR[rplidar_node] -->|/scan| NavStack
-    IMU[imu_driver] -->|/imu/data| EKF
-    Depth[realsense_node] -->|/camera/depth| Anomaly
-    Ultrasonic[ultrasonic_node] -->|/ultrasonic| NavStack
-    EKF -->|/odom| NavStack
-    NavStack -->|/cmd_vel| Base[Robot Base]
-    Anomaly -->|/anomaly_alert| GUI
-    NavStack -->|/map| GUI
-    GUI[GUI Backend] -->|Keyboard/Voice Override| NavStack
-
-
-**Development & Demonstration Phases**
-
-- **Development Phase**:
-  - Raw sensor data will be visualized and logged for calibration and validation.
-  - Sensor streams will be debugged individually and in fused configurations to ensure alignment and synchronization.
-  - Thresholds and tuning parameters will be iteratively optimized for reliable performance.
-- **Final Demonstration**:
-  - The robot will autonomously patrol a defined warehouse-like indoor environment.
-  - Real-time sensor data will inform **navigation**, **obstacle avoidance**, and **anomaly detection** logic.
-  - The GUI will display:
-    - Live occupancy map
-    - Detected objects or humans
-    - Sensor status and proximity alerts
-  - The robot will respond dynamically to unexpected obstacles, showcasing robust multi-sensor awareness and safe patrolling behavior.
+**In final demonstration**:  
+Sensor data will guide navigation, trigger reactive behaviors (e.g., avoid obstacle), and inform the GUI of real-time statuses and anomalies.
 
 **Interaction Plan**
 
-The system will include:
+We will influence robot behavior through both autonomous logic and manual controls:
 
-- A **custom ROS2-based GUI** (built using rqt and Python Qt) to display:
-  - Robot live location on a warehouse map.
-  - Obstacle detection and patrol path overlay.
-  - Anomaly alerts (unauthorized personnel/object detection).
-  - System logs (distance traveled, patrol time, power stats).
+- **GUI Interface** (Python Qt + rqt):
+  - Displays live patrol map and status
+  - Visual alerts for anomalies or obstacles
+  - Manual override buttons (pause, replan, resume)
+  - System logs (distance, battery, alerts)
+- **User Overrides**:
+  - Keyboard input for debugging
+  - (Optional) Voice commands for commands like “start patrol” or “return to base”
 
-We will implement basic keyboard and voice control overrides for debugging and semi-autonomous intervention.
-_Figure 2: Sample GUI Mockup_ 
-**Control and Autonomy: Enabling Intelligent Warehouse Patrolling**
-The autonomous capabilities of the warehouse patrolling robot are achieved through a carefully structured, layered control system. This hierarchical architecture allows for robust and adaptable operation, enabling the robot to navigate complex warehouse environments, react to unforeseen circumstances, and execute its patrolling mission effectively.
+Sample GUI Mockup
 
-**1\. Low-Level Control: Precise Motion Execution**
+**Control and Autonomy**
 
-At the foundational layer lies the low-level control system. This layer is responsible for the precise execution of motion commands sent by higher-level controllers. It directly interfaces with the robot's actuators, primarily the wheel motors.
+We implement a **layered control architecture**:
 
-- Wheel Velocity Commands: The primary function of this layer is to translate desired linear and angular velocities into individual wheel velocity commands. This involves kinematic models that account for the robot's geometry and wheel configuration.
-- Odometry Feedback: To ensure accurate motion, the low-level controller relies on odometry feedback. Data from wheel encoders (or other internal sensors) is used to estimate the robot's current pose (position and orientation).
-- Goal: The primary goal of the low-level control is to ensure smooth, accurate, and stable robot motion according to the commands received from the mid-level controller.
+- **Low-level Control**: Direct wheel velocity and motion via odometry.
+- **Mid-level Control**: Obstacle avoidance using VFH/DWA.
+- **High-level Autonomy**:
+  - Patrol routing using pre-defined waypoints
+  - Decision-making via Behavior Trees
+  - Dynamic re-planning in case of blocked paths
+  - Anomaly detection integration and behavior changes based on events
 
-**2\. Mid-Level Control: Reactive Navigation and Safety**
-
-The mid-level control system builds upon the capabilities of the low-level layer, focusing on the robot's interaction with its immediate surroundings and ensuring safe navigation.
-
-- Obstacle Avoidance: This is a critical function of the mid-level control. By processing real-time data from the robot's suite of sensors (LiDAR, depth camera, ultrasonic sensors), this layer detects obstacles in the robot's path.
-- Reactive Behaviors: Based on the sensor data, the mid-level controller implements reactive behaviors to avoid collisions. These behaviors might include slowing down, stopping, turning, or maneuvering around obstacles. Algorithms like Vector Field Histogram (VFH), Dynamic Window Approach (DWA), or similar reactive planning techniques are typically employed.
-
-**3\. High-Level Autonomy: Intelligent Mission Execution**
-
-The high-level autonomy system orchestrates the robot's overall mission, enabling it to perform complex tasks without continuous human intervention.
-
-- Patrol Routing: This layer utilizes a pre-mapped representation of the warehouse, dividing it into logical zones or waypoints. Based on the desired patrol strategy (e.g., sequential zone coverage, prioritized areas), the high-level controller generates a sequence of target locations or paths for the robot to follow.
-- Behavior Trees: Behavior trees provide a powerful and modular framework for defining the robot's high-level behaviors and decision-making processes. They allow for the representation of complex sequences, conditional actions, and parallel tasks involved in the patrolling mission (e.g., navigate to zone A, scan for anomalies, log data, proceed to zone B).
-- ROS2 Navigation Stack Integration: The robot leverages the ROS2 Navigation stack, a robust and widely used framework for mobile robot navigation. This stack provides pre-built functionalities for path planning, obstacle avoidance, localization, and map management.
-- Autonomous Decision-Making: The high-level system enables the robot to make autonomous decisions regarding patrol routes based on factors like time, priority, or previously detected anomalies.
-- Dynamic Path Re-planning: If the mid-level control encounters an unforeseen obstacle that blocks the planned path, the high-level autonomy system can trigger path re-planning. Utilizing the current map and the robot's current location, the Navigation stack can compute a new, feasible path to reach the original goal or the next patrol waypoint.
-- Anomaly Detection Integration: This layer will also integrate with the robot's perception system to process anomaly detection results. Upon detecting an anomaly, the high-level controller can deviate from the standard patrol route to investigate, log the event, and potentially trigger alerts.
-
-In summary, the layered control and autonomy system allows the warehouse patrolling robot to:
-
-- Execute precise movements based on high-level commands (low-level control).
-- Navigate safely and reactively to dynamic environments by avoiding obstacles (mid-level control).
-- Intelligently plan and execute patrol missions based on pre-defined strategies and adapt to changing circumstances (high-level autonomy).
-- Leverage the power of ROS2 Navigation for robust path planning and navigation capabilities.
-
-This sophisticated control architecture ensures that the robot can effectively and efficiently perform its warehouse patrolling tasks, enhancing security, safety, and operational awareness within the facility.
-
+All control layers are connected through ROS2's Navigation Stack with AMCL for localization.
 
 **Preparation Needs**
 
-To succeed, we need a deeper understanding of:
+To execute this project successfully, we need a solid grasp of:
 
-- Multi-sensor fusion in ROS2
-- Navigation stack configuration and tuning
-- Behavior trees and FSMs in autonomous systems
+- ROS2 Navigation Stack configuration
+- Multi-sensor data fusion techniques (especially IMU + LiDAR)
+- Behavior Tree design for high-level autonomy
 - GUI development using rqt and Python Qt
+- Real-time debugging in ROS2
 
-**Class Topics Requested:**
+**Topics we would like covered in class**:
 
-- Detailed coverage of ROS2 Navigation stack
-- Real-time system debugging techniques
-- Sensor data filtering and fusion strategies
+- Detailed walkthrough of the ROS2 Navigation Stack
+- Practical debugging tools for real-time sensor streams
+- Examples of robust behavior trees in ROS2
 
 **Final Demonstration Plan**
 
-Our final demonstration is designed to showcase the full capabilities of the Autonomous Warehouse Patrolling Robot, developed using the TurtleBot4 platform and ROS2. The demo will simulate a realistic indoor warehouse environment using a scaled mockup constructed within a classroom. This hands-on trial will allow observers to evaluate the robot’s ability to autonomously patrol, avoid obstacles, detect anomalies, and present live system data through a custom-built graphical user interface (GUI).
+**Resources Needed:**
 
-**🧪 Demo Description**
+- TurtleBot4 with LiDAR, depth camera, IMU
+- Classroom space with mock warehouse (tables, boxes, marked paths)
+- Projector to display GUI
+- Wi-Fi for robot-to-GUI communication
 
-During the demonstration, **TurtleBot4** will autonomously navigate through a **mock warehouse layout** configured using tables, cardboard boxes, and tape-marked pathways. It will:
+**Classroom Setup:**
 
-- **Perform a patrol loop** based on predefined waypoints.
-- Use **sensor data** from LiDAR, depth camera, IMU, and ultrasonic sensors to perceive and react to the environment.
-- **Avoid obstacles** (both static and dynamic) in real-time.
-- Provide **live telemetry and visualization** on a projector-based GUI that displays:
-  - Real-time map (from RViz)
-  - Robot position and path
-  - Obstacle alerts
-  - Anomaly flags (e.g., unexpected objects or human detection)
+- Tables and cardboard boxes simulate shelves
+- Marked patrol lanes with tape
+- Defined “anomaly zones” using objects or people
+- Central station (laptop) for GUI + RViz display
 
-The demo will highlight key features such as localization accuracy, real-time responsiveness, safety, and user interaction.
+**Handling Environmental Variability:**
 
-**🛠️ Resources Needed**
+- AMCL will adapt pose estimation in dynamic environments
+- Dynamic costmaps will update routes in real-time if obstacles appear
+- Redundant sensors help maintain perception during partial failure
 
-To conduct the final demonstration, we will require the following components:
+**Testing & Evaluation Plan:**
 
-- **TurtleBot4** equipped with LiDAR, depth camera, IMU, and onboard compute.
-- A pre-generated **warehouse map** loaded into RViz for AMCL-based localization.
-- **Mock warehouse setup**: Classroom space arranged with:
-  - Tables and **cardboard boxes** to simulate shelving.
-  - Clear lanes representing robot patrol paths.
-- **Wi-Fi router** for enabling ROS2 multi-node communication over the network.
-- A **projector and monitor** setup to display the custom GUI for real-time interaction and visualization.
+- **Unit testing** of individual sensor streams and nodes
+- **Functional testing** of integrated navigation + anomaly detection
+- **Live metrics**:
+  - Patrol coverage (zones visited)
+  - Anomaly detection rate vs ground truth
+  - Obstacle response time
+  - GUI responsiveness and feedback clarity
 
-**🏗️ Classroom Setup**
+**Impact Statement**
 
-- We will create aisles between tables and boxes to simulate warehouse lanes.
-- "Anomaly zones" will be marked with boxes or human presence for the robot to detect and log.
-- The TurtleBot4 will follow a set patrol route defined in the map and updated via the navigation stack.
-- A central station (laptop or workstation) will run the GUI and visualization tools, connected to the robot over Wi-Fi.
+This project challenges us to integrate real-world robotics technologies under constraints of hardware, cost, and usability. It will deepen our knowledge of robotic system design, especially in areas of:
 
-**🌍 Environmental Adaptability**
+- Modular ROS2 software design
+- Sensor data conditioning and fusion
+- Real-time autonomy and safety layers
+- Visual interface development
 
-To ensure robustness and adaptability in a non-static environment:
+It serves as a testbed for future coursework in robotics, simulation, and industrial automation—and could evolve into a deployable solution for safety inspection or inventory monitoring.
 
-- **AMCL (Adaptive Monte Carlo Localization)** will handle localization uncertainty by continuously updating the robot’s pose using LiDAR scans and the known map.
-- **Dynamic costmaps** in the navigation stack will enable the robot to avoid moving obstacles (e.g., people or displaced objects) and re-route in real time.
-- Sensor data fusion ensures redundancy and resilience if one sensor becomes noisy or fails temporarily.
+Pushed full autonomy (BT integration) by one week to refine SLAM + costmap tuning.
 
-**✅ Testing & Evaluation Plan**
+**Sensor Data Conditioning, Filtering, and Utilization**
 
-To verify system readiness and ensure a successful demo, we have implemented a multi-tiered testing framework:
+We implemented the following for sensor data:
 
-1. **Unit Testing**:
-    - Validate functionality of individual ROS2 nodes, including sensor input processing, map generation, and GUI backend.
-2. **Functional Testing**:
-    - Test integration between navigation, sensor fusion, and GUI components.
-    - Validate that anomaly detection correctly flags unexpected objects or people.
-3. **Live Evaluation Metrics**:
-    - **Coverage Assessment**: Ensure the robot completes a full patrol loop and visits all waypoints.
-    - **Anomaly Detection Accuracy**: Compare flagged anomalies to actual placements.
-    - **Obstacle Avoidance Response Time**: Measure latency in responding to new obstacles.
-    - **GUI Usability**: Confirm that the GUI provides clear, real-time, actionable feedback for users.
+| **Sensor** | **Strategy** |
+| --- | --- |
+| **LiDAR** | Clipping to range \[0.2m–3.5m\], outlier rejection, smoothing via rolling mean |
+| **IMU** | Filtered with ROS2 robot_localization EKF using /imu/data |
+| **Depth Camera** | Depth masking to ignore floor reflections and reduce noise; regions-of-interest for anomaly detection |
+| **Ultrasonic** | Threshold filtering + timeout logic to discard stale readings |
 
-Video recording and real-time logging will be used to analyze performance and validate mission success.
+All filtered sensor data feeds into:
 
-**Impact**
+- **local costmap** (for obstacle avoidance)
+- **global planner** (for patrol path planning)
+- **GUI** (for live monitoring and safety)
 
-This project pushes us to explore real-world robotic deployments using ROS2, a critical skill for modern robotic systems. It encourages learning across:
+**Sensor Fusion for Low-Level and High-Level Decisions**
 
-- Sensor integration
-- Autonomous control
-- System design
-- GUI development It could influence future coursework by offering a modular demo project template. It will also prepare us for robotics research or industrial roles in automation and logistics.
+- **Fusion Pipeline Overview**:
+
+![](data:image/png;base64,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)
+
+- **Low-Level**: EKF → Odometry + IMU → Controls
+- **High-Level**: Depth anomalies + patrol planner → path updates and alerts
+
+**ROS2 Node Architecture and Topic Mapping**
+
+Here is a recommended **ROS2 architecture diagram** for your system:
+
+**Node Overview**:
+
+- realsense2_camera_node → /camera/depth/image_raw
+- rplidar_ros2_node → /scan
+- micro_ros_node (ultrasonic) → /ultrasonic_range
+- robot_localization EKF → /odom, /imu/data
+- move_base_flex (nav stack)
+- patrol_manager_node (custom)
+- anomaly_detector_node (custom)
+- gui_backend_node → /gui/logs, /gui/alerts, /gui/status
+
+**GUI Real-Time Sensor Data (Live Demo Progress)**
+
+We’ve successfully implemented GUI elements that:
+
+- Plot live LiDAR scans
+- Highlight current patrol zone on map
+- Flag anomalies (red alert icon)
+- Log battery level, patrol duration, and distance
+- Buttons for Pause / Resume / Manual Override
+
+**Video Requirement**:  
 
 **Advising**
 
-- **Advisor:** Dr. Aukes
-- **Requested Resources:**
-  - Access to TurtleBot4
-  - Weekly project check-ins
-  - Use of robotics lab for after-hours testing
-- **Advisor Expectations:**
-  - Demonstrable progress every 2 weeks
-  - Functional final demo
-  - Full integration of perception, planning, and interaction modules
+**Advisor**: Dr. Aukes
 
-**Weekly Milestones (Gantt/Table Format)**
-```mermaid
-gantt
-    title Project Timeline - Autonomous Warehouse Patrolling Robot
-    dateFormat  YYYY-MM-DD
-    axisFormat  %b %d
-    section Hardware Integration
-    Initial TurtleBot4 Setup     :done,    t1, 2025-03-01, 7d
-    Sensor Integration           :active,  t2, 2025-03-08, 14d
-    Odometry & Motor Testing     :         t3, 2025-03-22, 7d
-    section GUI Development
-    GUI Layout & Mockup          :done,    i1, 2025-03-01, 10d
-    Sensor Feed & Logs Display   :active,  i2, 2025-03-11, 14d
-    Final GUI Integration        :         i3, 2025-04-01, 10d
-    section Sensor Calibration
-    LiDAR & Depth Camera Setup   :done,    s1, 2025-03-05, 7d
-    IMU Filtering & Fusion       :active,  s2, 2025-03-15, 10d
-    Ultrasonic Calibration       :         s3, 2025-04-01, 10d
-    section Control & Autonomy
-    SLAM + Path Planning         :done,    a1, 2025-03-10, 10d
-    Obstacle Avoidance Tuning    :active,  a2, 2025-03-22, 14d
-    Behavior Tree Logic          :         a3, 2025-04-03, 10d
-    section Testing & Demonstration
-    Lab Trials & Data Logging    :         d1, 2025-04-10, 7d
-    Final Demo Prep              :         d2, 2025-04-17, 7d
+**Requested Support**:
 
-```mermaid
-graph TD
-    G1[Robot Sensors] --> G2[ROS Topics]
-    G2 --> G3[GUI Backend Node]
-    G3 --> G4[Live Map Display]
-    G3 --> G5[Sensor Status Panel]
-    G3 --> G6[Anomaly Alerts]
-    G3 --> G7[Manual Control Buttons]
-    G3 --> G8[System Logs Export]
+- Access to TurtleBot4 and lab space
+- Weekly mentoring sessions
+- Guidance on advanced ROS2 usage
 
-** ROS2 Architecture + GUI Update**
------------------------------------
+**Advisor’s Role**:
 
-### ROS2 Node Graph (Flow Diagram)
+- Monitor biweekly progress
+- Help resolve integration and debugging roadblocks
+- Assess final demonstration functionality and documentation
 
--   **Nodes:**
-    -   `realsense_node`, `rplidar_node`, `imu_driver`, `ultrasonic_node`
-    -   `ekf_node` (robot_localization)
-    -   `nav2_bt_navigator`, `controller_server`
-    -   `anomaly_detector`, `gui_backend`
+**Weekly Milestones (Weeks 7–16)**
 
-### **Topics:**
--   `/scan`, `/camera/depth`, `/imu/data`, `/ultrasonic`
--   `/cmd_vel`, `/odom`, `/map`, `/anomaly_alert`
+**📋 Weekly Milestones Table (Aligned with Assignments)**
 
-### **GUI Update (In Progress)**
--   Displaying live map
--   Streaming depth image
--   Real-time position tracking
--   Anomaly alerts integration
--   System logs panel
--   Keyboard override controls
+| Week | Hardware Integration | Interface Development | Sensor Data & Filtering | Controls & Autonomy | Assignment Focus / Deliverable | Status |
+| --- | --- | --- | --- | --- | --- | --- |
+| Week 7 | TurtleBot4 bring-up, sensor validation | Set up GitHub Pages, basic project website | LiDAR + IMU + Odometry check | Define system architecture | 🟢 **Team Assignment 1**: Concept, goals, UI mockup | ✅ Complete |
+| Week 8 | Depth camera, ultrasonic sensor setup | RViz mockup, GUI layout draft | Live data feed validation | SLAM stack intro | 🟢 TA1 continued: Planning + visuals | ✅ Complete |
+| Week 9 | Sensor fusion (LiDAR+IMU+Odom) | GUI RViz integration | EKF-based fusion tuning | Localization tested with fusion | 🟢 TA1 final touches, prepare for SLAM | ✅ Complete |
+| Week 10 | SLAM + map saving setup | Real-time plots in GUI | Outlier filtering for ultrasonic + depth | SLAM navigation working demo | 🟢 **Team Assignment 2**: SLAM results, depth integration | ✅ Complete |
+| Week 11 | Costmap layers setup | GUI updates: status log, alerts | Depth camera anomaly logic | Patrol logic implementation | 🟢 TA2 submission; begin full behavior testing | ✅ Complete |
+| Week 12 | Mode toggle prep (SLAM ↔ AMCL) | Full GUI → ROS interaction | Sync all filtered streams | Navigation tuning | 🟢 **Team Assignment 3**: Data filtering, GUI integration | ✅ Complete |
+| Week 13 | GUI live display (alerts, metrics) | GUI control (pause/resume, alerts) | Visualization of processed sensor data | Replanning & manual override | 🟠 TA3 wrap-up; polish before dry-run | 🔄 In Progress |
+| Week 14 | TurtleBot full integration (real test) | Export GUI logs, feedback polish | Real-world evaluation of filtered data | SLAM vs AMCL toggle test | 🟠 Begin **Team Assignment 4**: Testing + autonomy | 🔄 In Progress |
+| Week 15 | Full autonomy dry run + backups | Auto-logging, restart controls | Multi-condition test scenarios | Behavior tree + fault handling | 🔘 TA4 final polish; prepare for live demo | ⬜ Not Started |
+| Week 16 | In-class demo setup | Final GUI build and docs | Live feedback validation | Final validation: autonomy + GUI monitoring | 🎯 Final deliverables submission + demo | ⬜ Not Started |
+
+**✅ Status Key:**
+
+- ✅ **Complete** (Weeks 7–12)
+- 🔄 **In Progress** (Weeks 13–14)
+- ⬜ **Not Started** (Weeks 15–16)
