@@ -1,4 +1,4 @@
-**Title or Home Page (index.md Update)**
+**Autonomous Warehouse Patrolling Robot**
 
 - **Project Name:** Autonomous Warehouse Patrolling Robot
 - **Team Number:** Team 8
