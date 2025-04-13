@@ -80,6 +80,7 @@ graph TD
     N1 --> H1
     H1 --> ACT[Actuator Commands]
     H1 --> GUI[GUI Alerts & Logs]
+...
   
 **Integration in ROS2**
 
@@ -298,7 +299,7 @@ gantt
     section Testing & Demonstration
     Lab Trials & Data Logging    :         d1, 2025-04-10, 7d
     Final Demo Prep              :         d2, 2025-04-17, 7d
-
+...
 ```mermaid
 graph TD
     G1[Robot Sensors] --> G2[ROS Topics]
@@ -308,7 +309,7 @@ graph TD
     G3 --> G6[Anomaly Alerts]
     G3 --> G7[Manual Control Buttons]
     G3 --> G8[System Logs Export]
-
+...
 ** ROS2 Architecture + GUI Update**
 -----------------------------------
 
