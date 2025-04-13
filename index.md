@@ -1,111 +1,95 @@
-<style>
-  body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    line-height: 1.6;
-    padding: 20px;
-    max-width: 1000px;
-    margin: auto;
-  }
-  h1, h2, h3 {
-    font-family: 'Helvetica Neue', sans-serif;
-    margin-top: 30px;
-  }
-  h1 {
-    font-size: 2.2em;
-    border-bottom: 2px solid #ccc;
-    padding-bottom: 5px;
-  }
-  h2 {
-    font-size: 1.6em;
-    color: #003366;
-    margin-top: 40px;
-  }
-  h3 {
-    font-size: 1.3em;
-    color: #005580;
-  }
-  ul {
-    padding-left: 20px;
-  }
-  img {
-    display: block;
-    margin: 20px auto;
-    max-width: 100%;
-  }
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 25px 0;
-    font-size: 0.95em;
-  }
-  th, td {
-    border: 1px solid #ddd;
-    padding: 10px;
-    text-align: left;
-  }
-  th {
-    background-color: #f0f0f0;
-  }
-  code {
-    background-color: #f9f9f9;
-    padding: 3px 6px;
-    border-radius: 4px;
-    font-family: monospace;
-  }
-</style>
-
-# **Autonomous Warehouse Patrolling Robot**
-
-**Project Name**: Autonomous Warehouse Patrolling Robot  
-**Team Number**: Team 8  
-**Team Members**: Bhavya M Shah, Ha Long Truong, Yashwanth Gowda  
-**Semester and Year**: Spring 2025  
-**University, Class, Professor**: Arizona State University, RAS 598, Dr. Aukes
+# Autonomous Warehouse Patrolling Robot
 
 ---
 
-## **Team Project Plan**
+Project Name: Autonomous Warehouse Patrolling Robot
 
-Our team aims to design and implement an **Autonomous Warehouse Patrolling Robot** using the TurtleBot4 platform and ROS2. This robot will autonomously navigate and patrol indoor warehouse-like environments while detecting anomalies, avoiding obstacles, and reporting real-time status through a custom graphical user interface (GUI).
+---
+
+Team Number: Team 8
+
+---
+
+Team Members: Bhavya M Shah, Ha Long Truong, Yashwanth Gowda
+
+---
+
+Semester and Year: Spring 2025
+
+---
+
+University, Class, Professor: Arizona State University, RAS 598, Dr. Aukes
+
+---
+
+## Team Project Plan
+
+---
+
+Our team aims to design and implement an # Autonomous Warehouse Patrolling Robot using the TurtleBot4 platform and ROS2. This robot will autonomously navigate and patrol indoor warehouse-like environments while detecting anomalies, avoiding obstacles, and reporting real-time status through a custom graphical user interface (GUI).
+
+---
 
 **Research Question**:  
-*How can low-cost mobile robotics platforms be utilized for reliable autonomous patrolling in indoor environments, combining real-time perception, decision-making, and interactive monitoring?*
+_How can low-cost mobile robotics platforms be utilized for reliable autonomous patrolling in indoor environments, combining real-time perception, decision-making, and interactive monitoring?_
+
+---
 
 ![A Visualization](visualization.png)
+A Visualization
 
 ---
 
 This project explores the intersection of autonomous navigation, sensor fusion, real-time anomaly detection, and user interface development.
 
+---
+
 We now focus more on robust **sensor fusion** and **reactive re-planning**. We scaled back voice control to a future extension due to time constraints. Anomaly detection will focus on static object and human detection using simple depth thresholds, not deep-learning vision.
 
 ---
 
-## **Sensor Integration**
+## Sensor Integration
+
+---
 
 We integrate a suite of sensors to support localization, perception, and safety. Each sensor contributes distinct yet complementary information:
+
+---
 
 - **2D LiDAR** for SLAM and obstacle mapping.
 - **Depth Camera** for object and human detection.
 - **IMU** for pose stability during motion.
 - **Ultrasonic Sensors** for short-range obstacle alerts.
 
+---
+
 **In code**:  
 Sensor data is streamed through individual ROS2 nodes and fused using the robot_localization package to estimate pose. Filters like moving averages and EKFs are used for smoothing.
+
+---
 
 **In testing**:  
 We will visualize real-time sensor streams in RViz2, calibrate thresholds, and verify detection algorithms.
 
+---
+
 **In final demonstration**:  
 Sensor data will guide navigation, trigger reactive behaviors (e.g., avoid obstacle), and inform the GUI of real-time statuses and anomalies.
 
+---
+
 ![realworldflowchart](real_world_workflow_chart.png)
+A Flowchart demonstrating the project work.
 
 ---
 
-## **Interaction Plan**
+## Interaction Plan
+
+---
 
 We will influence robot behavior through both autonomous logic and manual controls:
+
+---
 
 - **GUI Interface** (Python Qt + rqt):
   - Displays live patrol map and status
@@ -113,17 +97,26 @@ We will influence robot behavior through both autonomous logic and manual contro
   - Manual override buttons (pause, replan, resume)
   - System logs (distance, battery, alerts)
 
+---
+
 - **User Overrides**:
   - Keyboard input for debugging
   - (Optional) Voice commands for commands like “start patrol” or “return to base”
 
+---
+
 ![Sample GUI Mockup](sgm1.png)
+Sample GUI Mockup
 
 ---
 
-## **Control and Autonomy**
+## Control and Autonomy
+
+---
 
 We implement a **layered control architecture**:
+
+---
 
 - **Low-level Control**: Direct wheel velocity and motion via odometry.
 - **Mid-level Control**: Obstacle avoidance using VFH/DWA.
@@ -133,13 +126,19 @@ We implement a **layered control architecture**:
   - Dynamic re-planning in case of blocked paths
   - Anomaly detection integration and behavior changes based on events
 
+---
+
 All control layers are connected through ROS2's Navigation Stack with AMCL for localization.
 
 ---
 
-## **Preparation Needs**
+## Preparation Needs
+
+---
 
 To execute this project successfully, we need a solid grasp of:
+
+---
 
 - ROS2 Navigation Stack configuration
 - Multi-sensor data fusion techniques (especially IMU + LiDAR)
@@ -147,7 +146,11 @@ To execute this project successfully, we need a solid grasp of:
 - GUI development using rqt and Python Qt
 - Real-time debugging in ROS2
 
+---
+
 **Topics we would like covered in class**:
+
+---
 
 - Detailed walkthrough of the ROS2 Navigation Stack
 - Practical debugging tools for real-time sensor streams
@@ -155,29 +158,45 @@ To execute this project successfully, we need a solid grasp of:
 
 ---
 
-## **Final Demonstration Plan**
+## Final Demonstration Plan
 
-**Resources Needed**:
+---
+
+**Resources Needed:**
+
+---
 
 - TurtleBot4 with LiDAR, depth camera, IMU
 - Classroom space with mock warehouse (tables, boxes, marked paths)
 - Projector to display GUI
 - Wi-Fi for robot-to-GUI communication
 
-**Classroom Setup**:
+---
+
+**Classroom Setup:**
+
+---
 
 - Tables and cardboard boxes simulate shelves
 - Marked patrol lanes with tape
 - Defined “anomaly zones” using objects or people
 - Central station (laptop) for GUI + RViz display
 
-**Handling Environmental Variability**:
+---
+
+**Handling Environmental Variability:**
+
+---
 
 - AMCL will adapt pose estimation in dynamic environments
 - Dynamic costmaps will update routes in real-time if obstacles appear
 - Redundant sensors help maintain perception during partial failure
 
-**Testing & Evaluation Plan**:
+---
+
+**Testing & Evaluation Plan:**
+
+---
 
 - **Unit testing** of individual sensor streams and nodes
 - **Functional testing** of integrated navigation + anomaly detection
@@ -189,34 +208,52 @@ To execute this project successfully, we need a solid grasp of:
 
 ---
 
-## **Impact Statement**
+## Impact Statement
+
+---
 
 This project challenges us to integrate real-world robotics technologies under constraints of hardware, cost, and usability. It will deepen our knowledge of robotic system design, especially in areas of:
+
+---
 
 - Modular ROS2 software design
 - Sensor data conditioning and fusion
 - Real-time autonomy and safety layers
 - Visual interface development
 
+---
+
 It serves as a testbed for future coursework in robotics, simulation, and industrial automation—and could evolve into a deployable solution for safety inspection or inventory monitoring.
 
+---
+
 And we try to push full autonomy (BT integration) by one week to refine SLAM + costmap tuning.
+
+---
 
 ![flowchart](simplemm.png)
 
 ---
 
-## **Sensor Data Conditioning, Filtering, and Utilization**
+## Sensor Data Conditioning, Filtering, and Utilization
+
+---
 
 We implemented the following for sensor data:
 
+---
+
 | **Sensor** | **Strategy** |
-|-----------|--------------|
-| **LiDAR** | Clipping to range [0.2m–3.5m], outlier rejection, smoothing via rolling mean |
+| --- | --- |
+| **LiDAR** | Clipping to range \[0.2m–3.5m\], outlier rejection, smoothing via rolling mean |
 | **IMU** | Filtered with ROS2 robot_localization EKF using /imu/data |
 | **Depth Camera** | Depth masking to ignore floor reflections and reduce noise; regions-of-interest for anomaly detection |
 
+---
+
 All filtered sensor data feeds into:
+
+---
 
 - **local costmap** (for obstacle avoidance)
 - **global planner** (for patrol path planning)
@@ -224,57 +261,87 @@ All filtered sensor data feeds into:
 
 ---
 
-## **Sensor Fusion for Low-Level and High-Level Decisions**
+## Sensor Fusion for Low-Level and High-Level Decisions
 
-**Fusion Pipeline Overview**:
+---
+
+- **Fusion Pipeline Overview**:
+
+---
 
 ![Sensor Fusion](sensor_fusion_flowchart.png)
 
-- **Low-Level**: EKF → Odometry + IMU → Controls  
+---
+
+- **Low-Level**: EKF → Odometry + IMU → Controls
 - **High-Level**: Depth anomalies + patrol planner → path updates and alerts
 
 ---
 
-## **ROS2 Node Architecture and Topic Mapping**
+## ROS2 Node Architecture and Topic Mapping
+
+---
 
 **Node Overview**:
 
-- realsense2_camera_node → /camera/depth/image_raw  
-- rplidar_ros2_node → /scan  
-- micro_ros_node (ultrasonic) → /ultrasonic_range  
-- robot_localization EKF → /odom, /imu/data  
-- move_base_flex (nav stack)  
-- patrol_manager_node (custom)  
-- anomaly_detector_node (custom)  
+---
+
+- realsense2_camera_node → /camera/depth/image_raw
+- rplidar_ros2_node → /scan
+- micro_ros_node (ultrasonic) → /ultrasonic_range
+- robot_localization EKF → /odom, /imu/data
+- move_base_flex (nav stack)
+- patrol_manager_node (custom)
+- anomaly_detector_node (custom)
 - gui_backend_node → /gui/logs, /gui/alerts, /gui/status
+
+---
 
 ![Draft ROS2 Node Architecture](ros2_node_architecture_rqt_style.png)
 
 ---
 
-## **GUI Real-Time Sensor Data (Live Demo Progress)**
+## GUI Real-Time Sensor Data (Live Demo Progress)
+
+---
 
 We’ve successfully implemented GUI elements that:
 
-- Plot live LiDAR scans  
-- Highlight current patrol zone on map  
-- Flag anomalies (red alert icon)  
-- Log battery level, patrol duration, and distance  
+---
+
+- Plot live LiDAR scans
+- Highlight current patrol zone on map
+- Flag anomalies (red alert icon)
+- Log battery level, patrol duration, and distance
 - Buttons for Pause / Resume / Manual Override
 
 ---
 
-## **Advising**
+**Video Requirement**:  
+
+---
+
+## Advising
+
+---
 
 **Advisor**: Dr. Aukes
 
+---
+
 **Requested Support**:
+
+---
 
 - Access to TurtleBot4 and lab space
 - Weekly mentoring sessions
 - Guidance on advanced ROS2 usage
 
+---
+
 **Advisor’s Role**:
+
+---
 
 - Monitor biweekly progress
 - Help resolve integration and debugging roadblocks
@@ -282,10 +349,16 @@ We’ve successfully implemented GUI elements that:
 
 ---
 
-## **📋 Weekly Milestones Table (Aligned with Assignments)**
+**Weekly Milestones (Weeks 7–16)**
+
+---
+
+## 📋 Weekly Milestones Table (Aligned with Assignments)
+
+---
 
 | Week | Hardware Integration | Interface Development | Sensor Data & Filtering | Controls & Autonomy | Assignment Focus / Deliverable | Status |
-|------|----------------------|------------------------|--------------------------|----------------------|--------------------------------|--------|
+| --- | --- | --- | --- | --- | --- | --- |
 | Week 7 | TurtleBot4 bring-up, sensor validation | Set up GitHub Pages, basic project website | LiDAR + IMU + Odometry check | Define system architecture | 🟢 **Team Assignment 1**: Concept, goals, UI mockup | ✅ Complete |
 | Week 8 | Depth camera, ultrasonic sensor setup | RViz mockup, GUI layout draft | Live data feed validation | SLAM stack intro | 🟢 TA1 continued: Planning + visuals | ✅ Complete |
 | Week 9 | Sensor fusion (LiDAR+IMU+Odom) | GUI RViz integration | EKF-based fusion tuning | Localization tested with fusion | 🟢 TA1 final touches, prepare for SLAM | ✅ Complete |
@@ -299,7 +372,10 @@ We’ve successfully implemented GUI elements that:
 
 ---
 
-**✅ Status Key**:
-- ✅ **Complete** (Weeks 7–12)  
-- 🔄 **In Progress** (Weeks 13–14)  
+**✅ Status Key:**
+
+---
+
+- ✅ **Complete** (Weeks 7–12)
+- 🔄 **In Progress** (Weeks 13–14)
 - ⬜ **Not Started** (Weeks 15–16)
