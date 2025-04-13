@@ -1,4 +1,4 @@
-<div style="text-align: center;"> # Autonomous Warehouse Patrolling Robot
+# Autonomous Warehouse Patrolling Robot
 
 ---
 
