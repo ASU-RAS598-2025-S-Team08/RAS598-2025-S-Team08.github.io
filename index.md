@@ -26,8 +26,8 @@ By simulating realistic warehouse conditions, our project will investigate the f
 - Environmental Adaptability: Equipping the robot with the capability to adapt its behavior based on changing conditions such as blocked paths, dynamic obstacles, or signal loss, ensuring robustness in real-world applications.
 
 Our approach aims not only to implement a working prototype of a patrolling robot but also to provide a generalized framework for deploying autonomous agents in structured environments. Ultimately, this project aspires to demonstrate how affordable hardware combined with modular software architecture can address real-world operational needs in industrial settings — with potential extensions into areas like inventory monitoring, safety inspection, and collaborative automation.
-### **Updated Goal Statement**
 
+### **Updated Goal Statement**
 Our core objective remains the same: develop a low-cost, sensor-integrated patrolling robot using ROS2. However, **we've refined our scope** to emphasize:
 
 -   Real-time anomaly detection using basic computer vision (instead of deep learning models, for feasibility)
@@ -66,6 +66,18 @@ Here's what we've implemented or planned for filtering:
 -   **LiDAR**: Median filtering and range clipping to eliminate outliers and wall ghosting
 -   **Depth Camera**: Downsampling + HSV filtering for color-based detection
 -   **IMU**: Complementary filter + EKF integration via `robot_localization`
+
+graph TD
+    A1[LiDAR] --> F1[Sensor Fusion (EKF)]
+    A2[IMU] --> F1
+    A3[Depth Camera] --> P1[Anomaly Detection]
+    A4[Ultrasonic Sensors] --> F1
+    F1 --> L1[Localization & Mapping]
+    F1 --> N1[Navigation Stack]
+    P1 --> H1[High-Level Behavior Tree]
+    N1 --> H1
+    H1 --> ACT[Actuator Commands]
+    H1 --> GUI[GUI Alerts & Logs]
   
 **Integration in ROS2**
 
@@ -80,6 +92,18 @@ Each sensor will be managed through dedicated ROS2 nodes, ensuring modularity, s
   - IMU orientation data
   - Ultrasonic proximity markers
 - **Localization**: We employ **AMCL (Adaptive Monte Carlo Localization)** for probabilistic localization based on the occupancy grid map and laser scans.
+
+graph LR
+    LiDAR[rplidar_node] -->|/scan| NavStack
+    IMU[imu_driver] -->|/imu/data| EKF
+    Depth[realsense_node] -->|/camera/depth| Anomaly
+    Ultrasonic[ultrasonic_node] -->|/ultrasonic| NavStack
+    EKF -->|/odom| NavStack
+    NavStack -->|/cmd_vel| Base[Robot Base]
+    Anomaly -->|/anomaly_alert| GUI
+    NavStack -->|/map| GUI
+    GUI[GUI Backend] -->|Keyboard/Voice Override| NavStack
+
 
 **Development & Demonstration Phases**
 
@@ -146,17 +170,6 @@ In summary, the layered control and autonomy system allows the warehouse patroll
 
 This sophisticated control architecture ensures that the robot can effectively and efficiently perform its warehouse patrolling tasks, enhancing security, safety, and operational awareness within the facility.
 
-graph TD
-    A1[LiDAR] --> F1[Sensor Fusion (EKF)]
-    A2[IMU] --> F1
-    A3[Depth Camera] --> P1[Anomaly Detection]
-    A4[Ultrasonic] --> F1
-    F1 --> L1[Localization & Mapping]
-    F1 --> N1[Navigation Stack]
-    P1 --> H1[High-Level Behavior Tree]
-    N1 --> H1
-    H1 --> ACT[Actuator Commands]
-    H1 --> GUI[GUI Alerts & Logs]
 
 **Preparation Needs**
 
@@ -173,31 +186,9 @@ To succeed, we need a deeper understanding of:
 - Real-time system debugging techniques
 - Sensor data filtering and fusion strategies
 
-graph LR
-    LiDAR[rplidar_node] -->|/scan| NavStack
-    IMU[imu_driver] -->|/imu/data| EKF
-    Depth[realsense_node] -->|/camera/depth| Anomaly
-    Ultrasonic[ultrasonic_node] -->|/ultrasonic| NavStack
-    EKF -->|/odom| NavStack
-    NavStack -->|/cmd_vel| Base[Robot Base]
-    Anomaly -->|/anomaly_alert| GUI
-    NavStack -->|/map| GUI
-    GUI[GUI Backend] -->|Keyboard/Voice Override| NavStack
-
-
 **Final Demonstration Plan**
 
 Our final demonstration is designed to showcase the full capabilities of the Autonomous Warehouse Patrolling Robot, developed using the TurtleBot4 platform and ROS2. The demo will simulate a realistic indoor warehouse environment using a scaled mockup constructed within a classroom. This hands-on trial will allow observers to evaluate the robot’s ability to autonomously patrol, avoid obstacles, detect anomalies, and present live system data through a custom-built graphical user interface (GUI).
-
-graph TD
-    G1[Robot Sensors] --> G2[ROS Topics]
-    G2 --> G3[GUI Backend Node]
-    G3 --> G4[Live Map Display]
-    G3 --> G5[Sensor Status Panel]
-    G3 --> G6[Anomaly Alerts]
-    G3 --> G7[Manual Control Buttons]
-    G3 --> G8[System Logs Export]
-
 
 **🧪 Demo Description**
 
@@ -280,31 +271,38 @@ This project pushes us to explore real-world robotic deployments using ROS2, a c
   - Full integration of perception, planning, and interaction modules
 
 **Weekly Milestones (Gantt/Table Format)**
-
 gantt
-    title Project Timeline - Warehouse Patrolling Robot
+    title Project Timeline - Autonomous Warehouse Patrolling Robot
     dateFormat  YYYY-MM-DD
     axisFormat  %b %d
     section Hardware Integration
-    Initial Setup                :done,    t1, 2025-03-01, 7d
-    Sensor Connections           :active,  t2, 2025-03-08, 14d
+    Initial TurtleBot4 Setup     :done,    t1, 2025-03-01, 7d
+    Sensor Integration           :active,  t2, 2025-03-08, 14d
     Odometry & Motor Testing     :         t3, 2025-03-22, 7d
     section GUI Development
     GUI Layout & Mockup          :done,    i1, 2025-03-01, 10d
     Sensor Feed & Logs Display   :active,  i2, 2025-03-11, 14d
-    Final Integration & Polish   :         i3, 2025-04-01, 10d
+    Final GUI Integration        :         i3, 2025-04-01, 10d
     section Sensor Calibration
-    LiDAR & Depth Camera         :done,    s1, 2025-03-05, 7d
-    IMU Calibration & Filtering  :active,  s2, 2025-03-15, 10d
-    Ultrasonic Safety Layer      :         s3, 2025-04-01, 10d
-    section Controls & Autonomy
+    LiDAR & Depth Camera Setup   :done,    s1, 2025-03-05, 7d
+    IMU Filtering & Fusion       :active,  s2, 2025-03-15, 10d
+    Ultrasonic Calibration       :         s3, 2025-04-01, 10d
+    section Control & Autonomy
     SLAM + Path Planning         :done,    a1, 2025-03-10, 10d
     Obstacle Avoidance Tuning    :active,  a2, 2025-03-22, 14d
-    Behavior Tree Implementation :         a3, 2025-04-03, 10d
-    section Testing & Demo
-    Lab Trials                   :         d1, 2025-04-10, 7d
-    Demo Prep & Final Eval       :         d2, 2025-04-17, 7d
+    Behavior Tree Logic          :         a3, 2025-04-03, 10d
+    section Testing & Demonstration
+    Lab Trials & Data Logging    :         d1, 2025-04-10, 7d
+    Final Demo Prep              :         d2, 2025-04-17, 7d
 
+graph TD
+    G1[Robot Sensors] --> G2[ROS Topics]
+    G2 --> G3[GUI Backend Node]
+    G3 --> G4[Live Map Display]
+    G3 --> G5[Sensor Status Panel]
+    G3 --> G6[Anomaly Alerts]
+    G3 --> G7[Manual Control Buttons]
+    G3 --> G8[System Logs Export]
 
 ** ROS2 Architecture + GUI Update**
 -----------------------------------
