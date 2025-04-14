@@ -3,12 +3,15 @@
 ---
 
 Project Name: Autonomous Warehouse Patrolling Robot
+
 Team Number: Team 8
+
 Team Members: Bhavya M Shah, Ha Long Truong, Yashwanth Gowda
 
 ---
 
 Semester and Year: Spring 2025
+
 University, Class, Professor: Arizona State University, RAS 598, Dr. Aukes
 
 ---
@@ -31,6 +34,8 @@ By simulating realistic warehouse conditions, our project will investigate the f
 Real-Time Anomaly Detection: Using sensory input (such as depth and visual cues) to detect unexpected objects, humans, or hazards in the robot’s path or assigned patrol zones.
 - Interactive System Monitoring: Developing a custom graphical user interface (GUI) to display live robot status, environment mapping, anomaly alerts, and control interfaces for manual override or remote supervision.
 - Environmental Adaptability: Equipping the robot with the capability to adapt its behavior based on changing conditions such as blocked paths, dynamic obstacles, or signal loss, ensuring robustness in real-world applications.
+
+![anothervisualization](anothervisualization.png)
 
 Our approach aims not only to implement a working prototype of a patrolling robot but also to provide a generalized framework for deploying autonomous agents in structured environments. Ultimately, this project aspires to demonstrate how affordable hardware combined with modular software architecture can address real-world operational needs in industrial settings — with potential extensions into areas like inventory monitoring, safety inspection, and collaborative automation.
 
