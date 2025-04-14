@@ -38,6 +38,7 @@ Real-Time Anomaly Detection: Using sensory input (such as depth and visual cues)
 
 ![anothervisualization](anothervisualization.png)
                                                 _Another Visualization_
+                                                
 Our approach aims not only to implement a working prototype of a patrolling robot but also to provide a generalized framework for deploying autonomous agents in structured environments. Ultimately, this project aspires to demonstrate how affordable hardware combined with modular software architecture can address real-world operational needs in industrial settings — with potential extensions into areas like inventory monitoring, safety inspection, and collaborative automation.
 
 ---
@@ -303,19 +304,20 @@ We’ve implemented GUI elements that:
 ## 📋 Weekly Milestones Table (Aligned with Assignments)
 
 ---
+# 📅 Weekly Milestones Table (Simplified)
 
-| Week | Hardware Integration | Interface Development | Sensor Data & Filtering | Controls & Autonomy | Assignment Focus / Deliverable | Status |
-| --- | --- | --- | --- | --- | --- | --- |
-| Week 7 | TurtleBot4 bring-up, sensor validation | Set up GitHub Pages, basic project website | LiDAR + IMU + Odometry check | Define system architecture | 🟢 **Team Assignment 1**: Concept, goals, UI mockup | ✅ Complete |
-| Week 8 | Depth camera, ultrasonic sensor setup | RViz mockup, GUI layout draft | Live data feed validation | SLAM stack intro | 🟢 TA1 continued: Planning + visuals | ✅ Complete |
-| Week 9 | Sensor fusion (LiDAR+IMU+Odom) | GUI RViz integration | EKF-based fusion tuning | Localization tested with fusion | 🟢 TA1 final touches, prepare for SLAM | ✅ Complete |
-| Week 10 | SLAM + map saving setup | Real-time plots in GUI | Outlier filtering for ultrasonic + depth | SLAM navigation working demo | 🟢 **Team Assignment 2**: SLAM results, depth integration | ✅ Complete |
-| Week 11 | Costmap layers setup | GUI updates: status log, alerts | Depth camera anomaly logic | Patrol logic implementation | 🟢 TA2 submission; begin full behavior testing | ✅ Complete |
-| Week 12 | Mode toggle prep (SLAM ↔ AMCL) | Full GUI → ROS interaction | Sync all filtered streams | Navigation tuning | 🟢 **Team Assignment 3**: Data filtering, GUI integration | ✅ Complete |
-| Week 13 | GUI live display (alerts, metrics) | GUI control (pause/resume, alerts) | Visualization of processed sensor data | Replanning & manual override | 🟠 TA3 wrap-up; polish before dry-run | 🔄 In Progress |
-| Week 14 | TurtleBot full integration (real test) | Export GUI logs, feedback polish | Real-world evaluation of filtered data | SLAM vs AMCL toggle test | 🟠 Begin **Team Assignment 4**: Testing + autonomy | 🔄 In Progress |
-| Week 15 | Full autonomy dry run + backups | Auto-logging, restart controls | Multi-condition test scenarios | Behavior tree + fault handling | 🔘 TA4 final polish; prepare for live demo | ⬜ Not Started |
-| Week 16 | In-class demo setup | Final GUI build and docs | Live feedback validation | Final validation: autonomy + GUI monitoring | 🎯 Final deliverables submission + demo | ⬜ Not Started |
+| Week     | Hardware Integration                         | Interface Development                         | Controls & Autonomy                           | Assignment Focus / Deliverable                         | Status         |
+|----------|-----------------------------------------------|-----------------------------------------------|------------------------------------------------|--------------------------------------------------------|----------------|
+| Week 7   | TurtleBot4 bring-up, sensor validation        | Set up GitHub Pages, basic project website     | Define system architecture                     | 🟢 **Team Assignment 1**: Concept, goals, UI mockup     | ✅ Complete     |
+| Week 8   | Depth camera, ultrasonic sensor setup         | RViz mockup, GUI layout draft                  | SLAM stack intro                               | 🟢 TA1 continued: Planning + visuals                    | ✅ Complete     |
+| Week 9   | Sensor fusion (LiDAR+IMU+Odom)                | GUI RViz integration                           | Localization tested with fusion                | 🟢 TA1 final touches, prepare for SLAM                  | ✅ Complete     |
+| Week 10  | SLAM + map saving setup                       | Real-time plots in GUI                         | SLAM navigation working demo                   | 🟢 **Team Assignment 2**: SLAM results, depth integration| ✅ Complete     |
+| Week 11  | Costmap layers setup                          | GUI updates: status log, alerts                | Patrol logic implementation                    | 🟢 TA2 submission; begin full behavior testing          | ✅ Complete     |
+| Week 12  | Mode toggle prep (SLAM ↔ AMCL)                | Full GUI → ROS interaction                     | Navigation tuning                              | 🟢 **Team Assignment 3**: Data filtering, GUI integration| ✅ Complete     |
+| Week 13  | GUI live display (alerts, metrics)            | GUI control (pause/resume, alerts)             | Replanning & manual override                   | 🟠 TA3 wrap-up; polish before dry-run                   | 🔄 In Progress  |
+| Week 14  | TurtleBot full integration (real test)        | Export GUI logs, feedback polish               | SLAM vs AMCL toggle test                        | 🟠 Begin **Team Assignment 4**: Testing + autonomy       | 🔄 In Progress  |
+| Week 15  | Full autonomy dry run + backups               | Auto-logging, restart controls                 | Behavior tree + fault handling                 | 🔘 TA4 final polish; prepare for live demo              | ⬜ Not Started  |
+| Week 16  | In-class demo setup                           | Final GUI build and docs                       | Final validation: autonomy + GUI monitoring    | 🎯 Final deliverables submission + demo                 | ⬜ Not Started  |
 
 ---
 
