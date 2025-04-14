@@ -31,9 +31,12 @@ This research question drives us to explore and implement a range of robotics te
 By simulating realistic warehouse conditions, our project will investigate the following:
 
 - Multi-Sensor Fusion: Combining data from various onboard sensors to generate a coherent model of the robot’s environment and enhance localization, mapping, and situational awareness.
+  
 - Autonomous Navigation & Patrolling: Implementing SLAM (Simultaneous Localization and Mapping) techniques alongside path planning algorithms to enable the robot to patrol pre-defined or dynamically generated routes.
 Real-Time Anomaly Detection: Using sensory input (such as depth and visual cues) to detect unexpected objects, humans, or hazards in the robot’s path or assigned patrol zones.
+
 - Interactive System Monitoring: Developing a custom graphical user interface (GUI) to display live robot status, environment mapping, anomaly alerts, and control interfaces for manual override or remote supervision.
+
 - Environmental Adaptability: Equipping the robot with the capability to adapt its behavior based on changing conditions such as blocked paths, dynamic obstacles, or signal loss, ensuring robustness in real-world applications.
 
 ![anothervisualization](anothervisualization.png)
@@ -93,22 +96,33 @@ The autonomous capabilities of the warehouse patrolling robot are achieved throu
 
 1. Low-Level Control: Precise Motion Execution
 At the foundational layer lies the low-level control system. This layer is responsible for the precise execution of motion commands sent by higher-level controllers. It directly interfaces with the robot's actuators, primarily the wheel motors.
+
 -	Wheel Velocity Commands: The primary function of this layer is to translate desired linear and angular velocities into individual wheel velocity commands. This involves kinematic models that account for the robot's geometry and wheel configuration.
+
 -	Odometry Feedback: To ensure accurate motion, the low-level controller relies on odometry feedback. Data from wheel encoders (or other internal sensors) is used to estimate the robot's current pose (position and orientation).
+
 -	Goal: The primary goal of the low-level control is to ensure smooth, accurate, and stable robot motion according to the commands received from the mid-level controller.
 
 2. Mid-Level Control: Reactive Navigation and Safety
 The mid-level control system builds upon the capabilities of the low-level layer, focusing on the robot's interaction with its immediate surroundings and ensuring safe navigation.
+
 -	Obstacle Avoidance: This is a critical function of the mid-level control. By processing real-time data from the robot's suite of sensors (LiDAR, depth camera, ultrasonic sensors), this layer detects obstacles in the robot's path.
+
 -	Reactive Behaviors: Based on the sensor data, the mid-level controller implements reactive behaviors to avoid collisions. These behaviors might include slowing down, stopping, turning, or maneuvering around obstacles. Algorithms like Vector Field Histogram (VFH), Dynamic Window Approach (DWA), or similar reactive planning techniques are typically employed.
 
 3. High-Level Autonomy: Intelligent Mission Execution
 The high-level autonomy system orchestrates the robot's overall mission, enabling it to perform complex tasks without continuous human intervention.
+
 -	Patrol Routing: This layer utilizes a pre-mapped representation of the warehouse, dividing it into logical zones or waypoints. Based on the desired patrol strategy (e.g., sequential zone coverage, prioritized areas), the high-level controller generates a sequence of target locations or paths for the robot to follow.
+
 -	Behavior Trees: Behavior trees provide a powerful and modular framework for defining the robot's high-level behaviors and decision-making processes. They allow for the representation of complex sequences, conditional actions, and parallel tasks involved in the patrolling mission (e.g., navigate to zone A, scan for anomalies, log data, proceed to zone B).
+
 -	ROS2 Navigation Stack Integration: The robot leverages the ROS2 Navigation stack, a robust and widely used framework for mobile robot navigation. This stack provides pre-built functionalities for path planning, obstacle avoidance, localization, and map management.
+
  -Autonomous Decision-Making: The high-level system enables the robot to make autonomous decisions regarding patrol routes based on factors like time, priority, or previously detected anomalies.
+
 - Dynamic Path Re-planning: If the mid-level control encounters an unforeseen obstacle that blocks the planned path, the high-level autonomy system can trigger path re-planning. Utilizing the current map and the robot's current location, the Navigation stack can compute a new, feasible path to reach the original goal or the next patrol waypoint.
+
 - Anomaly Detection Integration: This layer will also integrate with the robot's perception system to process anomaly detection results. Upon detecting an anomaly, the high-level controller can deviate from the standard patrol route to investigate, log the event, and potentially trigger alerts.
 
 In summary, the layered control and autonomy system allows the warehouse patrolling robot to:
@@ -146,6 +160,7 @@ Our final demonstration is designed to showcase the full capabilities of the Aut
 **Demo Description**
 
 During the demonstration, TurtleBot4 will autonomously navigate through a mock warehouse layout configured using tables, cardboard boxes, and tape-marked pathways. It will:
+
 -	Perform a patrol loop based on predefined waypoints.
 -	Use sensor data from LiDAR, depth camera, IMU, and ultrasonic sensors to perceive and react to the environment.
 -	Avoid obstacles (both static and dynamic) in real-time.
@@ -258,7 +273,7 @@ All filtered sensor data feeds into:
 - gui_backend_node → /gui/logs, /gui/alerts, /gui/status
 
 ![Draft ROS2 Node Architecture](ros2_node_architecture_rqt_style.png)
-                                                          _ROS Node Architecture RQT_
+                                                          _ROS Node Architecture_
 ---
 
 ## GUI Real-Time Sensor Data (Live Demo Progress)
