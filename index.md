@@ -26,11 +26,11 @@ A Visualization
 This research question drives us to explore and implement a range of robotics technologies and concepts, particularly focusing on the integration of multiple sensor modalities (such as LiDAR, IMU, depth camera, and odometry), robust control algorithms, and autonomy pipelines that balance reactive behavior (e.g., obstacle avoidance) with deliberative planning (e.g., patrol route optimization).
 
 By simulating realistic warehouse conditions, our project will investigate the following:
--Multi-Sensor Fusion: Combining data from various onboard sensors to generate a coherent model of the robot’s environment and enhance localization, mapping, and situational awareness.
--Autonomous Navigation & Patrolling: Implementing SLAM (Simultaneous Localization and Mapping) techniques alongside path planning algorithms to enable the robot to patrol pre-defined or dynamically generated routes.
+- Multi-Sensor Fusion: Combining data from various onboard sensors to generate a coherent model of the robot’s environment and enhance localization, mapping, and situational awareness.
+- Autonomous Navigation & Patrolling: Implementing SLAM (Simultaneous Localization and Mapping) techniques alongside path planning algorithms to enable the robot to patrol pre-defined or dynamically generated routes.
 Real-Time Anomaly Detection: Using sensory input (such as depth and visual cues) to detect unexpected objects, humans, or hazards in the robot’s path or assigned patrol zones.
--Interactive System Monitoring: Developing a custom graphical user interface (GUI) to display live robot status, environment mapping, anomaly alerts, and control interfaces for manual override or remote supervision.
--Environmental Adaptability: Equipping the robot with the capability to adapt its behavior based on changing conditions such as blocked paths, dynamic obstacles, or signal loss, ensuring robustness in real-world applications.
+- Interactive System Monitoring: Developing a custom graphical user interface (GUI) to display live robot status, environment mapping, anomaly alerts, and control interfaces for manual override or remote supervision.
+- Environmental Adaptability: Equipping the robot with the capability to adapt its behavior based on changing conditions such as blocked paths, dynamic obstacles, or signal loss, ensuring robustness in real-world applications.
 
 Our approach aims not only to implement a working prototype of a patrolling robot but also to provide a generalized framework for deploying autonomous agents in structured environments. Ultimately, this project aspires to demonstrate how affordable hardware combined with modular software architecture can address real-world operational needs in industrial settings — with potential extensions into areas like inventory monitoring, safety inspection, and collaborative automation.
 
@@ -143,10 +143,10 @@ During the demonstration, TurtleBot4 will autonomously navigate through a mock w
 -	Use sensor data from LiDAR, depth camera, IMU, and ultrasonic sensors to perceive and react to the environment.
 -	Avoid obstacles (both static and dynamic) in real-time.
 -	Provide live telemetry and visualization on a projector-based GUI that displays:
-o	Real-time map (from RViz)
-o	Robot position and path
-o	Obstacle alerts
-o	Anomaly flags (e.g., unexpected objects or human detection)
+*	Real-time map (from RViz)
+*	Robot position and path
+*	Obstacle alerts
+*	Anomaly flags (e.g., unexpected objects or human detection)
 
 The demo will highlight key features such as localization accuracy, real-time responsiveness, safety, and user interaction.
 
@@ -164,8 +164,6 @@ The demo will highlight key features such as localization accuracy, real-time re
 - Marked patrol lanes with tape
 - Defined “anomaly zones” using objects or people
 - Central station (laptop) for GUI + RViz display
-
----
 
 **Handling Environmental Variability:**
 
@@ -187,6 +185,7 @@ The demo will highlight key features such as localization accuracy, real-time re
   - Obstacle response time
   - GUI responsiveness and feedback clarity
 
+Video recording and real-time logging will be used to analyze performance and validate mission success.
 ---
 
 ## Impact Statement
