@@ -24,11 +24,12 @@ Our project centers around the design and implementation of an Autonomous Wareho
 How can we leverage low-cost mobile robotics platforms to achieve reliable autonomous patrolling in structured indoor warehouse environments, with real-time anomaly detection and environmental adaptability?
 
 ![A Visualization](visualization.png)
-A Visualization
+                                                  _A Visualization_
 
 This research question drives us to explore and implement a range of robotics technologies and concepts, particularly focusing on the integration of multiple sensor modalities (such as LiDAR, IMU, depth camera, and odometry), robust control algorithms, and autonomy pipelines that balance reactive behavior (e.g., obstacle avoidance) with deliberative planning (e.g., patrol route optimization).
 
 By simulating realistic warehouse conditions, our project will investigate the following:
+
 - Multi-Sensor Fusion: Combining data from various onboard sensors to generate a coherent model of the robot’s environment and enhance localization, mapping, and situational awareness.
 - Autonomous Navigation & Patrolling: Implementing SLAM (Simultaneous Localization and Mapping) techniques alongside path planning algorithms to enable the robot to patrol pre-defined or dynamically generated routes.
 Real-Time Anomaly Detection: Using sensory input (such as depth and visual cues) to detect unexpected objects, humans, or hazards in the robot’s path or assigned patrol zones.
@@ -36,7 +37,7 @@ Real-Time Anomaly Detection: Using sensory input (such as depth and visual cues)
 - Environmental Adaptability: Equipping the robot with the capability to adapt its behavior based on changing conditions such as blocked paths, dynamic obstacles, or signal loss, ensuring robustness in real-world applications.
 
 ![anothervisualization](anothervisualization.png)
-
+                                                _Another Visualization_
 Our approach aims not only to implement a working prototype of a patrolling robot but also to provide a generalized framework for deploying autonomous agents in structured environments. Ultimately, this project aspires to demonstrate how affordable hardware combined with modular software architecture can address real-world operational needs in industrial settings — with potential extensions into areas like inventory monitoring, safety inspection, and collaborative automation.
 
 ---
@@ -62,7 +63,7 @@ We will visualize real-time sensor streams in RViz2, calibrate thresholds, and v
 Sensor data will guide navigation, trigger reactive behaviors (e.g., avoid obstacle), and inform the GUI of real-time statuses and anomalies.
 
 ![realworldflowchart](real_world_workflow_chart.png)
-A Flowchart demonstrating the project work.
+                                              _A Flowchart demonstrating the project work._
 
 ---
 
@@ -81,7 +82,7 @@ Each sensor will be managed through dedicated ROS2 nodes, ensuring modularity, s
   - (Optional) Voice commands for commands like “start patrol” or “return to base”
 
 ![Sample GUI Mockup](sgm1.png)
-Sample GUI Mockup
+                                                            _Sample GUI Mockup_
 
 ---
 
@@ -209,7 +210,7 @@ And we try to push full autonomy (BT integration) by one week to refine SLAM + c
 ---
 
 ![flowchart](simplemm.png)
-
+                                                         _Another Flowchart_
 ---
 
 ## Sensor Data Conditioning, Filtering, and Utilization
@@ -235,6 +236,7 @@ All filtered sensor data feeds into:
 - **Fusion Pipeline Overview**:
 
 ![Sensor Fusion](sensor_fusion_flowchart.png)
+                                                   _Sensor Fusion Pipeline Overview_
 
 - **Low-Level**: EKF → Odometry + IMU → Controls
 - **High-Level**: Depth anomalies + patrol planner → path updates and alerts
@@ -255,7 +257,7 @@ All filtered sensor data feeds into:
 - gui_backend_node → /gui/logs, /gui/alerts, /gui/status
 
 ![Draft ROS2 Node Architecture](ros2_node_architecture_rqt_style.png)
-
+                                                          _ROS Node Architecture RQT_
 ---
 
 ## GUI Real-Time Sensor Data (Live Demo Progress)
