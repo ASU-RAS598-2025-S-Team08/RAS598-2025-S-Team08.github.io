@@ -20,7 +20,7 @@ Our project centers around the design and implementation of an Autonomous Wareho
 **Research Question**:  
 How can we leverage low-cost mobile robotics platforms to achieve reliable autonomous patrolling in structured indoor warehouse environments, with real-time anomaly detection and environmental adaptability?
 
-![A Visualization](visualization.png width="600" height="400")
+![A Visualization](visualization.png)(width="600" height="400")
 A Visualization
 
 This research question drives us to explore and implement a range of robotics technologies and concepts, particularly focusing on the integration of multiple sensor modalities (such as LiDAR, IMU, depth camera, and odometry), robust control algorithms, and autonomy pipelines that balance reactive behavior (e.g., obstacle avoidance) with deliberative planning (e.g., patrol route optimization).
