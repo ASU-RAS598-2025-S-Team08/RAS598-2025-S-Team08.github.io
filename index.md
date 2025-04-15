@@ -77,8 +77,6 @@ Each sensor will be managed through dedicated ROS2 nodes, ensuring modularity, s
   - Keyboard input for debugging
   - (Optional) Voice commands for commands like “start patrol” or “return to base”
 
-![Sample GUI Mockup](sgm1.png)
-
 ## Control and Autonomy
 
 The autonomous capabilities of the warehouse patrolling robot are achieved through a carefully structured, layered control system. This hierarchical architecture allows for robust and adaptable operation, enabling the robot to navigate complex warehouse environments, react to unforeseen circumstances, and execute its patrolling mission effectively.We implement a **layered control architecture**:
