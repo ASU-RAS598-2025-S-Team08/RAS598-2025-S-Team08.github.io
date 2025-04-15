@@ -3,9 +3,13 @@
 ---
 
 Project Name: Autonomous Warehouse Patrolling Robot.
+
 Team Number: Team 8.
+
 Team Members: Bhavya M Shah, Ha Long Truong, Yashwanth Gowda.
+
 Semester and Year: Spring 2025.
+
 University, Class, Professor: Arizona State University, RAS 598, Dr. Aukes.
 
 ---
@@ -104,7 +108,7 @@ The high-level autonomy system orchestrates the robot's overall mission, enablin
 
 -	ROS2 Navigation Stack Integration: The robot leverages the ROS2 Navigation stack, a robust and widely used framework for mobile robot navigation. This stack provides pre-built functionalities for path planning, obstacle avoidance, localization, and map management.
 
--Autonomous Decision-Making: The high-level system enables the robot to make autonomous decisions regarding patrol routes based on factors like time, priority, or previously detected anomalies.
+- Autonomous Decision-Making: The high-level system enables the robot to make autonomous decisions regarding patrol routes based on factors like time, priority, or previously detected anomalies.
 
 - Dynamic Path Re-planning: If the mid-level control encounters an unforeseen obstacle that blocks the planned path, the high-level autonomy system can trigger path re-planning. Utilizing the current map and the robot's current location, the Navigation stack can compute a new, feasible path to reach the original goal or the next patrol waypoint.
 
