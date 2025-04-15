@@ -261,7 +261,8 @@ We’ve implemented GUI elements that:
 **Weekly Milestones (Weeks 7–16)**
 
 ## 📋 Weekly Milestones Table (Aligned with Assignments)
----
+# 📅 Weekly Milestones Table (Simplified)
+
 | Week     | Hardware Integration                         | Interface Development                         | Controls & Autonomy                           | Assignment Focus / Deliverable                         | Status         |
 |----------|-----------------------------------------------|-----------------------------------------------|------------------------------------------------|--------------------------------------------------------|----------------|
 | Week 7   | TurtleBot4 bring-up, sensor validation        | Set up GitHub Pages, basic project website     | Define system architecture                     | 🟢 **Team Assignment 1**: Concept, goals, UI mockup     | ✅ Complete     |
