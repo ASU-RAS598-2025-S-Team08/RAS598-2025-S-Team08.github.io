@@ -2,17 +2,11 @@
 
 ---
 
-Project Name: Autonomous Warehouse Patrolling Robot
-
-Team Number: Team 8
-
-Team Members: Bhavya M Shah, Ha Long Truong, Yashwanth Gowda
-
----
-
-Semester and Year: Spring 2025
-
-University, Class, Professor: Arizona State University, RAS 598, Dr. Aukes
+Project Name: Autonomous Warehouse Patrolling Robot.
+Team Number: Team 8.
+Team Members: Bhavya M Shah, Ha Long Truong, Yashwanth Gowda.
+Semester and Year: Spring 2025.
+University, Class, Professor: Arizona State University, RAS 598, Dr. Aukes.
 
 ---
 
@@ -24,7 +18,6 @@ Our project centers around the design and implementation of an Autonomous Wareho
 How can we leverage low-cost mobile robotics platforms to achieve reliable autonomous patrolling in structured indoor warehouse environments, with real-time anomaly detection and environmental adaptability?
 
 ![A Visualization](visualization.png)
-                                                  _A Visualization_
 
 This research question drives us to explore and implement a range of robotics technologies and concepts, particularly focusing on the integration of multiple sensor modalities (such as LiDAR, IMU, depth camera, and odometry), robust control algorithms, and autonomy pipelines that balance reactive behavior (e.g., obstacle avoidance) with deliberative planning (e.g., patrol route optimization).
 
@@ -33,18 +26,16 @@ By simulating realistic warehouse conditions, our project will investigate the f
 - Multi-Sensor Fusion: Combining data from various onboard sensors to generate a coherent model of the robot’s environment and enhance localization, mapping, and situational awareness.
   
 - Autonomous Navigation & Patrolling: Implementing SLAM (Simultaneous Localization and Mapping) techniques alongside path planning algorithms to enable the robot to patrol pre-defined or dynamically generated routes.
-Real-Time Anomaly Detection: Using sensory input (such as depth and visual cues) to detect unexpected objects, humans, or hazards in the robot’s path or assigned patrol zones.
+
+- Real-Time Anomaly Detection: Using sensory input (such as depth and visual cues) to detect unexpected objects, humans, or hazards in the robot’s path or assigned patrol zones.
 
 - Interactive System Monitoring: Developing a custom graphical user interface (GUI) to display live robot status, environment mapping, anomaly alerts, and control interfaces for manual override or remote supervision.
 
 - Environmental Adaptability: Equipping the robot with the capability to adapt its behavior based on changing conditions such as blocked paths, dynamic obstacles, or signal loss, ensuring robustness in real-world applications.
 
 ![anothervisualization](anothervisualization.png)
-                                                _Another Visualization_
                                                 
 Our approach aims not only to implement a working prototype of a patrolling robot but also to provide a generalized framework for deploying autonomous agents in structured environments. Ultimately, this project aspires to demonstrate how affordable hardware combined with modular software architecture can address real-world operational needs in industrial settings — with potential extensions into areas like inventory monitoring, safety inspection, and collaborative automation.
-
----
 
 ## Sensor Integration
 
@@ -67,9 +58,6 @@ We will visualize real-time sensor streams in RViz2, calibrate thresholds, and v
 Sensor data will guide navigation, trigger reactive behaviors (e.g., avoid obstacle), and inform the GUI of real-time statuses and anomalies.
 
 ![realworldflowchart](real_world_workflow_chart.png)
-                                              _A Flowchart demonstrating the project work._
-
----
 
 ## Interaction Plan
 
@@ -86,9 +74,6 @@ Each sensor will be managed through dedicated ROS2 nodes, ensuring modularity, s
   - (Optional) Voice commands for commands like “start patrol” or “return to base”
 
 ![Sample GUI Mockup](sgm1.png)
-                                                            _Sample GUI Mockup_
-
----
 
 ## Control and Autonomy
 
@@ -119,7 +104,7 @@ The high-level autonomy system orchestrates the robot's overall mission, enablin
 
 -	ROS2 Navigation Stack Integration: The robot leverages the ROS2 Navigation stack, a robust and widely used framework for mobile robot navigation. This stack provides pre-built functionalities for path planning, obstacle avoidance, localization, and map management.
 
- -Autonomous Decision-Making: The high-level system enables the robot to make autonomous decisions regarding patrol routes based on factors like time, priority, or previously detected anomalies.
+-Autonomous Decision-Making: The high-level system enables the robot to make autonomous decisions regarding patrol routes based on factors like time, priority, or previously detected anomalies.
 
 - Dynamic Path Re-planning: If the mid-level control encounters an unforeseen obstacle that blocks the planned path, the high-level autonomy system can trigger path re-planning. Utilizing the current map and the robot's current location, the Navigation stack can compute a new, feasible path to reach the original goal or the next patrol waypoint.
 
@@ -143,15 +128,11 @@ To execute this project successfully, we need a solid grasp of:
 - GUI development using rqt and Python Qt
 - Real-time debugging in ROS2
 
----
-
 **Topics we would like covered in class**:
 
 - Detailed walkthrough of the ROS2 Navigation Stack
 - Practical debugging tools for real-time sensor streams
 - Examples of robust behavior trees in ROS2
-
----
 
 ## Final Demonstration Plan
 
@@ -171,7 +152,6 @@ During the demonstration, TurtleBot4 will autonomously navigate through a mock w
 *	Anomaly flags (e.g., unexpected objects or human detection)
 
 The demo will highlight key features such as localization accuracy, real-time responsiveness, safety, and user interaction.
-
 
 **Resources Needed:**
 
@@ -193,11 +173,7 @@ The demo will highlight key features such as localization accuracy, real-time re
 - Dynamic costmaps will update routes in real-time if obstacles appear
 - Redundant sensors help maintain perception during partial failure
 
----
-
 **Testing & Evaluation Plan:**
-
----
 
 - **Unit testing** of individual sensor streams and nodes
 - **Functional testing** of integrated navigation + anomaly detection
@@ -208,7 +184,6 @@ The demo will highlight key features such as localization accuracy, real-time re
   - GUI responsiveness and feedback clarity
 
 Video recording and real-time logging will be used to analyze performance and validate mission success.
----
 
 ## Impact Statement
 
@@ -223,11 +198,7 @@ It serves as a testbed for future coursework in robotics, simulation, and indust
 
 And we try to push full autonomy (BT integration) by one week to refine SLAM + costmap tuning.
 
----
-
 ![flowchart](simplemm.png)
-                                                         _Another Flowchart_
----
 
 ## Sensor Data Conditioning, Filtering, and Utilization
 
@@ -245,19 +216,14 @@ All filtered sensor data feeds into:
 - **global planner** (for patrol path planning)
 - **GUI** (for live monitoring and safety)
 
----
-
 ## Sensor Fusion for Low-Level and High-Level Decisions
 
 - **Fusion Pipeline Overview**:
 
 ![Sensor Fusion](sensor_fusion_flowchart.png)
-                                                   _Sensor Fusion Pipeline Overview_
 
 - **Low-Level**: EKF → Odometry + IMU → Controls
 - **High-Level**: Depth anomalies + patrol planner → path updates and alerts
-
----
 
 ## ROS2 Node Architecture and Topic Mapping
 
@@ -273,8 +239,6 @@ All filtered sensor data feeds into:
 - gui_backend_node → /gui/logs, /gui/alerts, /gui/status
 
 ![Draft ROS2 Node Architecture](ros2_node_architecture_rqt_style.png)
-                                                          _ROS Node Architecture_
----
 
 ## GUI Real-Time Sensor Data (Live Demo Progress)
 
@@ -286,41 +250,20 @@ We’ve implemented GUI elements that:
 - Log battery level, patrol duration, and distance
 - Buttons for Pause / Resume / Manual Override
 
----
-
 **Video Requirement**:  
-
----
 
 ## Advising
 
----
-
 **Advisor**: Dr. Aukes
-
 **Requested Support**:
-
 - Access to TurtleBot4 and lab space
 - Weekly mentoring sessions
 - Guidance on advanced ROS2 usage
 
----
-
-**Advisor’s Role**:
-
-- Monitor biweekly progress
-- Help resolve integration and debugging roadblocks
-- Assess final demonstration functionality and documentation
-
----
-
 **Weekly Milestones (Weeks 7–16)**
 
 ## 📋 Weekly Milestones Table (Aligned with Assignments)
-
 ---
-# 📅 Weekly Milestones Table (Simplified)
-
 | Week     | Hardware Integration                         | Interface Development                         | Controls & Autonomy                           | Assignment Focus / Deliverable                         | Status         |
 |----------|-----------------------------------------------|-----------------------------------------------|------------------------------------------------|--------------------------------------------------------|----------------|
 | Week 7   | TurtleBot4 bring-up, sensor validation        | Set up GitHub Pages, basic project website     | Define system architecture                     | 🟢 **Team Assignment 1**: Concept, goals, UI mockup     | ✅ Complete     |
