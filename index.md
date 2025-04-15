@@ -244,11 +244,10 @@ We’ve implemented GUI elements that:
 
 - Plot live LiDAR scans
 - Highlight current patrol zone on map
-- Flag anomalies (red alert icon)
+- Flag anomalies
 - Log battery level, patrol duration, and distance
-- Buttons for Pause / Resume / Manual Override
 
-**Video Requirement**:  
+Video Requirement: https://youtube.com/playlist?list=PL4e6DWX5mZvaRTcvywfToLrumtm3tlkBI&si=JJDVAatZlTniiuUw   
 
 ## Advising
 
