@@ -196,11 +196,7 @@ This project challenges us to integrate real-world robotics technologies under c
 - Real-time autonomy and safety layers
 - Visual interface development
 
-It serves as a testbed for future coursework in robotics, simulation, and industrial automation—and could evolve into a deployable solution for safety inspection or inventory monitoring.
-
-And we try to push full autonomy (BT integration) by one week to refine SLAM + costmap tuning.
-
-![flowchart](simplemm.png)
+It serves as a testbed for future coursework in robotics, simulation, and industrial automation—and could evolve into a deployable solution for safety inspection or inventory monitoring. And we try to push full autonomy (BT integration) by one week to refine SLAM + costmap tuning.
 
 ## Sensor Data Conditioning, Filtering, and Utilization
 
