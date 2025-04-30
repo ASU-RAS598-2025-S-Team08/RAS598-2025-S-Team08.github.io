@@ -249,6 +249,10 @@ We’ve implemented GUI elements that:
 
 Video Requirement: https://youtube.com/playlist?list=PL4e6DWX5mZvaRTcvywfToLrumtm3tlkBI&si=JJDVAatZlTniiuUw   
 
+## Simulation
+
+![Simulation 1](simul1.png)
+
 ## Advising
 
 **Advisor**: Dr. Aukes
