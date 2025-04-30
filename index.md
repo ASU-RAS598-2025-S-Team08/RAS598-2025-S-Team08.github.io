@@ -251,7 +251,7 @@ Video Requirement: https://youtube.com/playlist?list=PL4e6DWX5mZvaRTcvywfToLrumt
 
 ## Simulation
 
-![Simulation 1](simul1.png)
+![Simulation 1](Simul1.jpg)
 
 ## Advising
 
