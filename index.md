@@ -253,6 +253,10 @@ Video Requirement: https://youtube.com/playlist?list=PL4e6DWX5mZvaRTcvywfToLrumt
 
 ![Simulation 1](Simul1.jpg)
 
+## Navigation
+
+https://youtu.be/e1mFo_xL-tc
+
 ## Advising
 
 **Advisor**: Dr. Aukes
