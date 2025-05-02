@@ -91,21 +91,9 @@ Our approach aims not only to implement a working prototype of a patrolling robo
 
 ---
 
-## Sensor Integration
-
-Sensor integration lies at the core of our Autonomous Warehouse Patrolling Robot’s functionality, enabling perception, localization, navigation, and real-time decision-making. Our approach involves the strategic fusion of multiple sensor modalities, each contributing complementary data that enhances the robot’s understanding of its environment and its ability to operate reliably in dynamic warehouse settings.
-
-We integrate a suite of sensors to support localization, perception, and safety. Each sensor contributes distinct yet complementary information:
-
-- **2D LiDAR** for SLAM and obstacle mapping.
-- **Depth Camera** for object and human detection.
-- **IMU** for pose stability during motion.
-
----
-
 ## 🤖 Final ROS2 Architecture
 
-![ROS Architecture](assets/ros2_node_graph_final.png)
+![ROS Architecture](ros2_node_architecture_rqt_style.png)
 
 - **Topics** (solid lines): `/scan`, `/odom`, `/cmd_vel`, `/camera/depth/image_raw`  
 - **Services** (dashed lines): `/replan_path`, `/get_status`  
@@ -128,13 +116,8 @@ We integrate a suite of sensors to support localization, perception, and safety.
 ## 🎥 Gallery – Project Demonstration Videos
 
 ### 🔹 Field Demo – TurtleBot Patrolling  
-📹 
-https://youtube.com/playlist?list=PL4e6DWX5mZvaRTcvywfToLrumtm3tlkBI&si=JJDVAatZlTniiuUw   
+![Simulation](Simul1.jpg)
 
-### 🔹 Live GUI + RViz Integration  
-📹 
-
----
 
 ## 🎬 Elevator Pitch (1-Minute Video)
 
@@ -215,8 +198,6 @@ https://youtube.com/playlist?list=PL4e6DWX5mZvaRTcvywfToLrumtm3tlkBI&si=JJDVAatZ
 
 ## 🎯 Simulation
 
-- 🔗 [Simulation Run 1: Navigation](https://youtu.be/e1mFo_xL-tc)
-
 ---
 
 ## 🧠 Impact and Learning
@@ -235,7 +216,7 @@ We believe this framework is scalable to real warehouses and adaptable to inspec
 
 ## 🧾 Dataset Link
 
-📁 [Download Our Dataset (HuggingFace)](https://huggingface.co/datasets/team08/warehouse_anomalies)
+📁 [Download Our Dataset 
 
 ---
 
