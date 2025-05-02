@@ -225,15 +225,16 @@ We believe this framework is scalable to real warehouses and adaptable to inspec
 
 ## 🗓️ Weekly Milestones
 
-| Week | Hardware | Interface | Autonomy | Status |
-|------|----------|-----------|----------|------------|--------|
-| 7 | TurtleBot bring-up | GitHub Pages | Arch design | ✅ |
-| 8 | Depth/ultrasonic setup | GUI mockup | SLAM start | ✅ |
-| 9 | Sensor fusion | RViz GUI | Loc. fusion | ✅ |
-| 10 | SLAM mapping | Real-time GUI | Nav test | ✅ |
-| 11 | Costmap tuning | Alerts/logs | Patrol logic | ✅ |
-| 12 | SLAM↔AMCL mode | Full GUI ↔ ROS | Tuning | ✅ |
-| 13 | GUI display alerts | Pause/resume | Replanning | ✅ |
-| 14 | TurtleBot testing | GUI export | SLAM toggle | ✅ |
-| 15 | Full dry run | Autologging | Behavior tree | ✅ |
-| 16 | Demo setup | Final GUI build | Full test | ✅ |
+| Week | Hardware Integration               | Interface Development         | Controls & Autonomy           | Status     |
+|------|------------------------------------|-------------------------------|-------------------------------|------------|
+| 7    | TurtleBot4 bring-up, sensor validation | Set up GitHub Pages, basic project site | Define system architecture       | ✅ Complete |
+| 8    | Depth camera, ultrasonic sensor setup | RViz mockup, GUI layout draft | SLAM stack introduction        | ✅ Complete |
+| 9    | Sensor fusion (LiDAR + IMU + Odom) | GUI-RViz integration           | Localization tested with fusion | ✅ Complete |
+| 10   | SLAM and map saving setup          | Real-time plots in GUI        | SLAM navigation working demo   | ✅ Complete |
+| 11   | Costmap layers setup               | GUI: status log, alerts       | Patrol logic implementation    | ✅ Complete |
+| 12   | SLAM ↔ AMCL mode toggle prep       | Full GUI → ROS interaction    | Navigation tuning              | ✅ Complete |
+| 13   | Full GUI: alerts, metrics display  | GUI controls (pause/resume)   | Replanning, manual override    | 🔄 In Progress |
+| 14   | TurtleBot full integration         | Export GUI logs, feedback     | SLAM vs AMCL toggle test       | 🔄 In Progress |
+| 15   | Full autonomy dry run + backups    | Auto-logging, restart buttons | Behavior tree + fault handling | ⬜ Not Started |
+| 16   | Demo setup and final prep          | Final GUI build and docs      | Final validation + GUI monitor | ⬜ Not Started |
+
