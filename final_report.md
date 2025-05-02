@@ -13,6 +13,12 @@ The **Autonomous Warehouse Patrolling Robot** is a ROS2-integrated mobile roboti
 
 ---
 
+## Team Project Plan
+
+Our project centers around the design and implementation of an Autonomous Warehouse Patrolling Robot utilizing the TurtleBot4 platform, integrated with the Robot Operating System 2 (ROS2) framework. The overarching goal is to develop a scalable, low-cost robotic solution capable of performing real-time patrolling tasks in structured indoor environments such as warehouses or storage facilities.
+
+---
+
 ## 🎯 Research Question
 
 **How can low-cost mobile robotics platforms achieve reliable autonomous patrolling in structured indoor warehouse environments with real-time anomaly detection and adaptability?**
@@ -26,7 +32,7 @@ Our exploration addresses this through:
 
 ---
 
-## 🧠 Updated Project Description
+## 🧠 Project Description
 
 ### Project Scoping
 
@@ -69,9 +75,31 @@ Validation was visualized using RViz overlays, logs, and demo recordings.
 
 ---
 
-## 🗓️ Project Timeline (Gantt Chart)
+By simulating realistic warehouse conditions, our project will investigate the following:
 
-![Gantt Chart](assets/gantt_chart_final.png)
+- Multi-Sensor Fusion: Combining data from various onboard sensors to generate a coherent model of the robot’s environment and enhance localization, mapping, and situational awareness.
+  
+- Autonomous Navigation & Patrolling: Implementing SLAM (Simultaneous Localization and Mapping) techniques alongside path planning algorithms to enable the robot to patrol pre-defined or dynamically generated routes.
+
+- Real-Time Anomaly Detection: Using sensory input (such as depth and visual cues) to detect unexpected objects, humans, or hazards in the robot’s path or assigned patrol zones.
+
+- Interactive System Monitoring: Developing a custom graphical user interface (GUI) to display live robot status, environment mapping, anomaly alerts, and control interfaces for manual override or remote supervision.
+
+- Environmental Adaptability: Equipping the robot with the capability to adapt its behavior based on changing conditions such as blocked paths, dynamic obstacles, or signal loss, ensuring robustness in real-world applications.
+
+Our approach aims not only to implement a working prototype of a patrolling robot but also to provide a generalized framework for deploying autonomous agents in structured environments. Ultimately, this project aspires to demonstrate how affordable hardware combined with modular software architecture can address real-world operational needs in industrial settings — with potential extensions into areas like inventory monitoring, safety inspection, and collaborative automation.
+
+---
+
+## Sensor Integration
+
+Sensor integration lies at the core of our Autonomous Warehouse Patrolling Robot’s functionality, enabling perception, localization, navigation, and real-time decision-making. Our approach involves the strategic fusion of multiple sensor modalities, each contributing complementary data that enhances the robot’s understanding of its environment and its ability to operate reliably in dynamic warehouse settings.
+
+We integrate a suite of sensors to support localization, perception, and safety. Each sensor contributes distinct yet complementary information:
+
+- **2D LiDAR** for SLAM and obstacle mapping.
+- **Depth Camera** for object and human detection.
+- **IMU** for pose stability during motion.
 
 ---
 
@@ -101,6 +129,7 @@ Validation was visualized using RViz overlays, logs, and demo recordings.
 
 ### 🔹 Field Demo – TurtleBot Patrolling  
 📹 
+https://youtube.com/playlist?list=PL4e6DWX5mZvaRTcvywfToLrumtm3tlkBI&si=JJDVAatZlTniiuUw   
 
 ### 🔹 Live GUI + RViz Integration  
 📹 
@@ -116,13 +145,10 @@ Validation was visualized using RViz overlays, logs, and demo recordings.
 
 ## 💻 Code Walkthrough
 
-- 🔗 
 - 📦 **ROS2 Packages:**
   - `patrol_manager`: Manages waypoints and state machine
   - `sensor_fusion_node`: Integrates IMU + LiDAR
   - `gui_backend`: Publishes logs and status  
-- 📄 
-
 ---
 
 ## 📊 Sensor Data Conditioning and Fusion
