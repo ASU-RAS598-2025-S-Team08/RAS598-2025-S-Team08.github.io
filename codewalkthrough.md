@@ -2,7 +2,7 @@
 
 ## Repository
 
-🔗 [GitHub Repository](https://github.com/ASU-Team08/warehouse-patrol)
+
 
 ## ROS Packages
 
