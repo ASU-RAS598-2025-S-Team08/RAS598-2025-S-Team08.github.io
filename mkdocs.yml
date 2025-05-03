@@ -5,7 +5,7 @@ nav:
   - Home: final_report.md
   - Initial Project Plan: index.md
   - Code Walkthrough: codewalkthrough.md
-  - Simulation Outputs: Simulationoutputs.md
+  - Simulation Outputs: SimulationOutputs.md
   - Dataset: dataset.md
   - Videos: videos.md
 markdown_extensions:
