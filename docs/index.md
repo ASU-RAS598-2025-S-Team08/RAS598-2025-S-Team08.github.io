@@ -18,7 +18,7 @@ University, Class, Professor: Arizona State University, RAS 598, Dr. Aukes.
 
 Our project centers around the design and implementation of an Autonomous Warehouse Patrolling Robot utilizing the TurtleBot4 platform, integrated with the Robot Operating System 2 (ROS2) framework. The overarching goal is to develop a scalable, low-cost robotic solution capable of performing real-time patrolling tasks in structured indoor environments such as warehouses or storage facilities.
 
-![anothervisualization](anothervisualization.png)
+![visualization](v2.png)
 
 **Research Question**:  
 How can we leverage low-cost mobile robotics platforms to achieve reliable autonomous patrolling in structured indoor warehouse environments, with real-time anomaly detection and environmental adaptability?
