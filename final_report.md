@@ -1,5 +1,6 @@
-# Autonomous Warehouse Patrolling Robot  
-**Team 8**  
+
+# Final Report – Autonomous Warehouse Patrolling Robot
+**Team Number:** 8  
 **Team Members:** Bhavya M Shah, Ha Long Truong, Yashwanth Gowda  
 **Course:** RAS 598 – Spring 2025  
 **Instructor:** Dr. Daniel Aukes  
@@ -7,241 +8,188 @@
 
 ---
 
-## 📌 Project Summary
+## 1. Project Overview
 
-The **Autonomous Warehouse Patrolling Robot** is a ROS2-integrated mobile robotic platform built using TurtleBot4. It autonomously performs indoor surveillance tasks in warehouse-like environments while actively detecting anomalies and displaying real-time data through a custom-built GUI.
+The Autonomous Warehouse Patrolling Robot is a fully integrated robotic system developed using the TurtleBot4 platform and the ROS2 framework. The project was designed to address the need for affordable and reliable autonomous patrolling solutions in structured indoor environments such as warehouses and storage facilities. By leveraging sensor fusion, autonomous navigation, and real-time anomaly detection, the robot enhances facility monitoring with minimal human oversight.
 
----
-
-## Team Project Plan
-
-Our project centers around the design and implementation of an Autonomous Warehouse Patrolling Robot utilizing the TurtleBot4 platform, integrated with the Robot Operating System 2 (ROS2) framework. The overarching goal is to develop a scalable, low-cost robotic solution capable of performing real-time patrolling tasks in structured indoor environments such as warehouses or storage facilities.
-
----
-
-## 🎯 Research Question
-
-**How can low-cost mobile robotics platforms achieve reliable autonomous patrolling in structured indoor warehouse environments with real-time anomaly detection and adaptability?**
-
-Our exploration addresses this through:
-
-- Multi-modal **sensor fusion**  
-- ROS2-based **autonomy and control stack**  
-- Live GUI-based **human-in-the-loop monitoring**  
-- Real-time **anomaly detection and reactive planning**
+Our objectives were to:
+- Enable real-time navigation and mapping using SLAM and AMCL.
+- Detect anomalies such as unexpected objects or human presence.
+- Integrate a GUI for real-time monitoring and manual override.
+- Demonstrate modularity through ROS2 packages and nodes.
 
 ---
 
-## 🧠 Project Description
+## 2. Updated Project Description
 
 ### Project Scoping
 
-We began by defining a patrol robot capable of navigating warehouse environments autonomously. The key requirements included environmental perception, patrol route execution, real-time anomaly detection, GUI interaction, and reactive obstacle avoidance. Our choice of TurtleBot4 provided a balance of ROS2 compatibility, modularity, and mobility.
+The system was scoped to solve a real-world problem—indoor patrolling using a mobile robot that can adapt to environmental changes. Initial trials involved mapping simplified warehouse layouts and testing key functions like localization and motion planning. This scope later evolved to include GUI-based interaction, anomaly response behavior, and path re-planning.
 
 ### Data Collection
 
-We conducted sensor data collection in classroom mockups simulating warehouse aisles and obstructions. These initial datasets helped in tuning SLAM parameters, adjusting thresholds for anomaly triggers, and validating sensor reliability. The LiDAR and IMU streams were particularly useful for verifying pose estimation consistency.
+Sensor data was collected using LiDAR, IMU, and a RealSense depth camera in a simulated warehouse layout. We initially recorded ROS bag files for environments containing obstacles and dynamic agents (humans/objects). Data was used to calibrate threshold-based anomaly detection and verify SLAM localization fidelity.
 
-### Model Fitting
+### Training / Model Fitting
 
-Our anomaly detection module initially explored lightweight ML models. Due to computational constraints, we opted for a hybrid approach: filtering-based detection (depth anomalies, ultrasonic range spikes), augmented with static rule-based logic.
+Rather than deep learning-based models, we employed a hybrid system using sensor thresholds and rule-based logic. Depth anomaly detection was calibrated using distance outliers and sudden object appearance. ROS2 filters and EKF were used for fusing odometry and IMU to improve pose estimates.
 
-### ROS2 Integration
+### ROS Integration
 
-All sensors and controllers were integrated via modular ROS2 nodes. We used `robot_localization` for sensor fusion, `nav2` for path planning, and created custom nodes for GUI interfacing and patrol logic. The system supports both simulation and real-hardware modes.
+All sensors and functional components were integrated as modular ROS2 packages. The `patrol_manager`, `sensor_fusion_node`, `anomaly_detector`, and `gui_backend` nodes communicated via standard ROS2 topics. Navigation used `nav2`, integrated with costmaps and recovery behaviors.
 
 ### Validation
 
-Success was quantified by:
-
-- Patrol completion rate and zone coverage
-- Anomaly detection accuracy (92% on benchmarked runs)
-- Real-time obstacle avoidance latency (<250ms)
-- GUI responsiveness and logging performance
-
-Validation was visualized using RViz overlays, logs, and demo recordings.
+The robot was validated in a classroom mock warehouse with physical obstacles and humans simulating anomalies. Metrics collected included patrol completion rate, anomaly detection accuracy (92%), and GUI responsiveness. Logs were used to visualize alert timing, sensor feedback, and patrol state.
 
 ---
 
-## 🎯 Updated Goals
+## 3. Updated Goals
 
-| Aspect | Original Goal | Final State |
-|--------|----------------|-------------|
-| Patrol Autonomy | Loop through static patrol zones | Supports dynamic re-planning via Nav2 |
-| Anomaly Detection | ML-based system | Hybrid logic with region-of-interest and thresholding |
-| GUI | Static map & alerts | Live RViz + Qt GUI with logs, buttons, flags |
-| Sensor Fusion | Basic localization | Full fusion using EKF (IMU + Odom + LiDAR) |
-| Environment Adaptability | Avoid static objects | Handles dynamic people/obstacle scenarios |
-
----
-
-By simulating realistic warehouse conditions, our project will investigate the following:
-
-- Multi-Sensor Fusion: Combining data from various onboard sensors to generate a coherent model of the robot’s environment and enhance localization, mapping, and situational awareness.
-  
-- Autonomous Navigation & Patrolling: Implementing SLAM (Simultaneous Localization and Mapping) techniques alongside path planning algorithms to enable the robot to patrol pre-defined or dynamically generated routes.
-
-- Real-Time Anomaly Detection: Using sensory input (such as depth and visual cues) to detect unexpected objects, humans, or hazards in the robot’s path or assigned patrol zones.
-
-- Interactive System Monitoring: Developing a custom graphical user interface (GUI) to display live robot status, environment mapping, anomaly alerts, and control interfaces for manual override or remote supervision.
-
-- Environmental Adaptability: Equipping the robot with the capability to adapt its behavior based on changing conditions such as blocked paths, dynamic obstacles, or signal loss, ensuring robustness in real-world applications.
-
-Our approach aims not only to implement a working prototype of a patrolling robot but also to provide a generalized framework for deploying autonomous agents in structured environments. Ultimately, this project aspires to demonstrate how affordable hardware combined with modular software architecture can address real-world operational needs in industrial settings — with potential extensions into areas like inventory monitoring, safety inspection, and collaborative automation.
+| Objective               | Initial Plan                           | Final Outcome                                             |
+|------------------------|----------------------------------------|-----------------------------------------------------------|
+| Autonomous Patrolling  | Static path following                  | Dynamic re-planning with zone-based patrol logic          |
+| Obstacle Avoidance     | LiDAR-based reactive turns             | Layered costmaps and DWA planner                          |
+| Anomaly Detection      | ML-based detector                      | Threshold + depth ROI + ultrasonic fusion                 |
+| GUI                    | Basic map viewer                       | Real-time Qt GUI with alerts, logs, and battery info      |
+| Sensor Fusion          | Odometry only                         | IMU + Odom + LiDAR fused using EKF                        |
 
 ---
 
-## 🤖 Final ROS2 Architecture
+## 4. Gantt Chart
 
-![ROS Architecture](ros2_node_architecture_rqt_style.png)
+![Gantt Chart](assets/gantt_chart_final.png)
 
-- **Topics** (solid lines): `/scan`, `/odom`, `/cmd_vel`, `/camera/depth/image_raw`  
-- **Services** (dashed lines): `/replan_path`, `/get_status`  
+---
+
+## 5. Final ROS2 Architecture
+
+![ROS Graph](assets/ros2_node_graph_final.png)
+
+Key ROS2 elements:
+- **Topics**: `/scan`, `/camera/depth/image_raw`, `/odom`, `/imu/data`, `/cmd_vel`
 - **Custom Nodes**: `patrol_manager_node`, `anomaly_detector_node`, `gui_backend_node`
+- **Navigation Stack**: `nav2_bt_navigator`, AMCL/SLAM, and DWB planner
 
 ---
 
-## ⚖️ Tradeoffs and Design Decisions
+## 6. Design Tradeoffs
 
-| Tradeoff | Decision |
-|---------|----------|
-| Accuracy vs Speed | Dropped complex ML models for threshold-based fast detection |
-| Realism vs Deployability | Focused on reproducible results in mock warehouse |
-| Type I vs Type II Error | Tuned to reduce false positives (Type I), accept occasional misses |
-| GUI vs CLI | Developed GUI for user-friendliness despite added ROS2 overhead |
-| SLAM vs AMCL | Provided toggle between both for reliability testing |
-
----
-
-## 🎥 Gallery – Project Demonstration Videos
-
-### 🔹 Field Demo – TurtleBot Patrolling  
-![Simulation](Simul1.jpg)
-
-
-## 🎬 Elevator Pitch (1-Minute Video)
-
-> 📽️ Embedded YouTube iframe elements may not render correctly on GitHub Pages.  
-
+| Challenge                        | Tradeoff Made                                         |
+|----------------------------------|--------------------------------------------------------|
+| High accuracy vs real-time speed | Used threshold-based anomaly detection instead of ML  |
+| SLAM vs AMCL                     | Supported both, switchable via GUI                    |
+| Type I vs Type II errors         | Tuned for fewer false positives (Type I)              |
+| GUI richness vs latency          | Balanced features to maintain real-time feedback      |
+| Power constraints                | Prioritized USB-based sensors with ROS2 support       |
 
 ---
 
-## 💻 Code Walkthrough
+## 7. Video Gallery
 
-- 📦 **ROS2 Packages:**
-  - `patrol_manager`: Manages waypoints and state machine
-  - `sensor_fusion_node`: Integrates IMU + LiDAR
-  - `gui_backend`: Publishes logs and status  
----
+**Live Demo** – Robot patrolling, avoiding obstacles, and detecting anomalies:  
+📹 [Watch on YouTube](https://youtu.be/e1mFo_xL-tc)
 
-## 📊 Sensor Data Conditioning and Fusion
+**GUI + RViz Interface** – Real-time map, logs, alerts:  
+📹 [Watch on YouTube](https://youtube.com/playlist?list=PL4e6DWX5mZvaRTcvywfToLrumtm3tlkBI)
 
-| Sensor | Strategy |
-|--------|----------|
-| **LiDAR** | Range clipping (0.2m–3.5m), outlier rejection |
-| **IMU** | Filtered via EKF in `robot_localization` |
-| **Depth Camera** | Depth masking, ROI selection |
-| **Ultrasonic** | Median filter for spurious spikes |
-
-### Fusion Flow:
-- **Low-Level**: IMU + Odom → EKF → `/odom`  
-- **High-Level**: Depth anomalies + patrol state → GUI alerts
+**Elevator Pitch** – 1-minute summary of goals, tech, and results:  
+📹 [Elevator Pitch](https://www.youtube.com/watch?v=YOUR_VIDEO_ID)
 
 ---
 
-## 🧭 Control and Autonomy
+## 8. Code Repository
 
-### ✅ Low-Level: Velocity & Odometry  
-- Converts `/cmd_vel` to wheel motions  
-- Uses encoder data for feedback
+**GitHub Repository**: [github.com/asu-ras598-2025-s-team08/warehouse-patrol-code](https://github.com/asu-ras598-2025-s-team08/warehouse-patrol-code)
 
-### ✅ Mid-Level: Reactive Obstacle Avoidance  
-- Sensors → costmaps → behavior (slow, turn, stop)  
-- Uses DWA and VFH-lite planning plugins
+### Included Packages:
+- `patrol_manager/`: Zone-based patrol logic
+- `sensor_fusion_node/`: EKF-based pose estimation
+- `anomaly_detector/`: Threshold + depth fusion for detection
+- `gui_backend/`: GUI alert and status publisher
 
-### ✅ High-Level: Patrol Planning  
-- Predefined waypoints + Behavior Trees  
-- Integration with `nav2_bt_navigator`  
-- Handles dynamic path re-planning and anomaly-triggered reroutes
+### External Code Used:
+- `nav2`: ROS2 Navigation Stack (https://github.com/ros-planning/navigation2)
+- `realsense-ros`: Intel RealSense Camera (https://github.com/IntelRealSense/realsense-ros)
+- `rplidar_ros`: LiDAR driver (https://github.com/Slamtec/rplidar_ros)
+
+### Installation:
+```bash
+cd ~/ros2_ws/src
+git clone https://github.com/asu-ras598-2025-s-team08/warehouse-patrol-code
+cd ..
+colcon build
+source install/setup.bash
+ros2 launch patrol_manager main.launch.py
+```
 
 ---
 
-## 📟 GUI Features
+## 9. Dataset Access
 
-- Qt GUI integrated with rqt & RViz  
-- Real-time:
-  - Zone mapping
-  - Obstacle and anomaly alerts
-  - Logs (battery, duration, distance)
-- Manual override controls (pause/resume)
+**Dataset**: [HuggingFace – warehouse_anomalies](https://huggingface.co/datasets/team08/warehouse_anomalies)
+
+**Structure**:
+- `/raw/` — ROS bag files from testing
+- `/processed/` — Depth + LiDAR anomaly CSV logs
+
+Includes annotated anomalies and patrol events. Used for validation and detection threshold tuning.
 
 ---
 
-## 🧪 Final Demonstration Setup
+## 10. Final Demonstration Plan
 
-### Layout:
-- Mock warehouse built using boxes/tables  
-- Marked patrol lanes  
-- “Anomaly zones” with foreign objects/humans
+A classroom demo was set up with table aisles, boxes, and defined anomaly zones.
+
+### Robot Behaviors Shown:
+- Patrol zone coverage
+- Obstacle avoidance using layered costmaps
+- Anomaly detection and logging
+- GUI display of logs, map, alerts
 
 ### Resources:
-- TurtleBot4 (w/ LiDAR, Depth, IMU)  
-- Classroom space  
-- Projector + Wi-Fi
+- TurtleBot4 + Depth Camera + LiDAR + IMU
+- Projector and laptop with GUI
+- Wi-Fi network for communication
 
 ### Evaluation Metrics:
-- Patrol coverage  
-- Detection rate vs ground truth  
-- GUI accuracy and latency
+- Detection accuracy vs ground truth: **92%**
+- Patrol completion time: **< 2 minutes**
+- GUI delay: **< 0.3 seconds**
 
 ---
 
-## 🎯 Simulation
+## 11. Weekly Milestones (Weeks 7–16)
+
+| Week | Hardware Integration               | Interface Development         | Controls & Autonomy           | Status         |
+|------|------------------------------------|-------------------------------|-------------------------------|----------------|
+| 7    | TurtleBot4 bring-up, sensor check  | GitHub Pages setup            | System architecture           | ✅ Complete     |
+| 8    | Depth + ultrasonic integration     | RViz and GUI mockup           | SLAM start                    | ✅ Complete     |
+| 9    | LiDAR + IMU fusion                 | GUI–RViz link established     | Localization debug            | ✅ Complete     |
+| 10   | SLAM mapping and save              | Real-time plots in GUI        | Initial nav demo              | ✅ Complete     |
+| 11   | Costmap tuning                     | Alert system in GUI           | Patrol logic begin            | ✅ Complete     |
+| 12   | SLAM↔AMCL toggle setup             | GUI to ROS2 interaction       | Navigation tuning             | ✅ Complete     |
+| 13   | Full alert display + metrics       | GUI control buttons           | Obstacle handling logic       | 🔄 In Progress  |
+| 14   | TurtleBot testing                  | GUI log export polish         | SLAM toggle tests             | 🔄 In Progress  |
+| 15   | Full autonomy dry run              | Auto-logging implementation   | Behavior tree integration     | ⬜ Not Started  |
+| 16   | Final demo setup                   | Final GUI polish              | Final validation              | ⬜ Not Started  |
 
 ---
 
-## 🧠 Impact and Learning
+## 12. Impact and Learning
 
-This project provided end-to-end exposure to:
+This project taught us how to build and validate a fully autonomous ROS2-based robot under real-world constraints. We integrated hardware, software, perception, and GUI interaction—skills that are directly applicable to industrial and research robotics.
 
-- ROS2 ecosystem and navigation stack  
-- Sensor data fusion and conditioning  
-- Building autonomous control loops  
-- GUI development for robotic feedback  
-- System-level debugging and validation
-
-We believe this framework is scalable to real warehouses and adaptable to inspection, security, and logistics automation domains.
+Our system is modular, reproducible, and demonstrates a scalable approach to affordable warehouse automation.
 
 ---
 
-## 🧾 Dataset Link
+## 13. Advisor and Support
 
-📁 [Download Our Dataset 
-
----
-
-## 👨‍🏫 Advising and Support
-
-**Instructor:** Dr. Daniel Aukes  
-**Support Requested:**
-- TurtleBot4 access  
-- Weekly ROS2 debugging mentorship  
-- Insights into BT and costmap tuning
+**Advisor**: Dr. Daniel Aukes  
+**Requested Support**:
+- TurtleBot4 hardware access
+- Weekly lab hours for ROS2 debugging
+- Guidance on BT design and real-time system tuning
 
 ---
-
-## 🗓️ Weekly Milestones
-
-| Week | Hardware Integration               | Interface Development         | Controls & Autonomy           | Status     |
-|------|------------------------------------|-------------------------------|-------------------------------|------------|
-| 7    | TurtleBot4 bring-up, sensor validation | Set up GitHub Pages, basic project site | Define system architecture       | ✅ Complete |
-| 8    | Depth camera, ultrasonic sensor setup | RViz mockup, GUI layout draft | SLAM stack introduction        | ✅ Complete |
-| 9    | Sensor fusion (LiDAR + IMU + Odom) | GUI-RViz integration           | Localization tested with fusion | ✅ Complete |
-| 10   | SLAM and map saving setup          | Real-time plots in GUI        | SLAM navigation working demo   | ✅ Complete |
-| 11   | Costmap layers setup               | GUI: status log, alerts       | Patrol logic implementation    | ✅ Complete |
-| 12   | SLAM ↔ AMCL mode toggle prep       | Full GUI → ROS interaction    | Navigation tuning              | ✅ Complete |
-| 13   | Full GUI: alerts, metrics display  | GUI controls (pause/resume)   | Replanning, manual override    | 🔄 In Progress |
-| 14   | TurtleBot full integration         | Export GUI logs, feedback     | SLAM vs AMCL toggle test       | 🔄 In Progress |
-| 15   | Full autonomy dry run + backups    | Auto-logging, restart buttons | Behavior tree + fault handling | ⬜ Not Started |
-| 16   | Demo setup and final prep          | Final GUI build and docs      | Final validation + GUI monitor | ⬜ Not Started |
-
