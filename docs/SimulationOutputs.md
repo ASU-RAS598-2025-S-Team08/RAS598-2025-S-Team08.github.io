@@ -1,11 +1,11 @@
 ## Simulation Layout
 
-![Simimg](simul1.jpg)
+![image1](simul1.jpg)
 ---
-![Simimg2](simul2.jpg)
+![image2](simul2.jpg)
 ---
 ## Simulation 
-![Simuimg](simulationimage.png)
+![image3](simulationimage.png)
 ---
 ## 📦 Autonomous Patrol in Action
 
