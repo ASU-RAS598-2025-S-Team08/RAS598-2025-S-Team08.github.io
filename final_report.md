@@ -94,7 +94,7 @@ Key ROS2 elements:
 📹 [Watch on YouTube]()
 
 **Elevator Pitch** – 1-minute summary of goals, tech, and results:  
-📹 [Elevator Pitch](https://youtu.be/srB0Ry8rDLg)
+📹 [![Watch the Video](assets/video_thumbnail.png)](https://youtu.be/srB0Ry8rDLg)
 
 ---
 
