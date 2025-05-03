@@ -56,12 +56,6 @@ The robot was validated in a classroom mock warehouse with physical obstacles an
 
 ---
 
-## Gantt Chart
-
-![Gantt Chart](assets/gantt_chart_final.png)
-
----
-
 ## Final ROS2 Architecture
 
 ![ROS Graph](assets/ros2_node_graph_final.png)
@@ -91,6 +85,9 @@ This project taught us how to build and validate a fully autonomous ROS2-based r
 
 Our system is modular, reproducible, and demonstrates a scalable approach to affordable warehouse automation.
 
+---
+## Simulation
+![Simimg](simulationimage.jpg)
 ---
 
 ## Final Demonstration Plan
@@ -129,6 +126,12 @@ A classroom demo was set up with table aisles, boxes, and defined anomaly zones.
 | 14   | TurtleBot testing                  | GUI log export polish         | SLAM toggle tests             | 🔄 In Progress  |
 | 15   | Full autonomy dry run              | Auto-logging implementation   | Behavior tree integration     | ⬜ Not Started  |
 | 16   | Final demo setup                   | Final GUI polish              | Final validation              | ⬜ Not Started  |
+
+---
+
+## Gantt Chart
+
+![Gantt Chart](assets/gantt_chart_final.png)
 
 ---
 
