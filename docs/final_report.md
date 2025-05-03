@@ -1,5 +1,5 @@
 
-# Final Report – Autonomous Warehouse Patrolling Robot
+# Autonomous Warehouse Patrolling Robot
 **Team Number:** 8  
 **Team Members:** Bhavya M Shah, Ha Long Truong, Yashwanth Gowda  
 **Course:** RAS 598 – Spring 2025  
@@ -80,6 +80,11 @@ Key ROS2 elements:
 
 ---
 
+## Simulation Image
+![Simimg](simulationimage.jpg)
+
+---
+
 ## Impact and Learning
 
 This project taught us how to build and validate a fully autonomous ROS2-based robot under real-world constraints. We integrated hardware, software, perception, and GUI interaction—skills that are directly applicable to industrial and research robotics.
@@ -87,8 +92,17 @@ This project taught us how to build and validate a fully autonomous ROS2-based r
 Our system is modular, reproducible, and demonstrates a scalable approach to affordable warehouse automation.
 
 ---
-## Simulation
-![Simimg](simulationimage.jpg)
+
+## Autonomous Patrol in Action
+
+<iframe width="560" height="315"
+  src="https://www.youtube.com/embed/e1mFo_xL-tc"
+  title="Warehouse Robot Demo"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  allowfullscreen>
+</iframe>
+
 ---
 
 ## Final Demonstration Plan
@@ -113,6 +127,18 @@ A classroom demo was set up with table aisles, boxes, and defined anomaly zones.
 
 ---
 
+## Elevator Pitch
+
+<iframe width="560" height="315"
+  src="https://www.youtube.com/embed/srB0Ry8rDLg"
+  title="Elevator Pitch"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  allowfullscreen>
+</iframe>
+
+---
+
 ## Weekly Milestones (Weeks 7–16)
 
 | Week | Hardware Integration               | Interface Development         | Controls & Autonomy           | Status         |
@@ -123,10 +149,10 @@ A classroom demo was set up with table aisles, boxes, and defined anomaly zones.
 | 10   | SLAM mapping and save              | Real-time plots in GUI        | Initial nav demo              | ✅ Complete     |
 | 11   | Costmap tuning                     | Alert system in GUI           | Patrol logic begin            | ✅ Complete     |
 | 12   | SLAM↔AMCL toggle setup             | GUI to ROS2 interaction       | Navigation tuning             | ✅ Complete     |
-| 13   | Full alert display + metrics       | GUI control buttons           | Obstacle handling logic       | 🔄 In Progress  |
-| 14   | TurtleBot testing                  | GUI log export polish         | SLAM toggle tests             | 🔄 In Progress  |
-| 15   | Full autonomy dry run              | Auto-logging implementation   | Behavior tree integration     | ⬜ Not Started  |
-| 16   | Final demo setup                   | Final GUI polish              | Final validation              | ⬜ Not Started  |
+| 13   | Full alert display + metrics       | GUI control buttons           | Obstacle handling logic       | ✅ Complete     |
+| 14   | TurtleBot testing                  | GUI log export polish         | SLAM toggle tests             | ✅ Complete     |
+| 15   | Full autonomy dry run              | Auto-logging implementation   | Behavior tree integration     | ✅ Complete     |
+| 16   | Final demo setup                   | Final GUI polish              | Final validation              | ✅ Complete     |
 
 ---
 
