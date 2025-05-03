@@ -1,0 +1,16 @@
+site_name: Autonomous Warehouse Patrolling Robot
+theme:
+  name: material
+nav:
+  - Home: index.md
+  - Final Report: final_report.md
+  - Code Walkthrough: code.md
+  - Dataset: dataset.md
+  - Videos: videos.md
+markdown_extensions:
+  - toc:
+      permalink: true
+  - admonition
+  - codehilite
+  - footnotes
+  - pymdownx.superfences
