@@ -4,7 +4,7 @@
 **Team Members:** Bhavya M Shah, Ha Long Truong, Yashwanth Gowda  
 **Course:** RAS 598 – Spring 2025  
 **Instructor:** Dr. Daniel Aukes  
-**University:** Arizona State University  
+**University:** Arizona State University 
 
 ---
 
