@@ -8,7 +8,7 @@
 
 ---
 
-## 1. Project Overview
+## Project Overview
 
 The Autonomous Warehouse Patrolling Robot is a fully integrated robotic system developed using the TurtleBot4 platform and the ROS2 framework. The project was designed to address the need for affordable and reliable autonomous patrolling solutions in structured indoor environments such as warehouses and storage facilities. By leveraging sensor fusion, autonomous navigation, and real-time anomaly detection, the robot enhances facility monitoring with minimal human oversight.
 
@@ -20,7 +20,7 @@ Our objectives were to:
 
 ---
 
-## 2. Updated Project Description
+## Updated Project Description
 
 ### Project Scoping
 
@@ -44,7 +44,7 @@ The robot was validated in a classroom mock warehouse with physical obstacles an
 
 ---
 
-## 3. Updated Goals
+## Updated Goals
 
 | Objective               | Initial Plan                           | Final Outcome                                             |
 |------------------------|----------------------------------------|-----------------------------------------------------------|
@@ -56,13 +56,13 @@ The robot was validated in a classroom mock warehouse with physical obstacles an
 
 ---
 
-## 4. Gantt Chart
+## Gantt Chart
 
 ![Gantt Chart](assets/gantt_chart_final.png)
 
 ---
 
-## 5. Final ROS2 Architecture
+## Final ROS2 Architecture
 
 ![ROS Graph](assets/ros2_node_graph_final.png)
 
@@ -73,7 +73,7 @@ Key ROS2 elements:
 
 ---
 
-## 6. Design Tradeoffs
+## Design Tradeoffs
 
 | Challenge                        | Tradeoff Made                                         |
 |----------------------------------|--------------------------------------------------------|
@@ -85,61 +85,15 @@ Key ROS2 elements:
 
 ---
 
-## 7. Video Gallery
+## Impact and Learning
 
-**Live Demo** – Robot patrolling, avoiding obstacles, and detecting anomalies:  
-📹 [Watch on YouTube]()
+This project taught us how to build and validate a fully autonomous ROS2-based robot under real-world constraints. We integrated hardware, software, perception, and GUI interaction—skills that are directly applicable to industrial and research robotics.
 
-**GUI + RViz Interface** – Real-time map, logs, alerts:  
-📹 [Watch on YouTube]()
-
-**Elevator Pitch** – 1-minute summary of goals, tech, and results:  
-📹 <iframe width="560" height="315"
-  src="https://www.youtube.com/embed/srB0Ry8rDLg"
-  title="YouTube video player"
-  frameborder="0"
-  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-  allowfullscreen>
-</iframe>
-
+Our system is modular, reproducible, and demonstrates a scalable approach to affordable warehouse automation.
 
 ---
 
-## 8. Code Repository
-
-**GitHub Repository**: [github.com/asu-ras598-2025-s-team08/warehouse-patrol-code](https://github.com/asu-ras598-2025-s-team08/warehouse-patrol-code)
-
-### Included Packages:
-- `patrol_manager/`: Zone-based patrol logic
-- `sensor_fusion_node/`: EKF-based pose estimation
-- `anomaly_detector/`: Threshold + depth fusion for detection
-- `gui_backend/`: GUI alert and status publisher
-
-### External Code Used:
-- `nav2`: ROS2 Navigation Stack (https://github.com/ros-planning/navigation2)
-- `realsense-ros`: Intel RealSense Camera (https://github.com/IntelRealSense/realsense-ros)
-- `rplidar_ros`: LiDAR driver (https://github.com/Slamtec/rplidar_ros)
-
-### Installation:
-```bash
-cd ~/ros2_ws/src
-git clone https://github.com/asu-ras598-2025-s-team08/warehouse-patrol-code
-cd ..
-colcon build
-source install/setup.bash
-ros2 launch patrol_manager main.launch.py
-```
-
----
-
-## 9. Dataset Access
-
-
-Includes annotated anomalies and patrol events. Used for validation and detection threshold tuning.
-
----
-
-## 10. Final Demonstration Plan
+## Final Demonstration Plan
 
 A classroom demo was set up with table aisles, boxes, and defined anomaly zones.
 
@@ -161,7 +115,7 @@ A classroom demo was set up with table aisles, boxes, and defined anomaly zones.
 
 ---
 
-## 11. Weekly Milestones (Weeks 7–16)
+## Weekly Milestones (Weeks 7–16)
 
 | Week | Hardware Integration               | Interface Development         | Controls & Autonomy           | Status         |
 |------|------------------------------------|-------------------------------|-------------------------------|----------------|
@@ -178,15 +132,7 @@ A classroom demo was set up with table aisles, boxes, and defined anomaly zones.
 
 ---
 
-## 12. Impact and Learning
-
-This project taught us how to build and validate a fully autonomous ROS2-based robot under real-world constraints. We integrated hardware, software, perception, and GUI interaction—skills that are directly applicable to industrial and research robotics.
-
-Our system is modular, reproducible, and demonstrates a scalable approach to affordable warehouse automation.
-
----
-
-## 13. Advisor and Support
+## Advisor and Support
 
 **Advisor**: Dr. Daniel Aukes  
 **Requested Support**:
