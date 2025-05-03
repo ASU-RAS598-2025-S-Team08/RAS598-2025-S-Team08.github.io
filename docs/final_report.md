@@ -19,8 +19,9 @@ Our objectives were to:
 - Demonstrate modularity through ROS2 packages and nodes.
 
 ---
-
-## Updated Project Description
+![v2](v2.png)
+---
+## Project Description
 
 ### Project Scoping
 
@@ -44,7 +45,7 @@ The robot was validated in a classroom mock warehouse with physical obstacles an
 
 ---
 
-## Updated Goals
+## Goals
 
 | Objective               | Initial Plan                           | Final Outcome                                             |
 |------------------------|----------------------------------------|-----------------------------------------------------------|
