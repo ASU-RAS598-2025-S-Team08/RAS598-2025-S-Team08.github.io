@@ -1,7 +1,5 @@
 # Code Walkthrough
 
-## Repository
-
 ## ROS Packages
 
 - `patrol_control`: Handles path planning and state transitions
