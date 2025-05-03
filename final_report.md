@@ -88,13 +88,13 @@ Key ROS2 elements:
 ## 7. Video Gallery
 
 **Live Demo** – Robot patrolling, avoiding obstacles, and detecting anomalies:  
-📹 [Watch on YouTube](https://youtu.be/e1mFo_xL-tc)
+📹 [Watch on YouTube]()
 
 **GUI + RViz Interface** – Real-time map, logs, alerts:  
-📹 [Watch on YouTube](https://youtube.com/playlist?list=PL4e6DWX5mZvaRTcvywfToLrumtm3tlkBI)
+📹 [Watch on YouTube]()
 
 **Elevator Pitch** – 1-minute summary of goals, tech, and results:  
-📹 [Elevator Pitch](https://www.youtube.com/watch?v=YOUR_VIDEO_ID)
+📹 [Elevator Pitch](https://youtu.be/srB0Ry8rDLg)
 
 ---
 
@@ -127,11 +127,6 @@ ros2 launch patrol_manager main.launch.py
 
 ## 9. Dataset Access
 
-**Dataset**: [HuggingFace – warehouse_anomalies](https://huggingface.co/datasets/team08/warehouse_anomalies)
-
-**Structure**:
-- `/raw/` — ROS bag files from testing
-- `/processed/` — Depth + LiDAR anomaly CSV logs
 
 Includes annotated anomalies and patrol events. Used for validation and detection threshold tuning.
 
