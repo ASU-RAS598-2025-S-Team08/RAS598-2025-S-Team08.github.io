@@ -1,4 +1,4 @@
-# Autonomous Warehouse Patrolling Robot
+# Initial Project Plan - Autonomous Warehouse Patrolling Robot
 
 ---
 
