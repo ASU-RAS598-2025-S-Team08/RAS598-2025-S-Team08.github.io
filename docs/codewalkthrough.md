@@ -115,4 +115,4 @@ You can modify this to send patrol waypoints dynamically, or integrate it with a
 ## 🗂️ Repository Access
 
 You can find the complete codebase here:  
-📦 [warehouse_simulation-main](https://github.com/YOUR_USERNAME/warehouse_simulation-main)
+📦 [warehouse_simulation-main](https://github.com/ASU-RAS598-2025-S-Team08/warehouse_simulation)
