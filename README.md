@@ -61,9 +61,8 @@ rviz2
 
 ## 🎥 Video Demonstration
 
-- Simulation Demo:
-  <iframe width="560" height="315" src="https://www.youtube.com/embed/e1mFo_xL-tc?si=LL2-PQUI1WnQYM9X" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-
+- Simulation Demo: Watch Here : [![Watch the demo]([https://www.youtube.com/watch?v=YOUTUBE_VIDEO_ID](https://youtu.be/e1mFo_xL-tc?si=ib9iUI2zb0CRulOy))
+ 
 ---
 
 ## 👥 Team Members
