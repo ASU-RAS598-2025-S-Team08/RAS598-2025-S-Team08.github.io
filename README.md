@@ -61,7 +61,8 @@ rviz2
 
 ## 🎥 Video Demonstration
 
-- Simulation Demo: Watch Here : [![Watch the demo]([https://www.youtube.com/watch?v=YOUTUBE_VIDEO_ID](https://youtu.be/e1mFo_xL-tc?si=ib9iUI2zb0CRulOy))
+- Simulation Demo: Watch Here : [Watch our demo video](https://youtu.be/e1mFo_xL-tc?si=nqHWN2RykVblXiYx)
+
  
 ---
 
