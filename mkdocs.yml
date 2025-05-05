@@ -7,6 +7,7 @@ nav:
   - Code Walkthrough: codewalkthrough.md
   - Dataset: dataset.md
   - Videos: videos.md
+  - ROS2 Architecture: ros2_architecture.md
 markdown_extensions:
   - toc:
       permalink: true
