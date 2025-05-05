@@ -8,7 +8,7 @@ This page consolidates the key visual results and architectural outputs from the
 
 A simulated rqt_graph-style layout based on all nodes, topics, and services active during robot navigation.
 
-![ROS2 Architecture](assets/ros2nodearch.png)
+<p align="center"><img src="assets/ros2nodearch.png" width="800" alt="ROS2 Architecture"/></p>
 
 ---
 
@@ -16,7 +16,7 @@ A simulated rqt_graph-style layout based on all nodes, topics, and services acti
 
 This diagram simulates a snapshot of the live ROS2 communication graph generated using `rqt_graph`.
 
-![rqt_graph](assets/rqtgraph.png)
+<p align="center"><img src="assets/rqtgraph.png" width="800" alt="rqt_graph"/></p>
 
 ---
 
@@ -24,7 +24,7 @@ This diagram simulates a snapshot of the live ROS2 communication graph generated
 
 Shows how many patrol zones were successfully visited compared to the expected mission plan.
 
-![Navigation Accuracy](assets/navigation_accuracy_graph.png)
+<p align="center"><img src="assets/navigation_accuracy_graph.png" width="800" alt="Navigation Accuracy"/></p>
 
 ---
 
@@ -32,7 +32,7 @@ Shows how many patrol zones were successfully visited compared to the expected m
 
 Illustrates the detection performance across different anomaly types using simulated ground truth.
 
-![Anomaly Detection](assets/anomaly_detection_graph.png)
+<p align="center"><img src="assets/anomaly_detection_graph.png" width="800" alt="Anomaly Detection"/></p>
 
 ---
 
@@ -64,25 +64,25 @@ Illustrates the detection performance across different anomaly types using simul
 
 ---
 
-![simul1](assets/Simul1.jpg) 
+<p align="center"><img src="assets/Simul1.jpg" width="800" alt="simul1"/></p> 
 
 ---
 
-![simul2](assets/Simul2.jpg) 
+<p align="center"><img src="assets/Simul2.jpg" width="800" alt="simul2"/></p> 
 
 ---
 
-![simul3](assets/Simul3.jpg) 
+<p align="center"><img src="assets/Simul3.jpg" width="800" alt="simul3"/></p> 
 
 ---
 
-![simulationimage](assets/simulationimage.jpg)
+<p align="center"><img src="assets/simulationimage.jpg" width="800" alt="simulationimage"/></p>
 
 ---
 
 ### Web-Application Screenshot
 
-![webapp](assets/webapp.jpg)
+<p align="center"><img src="assets/webapp.jpg" width="800" alt="webapp"/></p>
 
 ---
 
