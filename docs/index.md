@@ -19,7 +19,7 @@ Our objectives were to:
 - Demonstrate modularity through ROS2 packages and nodes.
 
 ---
-![v2](v2.png)
+![v2](assets/v2.png)
 ---
 ## Project Description
 
@@ -134,7 +134,7 @@ The robot was validated in a classroom mock warehouse with physical obstacles an
 ---
 
 ## Simulation Image
-![Simimg](simulationimage.jpg)
+![Simimg](assets/simulationimage.jpg)
 
 ---
 
