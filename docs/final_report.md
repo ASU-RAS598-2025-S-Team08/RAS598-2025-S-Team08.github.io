@@ -115,10 +115,9 @@ The robot was validated in a classroom mock warehouse with physical obstacles an
 
 ---
 
+## ✅ Diagram: Visual ROS2 Graph
 
-![ROS Graph](assets/ros2_node_graph_final.png)
-
-
+📷 ![ROS2 Architecture Diagram](assets/ros2arch.png)
 
 ---
 
