@@ -2,8 +2,8 @@ site_name: Autonomous Warehouse Patrolling Robot
 theme:
   name: material
 nav:
-  - Home: final_report.md
-  - Initial Project Plan: index.md
+  - Home: index.md
+  - Initial Project Plan: initialplan.md
   - Code Walkthrough: codewalkthrough.md
   - Videos: videos.md
   - ROS2 Architecture: ros2_architecture.md
