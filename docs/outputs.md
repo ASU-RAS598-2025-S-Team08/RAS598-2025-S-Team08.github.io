@@ -12,11 +12,11 @@ A simulated rqt_graph-style layout based on all nodes, topics, and services acti
 
 ---
 
-## 🧠 rqt_graph Snapshot (Simulated)
+## 🧠 rqt_graph Snapshot
 
 This diagram simulates a snapshot of the live ROS2 communication graph generated using `rqt_graph`.
 
-![rqt_graph](assets/final_ros2_graph.png)
+![rqt_graph](assets/ros2arch.png)
 
 ---
 
@@ -37,8 +37,6 @@ Illustrates the detection performance across different anomaly types using simul
 ---
 
 ## 🎥 Demonstration Videos
-
-# 🎥 Project Demo Videos
 
 ## 📦 Autonomous Patrol in Action
 
