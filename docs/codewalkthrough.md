@@ -1,11 +1,11 @@
 
-# 🧭 Code Walkthrough – Autonomous Warehouse Patrolling Robot
+# Code Walkthrough – Autonomous Warehouse Patrolling Robot
 
 This walkthrough describes the structure and functionality of our ROS2 codebase, which powers the robot's simulation, navigation, and goal-based patrolling inside a custom warehouse environment.
 
 ---
 
-## 📁 Packages Overview
+## Packages Overview
 
 | Package              | Purpose                                          |
 |----------------------|--------------------------------------------------|
@@ -14,13 +14,13 @@ This walkthrough describes the structure and functionality of our ROS2 codebase,
 
 ---
 
-## 📦 `custom_world_pkg`
+## `custom_world_pkg`
 
 ### ▶ Purpose
 
 This package defines a **custom Gazebo warehouse world** complete with shelves and patrol lanes. It allows realistic simulation of patrolling behavior in structured environments.
 
-### 📂 Key Structure
+### Key Structure
 
 ```
 custom_world_pkg/
@@ -32,7 +32,7 @@ custom_world_pkg/
 ├── package.xml / CMakeLists.txt         # Standard ROS2 package setup
 ```
 
-### 🛠 Launch the Simulation
+### Launch the Simulation
 
 ```bash
 ros2 launch custom_world_pkg launch_simulation.launch.py
@@ -42,7 +42,7 @@ This opens Gazebo with a preloaded warehouse layout and the TurtleBot4 robot.
 
 ---
 
-## 📦 `path_planner_pkg`
+## `path_planner_pkg`
 
 ### ▶ Purpose
 
@@ -51,7 +51,7 @@ This is the control and navigation package. It provides:
 - Navigation using Nav2 stack
 - Code to send custom navigation goals
 
-### 📂 Key Structure
+### Key Structure
 
 ```
 path_planner_pkg/
@@ -66,14 +66,14 @@ path_planner_pkg/
 ├── resource/ / test/                   # ROS2-specific folders
 ```
 
-### 🧠 Core File: `custom_goal_sender.py`
+### Core File: `custom_goal_sender.py`
 
 This node:
 - Initializes a ROS2 node using `rclpy`
 - Publishes a `PoseStamped` goal to the Nav2 stack
 - Logs success/failure from the `NavigateToPose` action client
 
-#### 🔹 Example Usage:
+#### Example Usage:
 
 ```bash
 ros2 run path_planner custom_goal_sender
@@ -90,7 +90,7 @@ You can modify this to send patrol waypoints dynamically, or integrate it with a
 
 ---
 
-## 🚀 How the Packages Work Together
+## How the Packages Work Together
 
 ```text
 [custom_world_pkg] → Launches Gazebo simulation with TurtleBot4
@@ -104,7 +104,7 @@ You can modify this to send patrol waypoints dynamically, or integrate it with a
 
 ---
 
-## 🧪 Testing & Debugging
+## Testing & Debugging
 
 - Use `RViz2` with `/map`, `/tf`, and `/goal_pose` to visualize movement
 - Run `ros2 topic echo /amcl_pose` to verify localization
