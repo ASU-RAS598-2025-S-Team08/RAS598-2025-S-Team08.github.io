@@ -2,7 +2,7 @@
 
 Our project centers around the design and implementation of an Autonomous Warehouse Patrolling Robot utilizing the TurtleBot4 platform, integrated with the Robot Operating System 2 (ROS2) framework. The overarching goal is to develop a scalable, low-cost robotic solution capable of performing real-time patrolling tasks in structured indoor environments such as warehouses or storage facilities.
 
-<p align="center"><img src="assets/v1.png" width="800" alt="visualization"/></p>
+![visualization](assets/v1.png)
 
 **Research Question**:  
 How can we leverage low-cost mobile robotics platforms to achieve reliable autonomous patrolling in structured indoor warehouse environments, with real-time anomaly detection and environmental adaptability?
@@ -21,7 +21,7 @@ By simulating realistic warehouse conditions, our project will investigate the f
 
 - Environmental Adaptability: Equipping the robot with the capability to adapt its behavior based on changing conditions such as blocked paths, dynamic obstacles, or signal loss, ensuring robustness in real-world applications.
 
-<p align="center"><img src="assets/anothervisualization.png" width="800" alt="anothervisualization"/></p>
+![anothervisualization](assets/anothervisualization.png)
                                                 
 Our approach aims not only to implement a working prototype of a patrolling robot but also to provide a generalized framework for deploying autonomous agents in structured environments. Ultimately, this project aspires to demonstrate how affordable hardware combined with modular software architecture can address real-world operational needs in industrial settings — with potential extensions into areas like inventory monitoring, safety inspection, and collaborative automation.
 
@@ -45,7 +45,7 @@ We will visualize real-time sensor streams in RViz2, calibrate thresholds, and v
 **In final demonstration**:  
 Sensor data will guide navigation, trigger reactive behaviors (e.g., avoid obstacle), and inform the GUI of real-time statuses and anomalies.
 
-<p align="center"><img src="assets/real_world_workflow_chart.png" width="800" alt="realworldflowchart"/></p>
+![realworldflowchart](assets/real_world_workflow_chart.png)
 
 ## Interaction Plan
 
@@ -202,7 +202,7 @@ All filtered sensor data feeds into:
 
 - **Fusion Pipeline Overview**:
 
-<p align="center"><img src="assets/sensor_fusion_flowchart.png" width="800" alt="Sensor Fusion"/></p>
+![Sensor Fusion](assets/sensor_fusion_flowchart.png)
 
 - **Low-Level**: EKF → Odometry + IMU → Controls
 - **High-Level**: Depth anomalies + patrol planner → path updates and alerts
@@ -220,7 +220,7 @@ All filtered sensor data feeds into:
 - anomaly_detector_node (custom)
 - gui_backend_node → /gui/logs, /gui/alerts, /gui/status
 
-<p align="center"><img src="assets/ros2_node_architecture_rqt_style.png" width="800" alt="Draft ROS2 Node Architecture"/></p>
+![Draft ROS2 Node Architecture](assets/ros2_node_architecture_rqt_style.png)
 
 ## GUI Real-Time Sensor Data (Live Demo Progress)
 
@@ -231,19 +231,20 @@ We’ve implemented GUI elements that:
 - Flag anomalies
 - Log battery level, patrol duration, and distance
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/p81DixPODpc?si=nUVOVv6schUhRbVz" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/p81DixPODpc&list=PL4e6DWX5mZvaRTcvywfToLrumtm3tlkBI&index=1" title="GUI Real Time Sensor Data" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen> </iframe>
 
 Video Requirement: https://youtube.com/playlist?list=PL4e6DWX5mZvaRTcvywfToLrumtm3tlkBI&si=JJDVAatZlTniiuUw   
 
 ## Simulation
 
-<p align="center"><img src="assets/Simul3.jpg" width="800" alt="Simulation 1"/></p>
+![Simulation 1](assets/Simul3.jpg)
 
-<p align="center"><img src="assets/simulationimage.jpg" width="800" alt="Simulation"/></p>
+![Simulation](assets/simulationimage.jpg)
 
 ## Navigation
 <iframe width="560" height="315" src="https://www.youtube.com/embed/e1mFo_xL-tc" title="Warehouse Robot Demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen> </iframe>
 https://youtu.be/e1mFo_xL-tc
+
 
 ## Advising
 
@@ -255,7 +256,7 @@ https://youtu.be/e1mFo_xL-tc
 
 **Weekly Milestones (Weeks 7–16)**
 
-## 📋 Weekly Milestones Table (Aligned with Assignments)
+
 # 📅 Weekly Milestones Table (Simplified)
 
 | Week     | Hardware Integration                         | Interface Development                         | Controls & Autonomy                           | Assignment Focus / Deliverable                         | Status         |
