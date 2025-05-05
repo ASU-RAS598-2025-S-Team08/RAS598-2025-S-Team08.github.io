@@ -231,7 +231,7 @@ We’ve implemented GUI elements that:
 - Flag anomalies
 - Log battery level, patrol duration, and distance
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/p81DixPODpc&list=PL4e6DWX5mZvaRTcvywfToLrumtm3tlkBI&index=1" title="GUI Real Time Sensor Data" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen> </iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/p81DixPODpc?si=Crmn_9kT5bnMjX4R" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 Video Requirement: https://youtube.com/playlist?list=PL4e6DWX5mZvaRTcvywfToLrumtm3tlkBI&si=JJDVAatZlTniiuUw   
 
