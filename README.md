@@ -59,19 +59,9 @@ rviz2
 
 ---
 
-## 📊 Evaluation Snapshots
-
-- ![Navigation Accuracy](docs/assets/navigation_accuracy_graph.png)
-- ![Anomaly Detection](docs/assets/anomaly_detection_graph.png)
-- ![Working Flowchart](docs/assets/working_flowchart_robot.png)
-- ![Gantt Chart](docs/assets/final_gantt_chart.png)
-
----
-
 ## 🎥 Video Demonstration
 
-- Elevator Pitch: [Watch here](https://www.youtube.com/embed/YOUR_PITCH_VIDEO_ID)
-- Simulation Demo: [Watch here](https://www.youtube.com/embed/YOUR_DEMO_VIDEO_ID)
+- Simulation Demo: [Watch here](https://www.youtube.com/embed/e1mFo_xL-tc)
 
 ---
 
@@ -83,18 +73,6 @@ rviz2
 
 ---
 
-## 📂 Repository Structure
-
-```
-├── custom_world_pkg/          # Gazebo world and models
-├── path_planner_pkg/          # Nav2 launch + mission_executor
-├── docs/                      # MkDocs site content + assets
-├── index.md                   # Full team report
-└── README.md                  # This file
-```
-
----
-
 ## 📚 License
 
-MIT License – 2025 | Arizona State University | RAS598 – Dr. Daniel Aukes
+ Arizona State University | RAS598 – Dr. Daniel Aukes
