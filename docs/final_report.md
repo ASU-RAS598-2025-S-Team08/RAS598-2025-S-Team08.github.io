@@ -61,10 +61,7 @@ The robot was validated in a classroom mock warehouse with physical obstacles an
 
 ![ROS Graph](assets/ros2_node_graph_final.png)
 
-Key ROS2 elements:
-- **Topics**: `/scan`, `/camera/depth/image_raw`, `/odom`, `/imu/data`, `/cmd_vel`
-- **Custom Nodes**: `patrol_manager_node`, `anomaly_detector_node`, `gui_backend_node`
-- **Navigation Stack**: `nav2_bt_navigator`, AMCL/SLAM, and DWB planner
+
 
 ---
 
