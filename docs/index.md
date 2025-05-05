@@ -19,7 +19,7 @@ Our objectives were to:
 - Demonstrate modularity through ROS2 packages and nodes.
 
 ---
-![v1](assets/v1.png)
+<p align="center"><img src="assets/v1.png" width="800" alt="v1"/></p>
 ---
 
 ## Project Description
@@ -113,7 +113,7 @@ The system was validated in a classroom mock environment with custom goals and a
 
 ## ✅ Diagram: Visual ROS2 Graph
 
-📷 ![ROS2 Architecture Diagram](assets/ros2nodearch.png)
+📷 <p align="center"><img src="assets/ros2nodearch.png" width="800" alt="ROS2 Architecture Diagram"/></p>
 
 ---
 
@@ -132,7 +132,7 @@ The system was validated in a classroom mock environment with custom goals and a
 ## A Simulation Image 
 Check out the outputs in Outputs Tab
 Check out the simulation video in Vidoes Tab
-![Simimg](assets/simulationimage.jpg)
+<p align="center"><img src="assets/simulationimage.jpg" width="800" alt="Simimg"/></p>
 
 ---
 
@@ -223,7 +223,7 @@ Our system is modular, reproducible, and demonstrates a scalable approach to aff
 
 ## Gantt Chart
 
-![Gantt Chart](assets/gantt_chart_final.png)
+<p align="center"><img src="assets/gantt_chart_final.png" width="800" alt="Gantt Chart"/></p>
 
 ---
 
