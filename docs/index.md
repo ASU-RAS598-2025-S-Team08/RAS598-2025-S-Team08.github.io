@@ -19,7 +19,9 @@ Our objectives were to:
 - Demonstrate modularity through ROS2 packages and nodes.
 
 ---
+
 <p align="center"><img src="assets/v1.png" width="800" alt="v1"/></p>
+
 ---
 
 ## Project Description
@@ -113,7 +115,7 @@ The system was validated in a classroom mock environment with custom goals and a
 
 ## ✅ Diagram: Visual ROS2 Graph
 
-📷 <p align="center"><img src="assets/ros2nodearch.png" width="800" alt="ROS2 Architecture Diagram"/></p>
+<p align="center"><img src="assets/ros2nodearch.png" width="800" alt="ROS2 Architecture Diagram"/></p>
 
 ---
 
