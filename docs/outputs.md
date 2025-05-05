@@ -64,11 +64,21 @@ Illustrates the detection performance across different anomaly types using simul
 
 ---
 
-![simul1](Simul1.jpg) 
+![simul1](assets/Simul1.jpg) 
 
 ---
 
-![simul2](Simul2.jpg) 
+![simul2](assets/Simul2.jpg) 
+
+---
+
+![simulationimage](assets/simulationimage.jpg)
+
+---
+
+### Web-Application Screenshot
+
+![webapp](assets/webapp.jpg)
 
 ---
 
