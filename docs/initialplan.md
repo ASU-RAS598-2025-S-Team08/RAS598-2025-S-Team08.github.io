@@ -18,7 +18,7 @@ University, Class, Professor: Arizona State University, RAS 598, Dr. Aukes.
 
 Our project centers around the design and implementation of an Autonomous Warehouse Patrolling Robot utilizing the TurtleBot4 platform, integrated with the Robot Operating System 2 (ROS2) framework. The overarching goal is to develop a scalable, low-cost robotic solution capable of performing real-time patrolling tasks in structured indoor environments such as warehouses or storage facilities.
 
-![visualization](v2.png)
+![visualization](assets/v1.png)
 
 **Research Question**:  
 How can we leverage low-cost mobile robotics platforms to achieve reliable autonomous patrolling in structured indoor warehouse environments, with real-time anomaly detection and environmental adaptability?
@@ -37,7 +37,7 @@ By simulating realistic warehouse conditions, our project will investigate the f
 
 - Environmental Adaptability: Equipping the robot with the capability to adapt its behavior based on changing conditions such as blocked paths, dynamic obstacles, or signal loss, ensuring robustness in real-world applications.
 
-![anothervisualization](anothervisualization.png)
+![anothervisualization](assets/anothervisualization.png)
                                                 
 Our approach aims not only to implement a working prototype of a patrolling robot but also to provide a generalized framework for deploying autonomous agents in structured environments. Ultimately, this project aspires to demonstrate how affordable hardware combined with modular software architecture can address real-world operational needs in industrial settings — with potential extensions into areas like inventory monitoring, safety inspection, and collaborative automation.
 
@@ -61,7 +61,7 @@ We will visualize real-time sensor streams in RViz2, calibrate thresholds, and v
 **In final demonstration**:  
 Sensor data will guide navigation, trigger reactive behaviors (e.g., avoid obstacle), and inform the GUI of real-time statuses and anomalies.
 
-![realworldflowchart](real_world_workflow_chart.png)
+![realworldflowchart](assets/real_world_workflow_chart.png)
 
 ## Interaction Plan
 
@@ -218,7 +218,7 @@ All filtered sensor data feeds into:
 
 - **Fusion Pipeline Overview**:
 
-![Sensor Fusion](sensor_fusion_flowchart.png)
+![Sensor Fusion](assets/sensor_fusion_flowchart.png)
 
 - **Low-Level**: EKF → Odometry + IMU → Controls
 - **High-Level**: Depth anomalies + patrol planner → path updates and alerts
@@ -236,7 +236,7 @@ All filtered sensor data feeds into:
 - anomaly_detector_node (custom)
 - gui_backend_node → /gui/logs, /gui/alerts, /gui/status
 
-![Draft ROS2 Node Architecture](ros2_node_architecture_rqt_style.png)
+![Draft ROS2 Node Architecture](assets/ros2_node_architecture_rqt_style.png)
 
 ## GUI Real-Time Sensor Data (Live Demo Progress)
 
@@ -253,7 +253,7 @@ Video Requirement: https://youtube.com/playlist?list=PL4e6DWX5mZvaRTcvywfToLrumt
 
 ## Simulation
 
-![Simulation 1](Simul1.jpg)
+![Simulation 1](assets/Simul1.jpg)
 
 ## Navigation
 <iframe width="560" height="315" src="https://www.youtube.com/embed/e1mFo_xL-tc" title="Warehouse Robot Demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen> </iframe>
