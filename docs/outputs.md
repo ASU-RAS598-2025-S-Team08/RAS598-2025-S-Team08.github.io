@@ -20,7 +20,7 @@ This diagram simulates a snapshot of the live ROS2 communication graph generated
 
 ---
 
-## Navigation Accuracy – Patrol Zone Coverage
+## Navigation Accuracy – Patrol Zone Coverage Graph
 
 Shows how many patrol zones were successfully visited compared to the expected mission plan.
 
@@ -28,7 +28,7 @@ Shows how many patrol zones were successfully visited compared to the expected m
 
 ---
 
-## Anomaly Detection – Results Breakdown
+## Anomaly Detection 
 
 Illustrates the detection performance across different anomaly types using simulated ground truth.
 
@@ -72,6 +72,10 @@ Illustrates the detection performance across different anomaly types using simul
 
 ---
 
+![simul3](assets/Simul3.jpg) 
+
+---
+
 ![simulationimage](assets/simulationimage.jpg)
 
 ---
@@ -82,7 +86,7 @@ Illustrates the detection performance across different anomaly types using simul
 
 ---
 
-## 📋 Summary
+## Summary
 
 These outputs validate the core goals of our project:
 - Real-time autonomous patrolling in a simulated warehouse
