@@ -68,7 +68,7 @@ Illustrates the detection performance across different anomaly types using simul
 
 ---
 
-![simul2](Simul2.jpg) |
+![simul2](Simul2.jpg) 
 
 ---
 
