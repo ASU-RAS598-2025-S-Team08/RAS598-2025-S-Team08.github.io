@@ -1,10 +1,10 @@
-# 🧪 Project Outputs: Autonomous Warehouse Patrolling Robot
+# Project Outputs: Autonomous Warehouse Patrolling Robot
 
 This page consolidates the key visual results and architectural outputs from the `warehouse_simulation-main` project developed by Team 08.
 
 ---
 
-## 🧭 Final ROS2 Architecture Diagram
+## Final ROS2 Architecture Diagram
 
 A simulated rqt_graph-style layout based on all nodes, topics, and services active during robot navigation.
 
@@ -12,7 +12,7 @@ A simulated rqt_graph-style layout based on all nodes, topics, and services acti
 
 ---
 
-## 🧠 rqt_graph Snapshot
+## rqt_graph Snapshot
 
 This diagram simulates a snapshot of the live ROS2 communication graph generated using `rqt_graph`.
 
@@ -20,7 +20,7 @@ This diagram simulates a snapshot of the live ROS2 communication graph generated
 
 ---
 
-## 📊 Navigation Accuracy – Patrol Zone Coverage
+## Navigation Accuracy – Patrol Zone Coverage
 
 Shows how many patrol zones were successfully visited compared to the expected mission plan.
 
@@ -28,7 +28,7 @@ Shows how many patrol zones were successfully visited compared to the expected m
 
 ---
 
-## 📈 Anomaly Detection – Results Breakdown
+## Anomaly Detection – Results Breakdown
 
 Illustrates the detection performance across different anomaly types using simulated ground truth.
 
@@ -36,9 +36,9 @@ Illustrates the detection performance across different anomaly types using simul
 
 ---
 
-## 🎥 Demonstration Videos
+## Demonstration Videos
 
-## 📦 Autonomous Patrol in Action
+## Autonomous Patrol in Action
 
 <iframe width="560" height="315"
   src="https://www.youtube.com/embed/e1mFo_xL-tc"
@@ -50,7 +50,7 @@ Illustrates the detection performance across different anomaly types using simul
 
 ---
 
-## 🎤 Elevator Pitch
+## Elevator Pitch
 
 <iframe width="560" height="315"
   src="https://www.youtube.com/embed/srB0Ry8rDLg"
@@ -60,7 +60,7 @@ Illustrates the detection performance across different anomaly types using simul
   allowfullscreen>
 </iframe>
 
-## 🖼️ Simulation Screenshots
+## Simulation Screenshots
 
 ---
 
