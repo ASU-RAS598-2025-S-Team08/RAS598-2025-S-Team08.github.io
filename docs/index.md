@@ -132,9 +132,7 @@ The system was validated in a classroom mock environment with custom goals and a
 ---
 
 ## A Simulation Image 
-Check out the outputs in Outputs Tab
-
-Check out the simulation video in Vidoes Tab
+Check out the outputs in Outputs Tab, and the simulation video in Vidoes Tab.
 
 <p align="center"><img src="assets/simulationimage.jpg" width="800" alt="Simimg"/></p>
 
