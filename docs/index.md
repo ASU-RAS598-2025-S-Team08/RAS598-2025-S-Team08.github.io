@@ -21,43 +21,39 @@ Our objectives were to:
 ---
 ![v1](assets/v1.png)
 ---
+
 ## Project Description
 
-### Project Scoping
+### 🔹 Project Scoping
+Initially scoped to enable basic warehouse patrolling, the system evolved to support reactive path re-planning, GUI-triggered behaviors, anomaly detection zones, and a fully simulated Gazebo environment.
 
-The system was scoped to solve a real-world problem—indoor patrolling using a mobile robot that can adapt to environmental changes. Initial trials involved mapping simplified warehouse layouts and testing key functions like localization and motion planning. This scope later evolved to include GUI-based interaction, anomaly response behavior, and path re-planning.
+### 🔹 Data Collection
+Data was collected from LiDAR, depth camera, IMU, and ultrasonic sensors in a mock Gazebo warehouse. ROS bag recordings were used to calibrate detection thresholds and test path planning under dynamic conditions.
 
-### Data Collection
+### 🔹 Model Fitting
+We used threshold + region-of-interest filtering and fused sensor streams instead of training ML models. Anomalies were identified based on distance deviations and depth map changes, improving accuracy while maintaining real-time performance.
 
-Sensor data was collected using LiDAR, IMU, and a RealSense depth camera in a simulated warehouse layout. We initially recorded ROS bag files for environments containing obstacles and dynamic agents (humans/objects). Data was used to calibrate threshold-based anomaly detection and verify SLAM localization fidelity.
+### 🔹 ROS Integration
+All modules were implemented as ROS 2 nodes communicating over well-defined topics. The Nav2 stack handled localization and motion planning, while custom nodes managed goal dispatch and anomaly response. Real-time GUI visualized logs, maps, and robot metrics.
 
-### Training / Model Fitting
-
-Rather than deep learning-based models, we employed a hybrid system using sensor thresholds and rule-based logic. Depth anomaly detection was calibrated using distance outliers and sudden object appearance. ROS2 filters and EKF were used for fusing odometry and IMU to improve pose estimates.
-
-### ROS Integration
-
-All sensors and functional components were integrated as modular ROS2 packages. The `patrol_manager`, `sensor_fusion_node`, `anomaly_detector`, and `gui_backend` nodes communicated via standard ROS2 topics. Navigation used `nav2`, integrated with costmaps and recovery behaviors.
-
-### Validation
-
-The robot was validated in a classroom mock warehouse with physical obstacles and humans simulating anomalies. Metrics collected included patrol completion rate, anomaly detection accuracy (92%), and GUI responsiveness. Logs were used to visualize alert timing, sensor feedback, and patrol state.
+### 🔹 Validation
+The system was validated in a classroom mock environment with custom goals and anomaly zones. Detection accuracy reached **92%**, and full patrol cycles completed within **2 minutes**, with GUI feedback under **0.3s** delay.
 
 ---
 
-## Goals
+## 🎯 Goals and Final Outcomes
 
-| Objective               | Initial Plan                           | Final Outcome                                             |
+| Objective               | Initial Goal                           | Final Outcome                                             |
 |------------------------|----------------------------------------|-----------------------------------------------------------|
-| Autonomous Patrolling  | Static path following                  | Dynamic re-planning with zone-based patrol logic          |
-| Obstacle Avoidance     | LiDAR-based reactive turns             | Layered costmaps and DWA planner                          |
-| Anomaly Detection      | ML-based detector                      | Threshold + depth ROI + ultrasonic fusion                 |
-| GUI                    | Basic map viewer                       | Real-time Qt GUI with alerts, logs, and battery info      |
-| Sensor Fusion          | Odometry only                         | IMU + Odom + LiDAR fused using EKF                        |
+| Autonomous Patrolling  | Static goal-based nav                  | Zone-based patrol with re-routing                         |
+| Obstacle Avoidance     | LiDAR-based avoidance only             | DWA planner + layered costmaps                            |
+| Anomaly Detection      | ML (planned)                           | Threshold-based + ROI + fusion with ultrasonic            |
+| GUI                    | Map display only                       | Qt-based GUI with alerts, logs, live metrics              |
+| Sensor Fusion          | Odometry only                          | EKF fusion (LiDAR + IMU + Odom) via robot_localization    |
 
 ---
 
-## Final ROS2 Architecture
+## 🧠 Final ROS 2 Architecture
 
 ### 📦 Packages:
 - `custom_world_pkg` → launches Gazebo with warehouse models
@@ -133,7 +129,9 @@ The robot was validated in a classroom mock warehouse with physical obstacles an
 
 ---
 
-## Simulation Image
+## A Simulation Image 
+Check out the outputs in Outputs Tab
+Check out the simulation video in Vidoes Tab
 ![Simimg](assets/simulationimage.jpg)
 
 ---
@@ -143,6 +141,11 @@ The robot was validated in a classroom mock warehouse with physical obstacles an
 This project taught us how to build and validate a fully autonomous ROS2-based robot under real-world constraints. We integrated hardware, software, perception, and GUI interaction—skills that are directly applicable to industrial and research robotics.
 
 Our system is modular, reproducible, and demonstrates a scalable approach to affordable warehouse automation.
+
+- Learned full ROS2 stack development from SLAM to GUI integration  
+- Developed custom simulation environment and path planner node  
+- Hands-on with EKF-based sensor fusion and Nav2 tuning  
+- Produced a modular, extensible prototype applicable to real-world warehouse robotics 
 
 ---
 
@@ -158,22 +161,31 @@ Our system is modular, reproducible, and demonstrates a scalable approach to aff
 
 ---
 
-## Final Demonstration Plan
+## Final Demonstration 
 
-A classroom demo was set up with table aisles, boxes, and defined anomaly zones.
+### Setup  
+- Simulated warehouse with Gazebo  
+- TurtleBot4 + Depth camera + LiDAR + IMU  
+- Patrol zones and anomaly triggers  
 
-### Robot Behaviors Shown:
+### Features Demonstrated
+- Dynamic goal dispatch  
+- Reactive obstacle avoidance  
+- Anomaly detection + GUI alerts  
+- Live monitoring via RViz and custom GUI
+
+### Robot Behaviors Shown
 - Patrol zone coverage
 - Obstacle avoidance using layered costmaps
 - Anomaly detection and logging
 - GUI display of logs, map, alerts
 
-### Resources:
+### Resources
 - TurtleBot4 + Depth Camera + LiDAR + IMU
 - Projector and laptop with GUI
 - Wi-Fi network for communication
 
-### Evaluation Metrics:
+### Evaluation Metrics
 - Detection accuracy vs ground truth: **92%**
 - Patrol completion time: **< 2 minutes**
 - GUI delay: **< 0.3 seconds**
@@ -188,7 +200,7 @@ A classroom demo was set up with table aisles, boxes, and defined anomaly zones.
   frameborder="0"
   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
   allowfullscreen>
-</iframe>
+</iframe> 
 
 ---
 
