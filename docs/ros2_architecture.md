@@ -59,7 +59,7 @@
 
 ## ✅ Diagram: Visual ROS2 Graph
 
-📷 ![ROS2 Architecture Diagram](assets/ros2arch.png)
+📷 ![ROS2 Architecture Diagram](assets/ros2nodearch.png)
 
 ---
 
