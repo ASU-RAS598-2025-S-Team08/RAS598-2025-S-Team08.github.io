@@ -19,7 +19,7 @@ Our objectives were to:
 - Demonstrate modularity through ROS2 packages and nodes.
 
 ---
-![v2](assets/v2.png)
+![v1](assets/v1.png)
 ---
 ## Project Description
 
