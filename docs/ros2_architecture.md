@@ -1,13 +1,13 @@
 
-# 🧭 Full ROS 2 Architecture – `warehouse_simulation-main`
+# Full ROS 2 Architecture – `warehouse_simulation-main`
 
-### 📦 Packages:
+### Packages:
 - `custom_world_pkg` → launches Gazebo with warehouse models
 - `path_planner_pkg` → handles Nav2 stack and goal navigation
 
 ---
 
-### 🔧 Nodes Identified
+### Nodes Identified
 
 | Node Name              | Source                                 | Description |
 |------------------------|----------------------------------------|-------------|
@@ -23,7 +23,7 @@
 
 ---
 
-### 🔌 Topics Flow
+### Topics Flow
 
 | Topic                            | From → To                         | Notes |
 |----------------------------------|-----------------------------------|-------|
@@ -40,7 +40,7 @@
 
 ---
 
-## 🔄 How the System Flows
+## How the System Flows
 
 ```text
 [mission_executor.py]
@@ -57,13 +57,13 @@
 
 ---
 
-## ✅ Diagram: Visual ROS2 Graph
+## Diagram: Visual ROS2 Graph
 
 📷 ![ROS2 Architecture Diagram](assets/ros2nodearch.png)
 
 ---
 
-## 📌 Summary
+## Summary
 
 The simulation launches:
 - A robot inside a Gazebo warehouse
