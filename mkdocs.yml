@@ -6,6 +6,7 @@ nav:
   - Initial Project Plan: initialplan.md
   - Code Walkthrough: codewalkthrough.md
   - Videos: videos.md
+  - Outputs: outputs.md
   - ROS2 Architecture: ros2_architecture.md
   - Launch Instructions: launch.md
 markdown_extensions:
