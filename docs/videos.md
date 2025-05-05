@@ -1,8 +1,16 @@
 # 🎥 Project Demo Videos
 
+---
+
 ## 📦 Autonomous Patrol in Action
 
-<iframe width="560" height="315"
+This video demonstrates the TurtleBot4 autonomously navigating through a custom warehouse simulation built in Gazebo. The robot performs a full patrol loop using Nav2, reacts to obstacles, and follows predefined waypoints. You’ll see:
+- Live SLAM-based navigation
+- Dynamic re-planning when paths are blocked
+- Accurate localization 
+- Integration of sensor data for robust movement
+
+<iframe width="700" height="394"
   src="https://www.youtube.com/embed/e1mFo_xL-tc"
   title="Warehouse Robot Demo"
   frameborder="0"
@@ -14,7 +22,9 @@
 
 ## 🎤 Elevator Pitch
 
-<iframe width="560" height="315"
+This 60-second pitch summarizes the motivation, goals, and highlights of our project: the Autonomous Warehouse Patrolling Robot.
+
+<iframe width="700" height="394"
   src="https://www.youtube.com/embed/srB0Ry8rDLg"
   title="Elevator Pitch"
   frameborder="0"
@@ -22,13 +32,14 @@
   allowfullscreen>
 </iframe>
 
-## GUI Real-Time Sensor Data (Live Demo Progress)
+---
 
-We’ve implemented GUI elements that:
+## 🖥️ GUI Real-Time Sensor Data (Live Demo Progress)
 
-- Plot live LiDAR scans
-- Highlight current patrol zone on map
-- Flag anomalies
-- Log battery level, patrol duration, and distance
+This video showcases the real-time graphical user interface (GUI) developed to monitor and control the robot’s patrol behavior. The GUI includes:
+- LiDAR scan visualization
+- Current patrol zone mapping
+- Anomaly flagging and logging
+- Status updates: battery level, distance, alerts
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/p81DixPODpc?si=Crmn_9kT5bnMjX4R" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="700" height="394" src="https://www.youtube.com/embed/p81DixPODpc?si=Crmn_9kT5bnMjX4R" title="GUI Sensor Display" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
