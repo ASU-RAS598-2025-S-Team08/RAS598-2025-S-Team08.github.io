@@ -8,7 +8,7 @@ This page consolidates the key visual results and architectural outputs from the
 
 A simulated rqt_graph-style layout based on all nodes, topics, and services active during robot navigation.
 
-![ROS2 Architecture](assets/final_ros2_architecture_simulated_16x9.png)
+![ROS2 Architecture](assets/ros2nodearch.png)
 
 ---
 
@@ -16,7 +16,7 @@ A simulated rqt_graph-style layout based on all nodes, topics, and services acti
 
 This diagram simulates a snapshot of the live ROS2 communication graph generated using `rqt_graph`.
 
-![rqt_graph](assets/ros2arch.png)
+![rqt_graph](assets/rqtgraph.png)
 
 ---
 
