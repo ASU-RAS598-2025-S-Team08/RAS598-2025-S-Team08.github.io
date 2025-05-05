@@ -21,7 +21,7 @@ This project demonstrates a scalable and low-cost robotic solution for structure
 
 ## 🧠 Architecture Diagram
 
-![ROS2 Architecture](docs/assets/final_ros2_node_architecture.png)
+![ROS2 Architecture](docs/assets/ros2nodearch.png)
 
 ---
 
