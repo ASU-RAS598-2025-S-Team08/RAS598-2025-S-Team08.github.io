@@ -1,21 +1,5 @@
 # Initial Project Plan - Autonomous Warehouse Patrolling Robot
 
----
-
-Project Name: Autonomous Warehouse Patrolling Robot.
-
-Team Number: Team 8.
-
-Team Members: Bhavya M Shah, Ha Long Truong, Yashwanth Gowda.
-
-Semester and Year: Spring 2025.
-
-University, Class, Professor: Arizona State University, RAS 598, Dr. Aukes.
-
----
-
-## Team Project Plan
-
 Our project centers around the design and implementation of an Autonomous Warehouse Patrolling Robot utilizing the TurtleBot4 platform, integrated with the Robot Operating System 2 (ROS2) framework. The overarching goal is to develop a scalable, low-cost robotic solution capable of performing real-time patrolling tasks in structured indoor environments such as warehouses or storage facilities.
 
 <p align="center"><img src="assets/v1.png" width="800" alt="visualization"/></p>
@@ -247,7 +231,7 @@ We’ve implemented GUI elements that:
 - Flag anomalies
 - Log battery level, patrol duration, and distance
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/p81DixPODpc&list=PL4e6DWX5mZvaRTcvywfToLrumtm3tlkBI&index=1" title="GUI Real Time Sensor Data" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen> </iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/p81DixPODpc?si=nUVOVv6schUhRbVz" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 Video Requirement: https://youtube.com/playlist?list=PL4e6DWX5mZvaRTcvywfToLrumtm3tlkBI&si=JJDVAatZlTniiuUw   
 
