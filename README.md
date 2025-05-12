@@ -69,7 +69,7 @@ cd ~/webapp/
 git clone https://github.com/ASU-RAS598-2025-S-Team08/Webapp.git
 ```
 
-2. Stream data:
+2. Stream data (We used FastDDS to get the data):
 
 ```bash
 ros2 launch rosbridge_server rosbridge_websocket_launch.xml
