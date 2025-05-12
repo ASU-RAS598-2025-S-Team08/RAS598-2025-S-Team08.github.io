@@ -1,0 +1,1078 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../outputs/">
+      
+      
+        <link rel="next" href="../codewalkthrough/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.13">
+    
+    
+      
+        <title>🧭 Initial Project Plan - Autonomous Warehouse Patrolling Robot</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.342714a4.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#initial-project-plan-autonomous-warehouse-patrolling-robot" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Autonomous Warehouse Patrolling Robot" class="md-header__button md-logo" aria-label="Autonomous Warehouse Patrolling Robot" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Autonomous Warehouse Patrolling Robot
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              🧭 Initial Project Plan
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Autonomous Warehouse Patrolling Robot" class="md-nav__button md-logo" aria-label="Autonomous Warehouse Patrolling Robot" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Autonomous Warehouse Patrolling Robot
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    🏠 Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../outputs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    📊 Project Outputs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    🧭 Initial Project Plan
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    🧭 Initial Project Plan
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#sensor-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sensor Integration
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interaction-plan" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interaction Plan
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#control-and-autonomy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Control and Autonomy
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#preparation-needs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Preparation Needs
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#final-demonstration-plan" class="md-nav__link">
+    <span class="md-ellipsis">
+      Final Demonstration Plan
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#impact-statement" class="md-nav__link">
+    <span class="md-ellipsis">
+      Impact Statement
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sensor-data-conditioning-filtering-and-utilization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sensor Data Conditioning, Filtering, and Utilization
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sensor-fusion-for-low-level-and-high-level-decisions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sensor Fusion for Low-Level and High-Level Decisions
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ros2-node-architecture-and-topic-mapping" class="md-nav__link">
+    <span class="md-ellipsis">
+      ROS2 Node Architecture and Topic Mapping
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gui-real-time-sensor-data-live-demo-progress" class="md-nav__link">
+    <span class="md-ellipsis">
+      GUI Real-Time Sensor Data (Live Demo Progress)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#simulation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Simulation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#navigation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Navigation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#advising" class="md-nav__link">
+    <span class="md-ellipsis">
+      Advising
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../codewalkthrough/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    🧰 Code Walkthrough
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../launch/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    🚀 Launch Instructions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../videos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    🎥 Videos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ros2_architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    🧠 ROS2 Architecture
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#sensor-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sensor Integration
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interaction-plan" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interaction Plan
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#control-and-autonomy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Control and Autonomy
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#preparation-needs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Preparation Needs
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#final-demonstration-plan" class="md-nav__link">
+    <span class="md-ellipsis">
+      Final Demonstration Plan
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#impact-statement" class="md-nav__link">
+    <span class="md-ellipsis">
+      Impact Statement
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sensor-data-conditioning-filtering-and-utilization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sensor Data Conditioning, Filtering, and Utilization
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sensor-fusion-for-low-level-and-high-level-decisions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sensor Fusion for Low-Level and High-Level Decisions
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ros2-node-architecture-and-topic-mapping" class="md-nav__link">
+    <span class="md-ellipsis">
+      ROS2 Node Architecture and Topic Mapping
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gui-real-time-sensor-data-live-demo-progress" class="md-nav__link">
+    <span class="md-ellipsis">
+      GUI Real-Time Sensor Data (Live Demo Progress)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#simulation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Simulation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#navigation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Navigation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#advising" class="md-nav__link">
+    <span class="md-ellipsis">
+      Advising
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="initial-project-plan-autonomous-warehouse-patrolling-robot">Initial Project Plan - Autonomous Warehouse Patrolling Robot<a class="headerlink" href="#initial-project-plan-autonomous-warehouse-patrolling-robot" title="Permanent link">&para;</a></h1>
+<p>Our project centers around the design and implementation of an Autonomous Warehouse Patrolling Robot utilizing the TurtleBot4 platform, integrated with the Robot Operating System 2 (ROS2) framework. The overarching goal is to develop a scalable, low-cost robotic solution capable of performing real-time patrolling tasks in structured indoor environments such as warehouses or storage facilities.</p>
+<p><img alt="visualization" src="../assets/v1.png" /></p>
+<p><strong>Research Question</strong>:<br />
+How can we leverage low-cost mobile robotics platforms to achieve reliable autonomous patrolling in structured indoor warehouse environments, with real-time anomaly detection and environmental adaptability?</p>
+<p>This research question drives us to explore and implement a range of robotics technologies and concepts, particularly focusing on the integration of multiple sensor modalities (such as LiDAR, IMU, depth camera, and odometry), robust control algorithms, and autonomy pipelines that balance reactive behavior (e.g., obstacle avoidance) with deliberative planning (e.g., patrol route optimization).</p>
+<p>By simulating realistic warehouse conditions, our project will investigate the following:</p>
+<ul>
+<li>
+<p>Multi-Sensor Fusion: Combining data from various onboard sensors to generate a coherent model of the robot’s environment and enhance localization, mapping, and situational awareness.</p>
+</li>
+<li>
+<p>Autonomous Navigation &amp; Patrolling: Implementing SLAM (Simultaneous Localization and Mapping) techniques alongside path planning algorithms to enable the robot to patrol pre-defined or dynamically generated routes.</p>
+</li>
+<li>
+<p>Real-Time Anomaly Detection: Using sensory input (such as depth and visual cues) to detect unexpected objects, humans, or hazards in the robot’s path or assigned patrol zones.</p>
+</li>
+<li>
+<p>Interactive System Monitoring: Developing a custom graphical user interface (GUI) to display live robot status, environment mapping, anomaly alerts, and control interfaces for manual override or remote supervision.</p>
+</li>
+<li>
+<p>Environmental Adaptability: Equipping the robot with the capability to adapt its behavior based on changing conditions such as blocked paths, dynamic obstacles, or signal loss, ensuring robustness in real-world applications.</p>
+</li>
+</ul>
+<p><img alt="anothervisualization" src="../assets/anothervisualization.png" /></p>
+<p>Our approach aims not only to implement a working prototype of a patrolling robot but also to provide a generalized framework for deploying autonomous agents in structured environments. Ultimately, this project aspires to demonstrate how affordable hardware combined with modular software architecture can address real-world operational needs in industrial settings — with potential extensions into areas like inventory monitoring, safety inspection, and collaborative automation.</p>
+<h2 id="sensor-integration">Sensor Integration<a class="headerlink" href="#sensor-integration" title="Permanent link">&para;</a></h2>
+<p>Sensor integration lies at the core of our Autonomous Warehouse Patrolling Robot’s functionality, enabling perception, localization, navigation, and real-time decision-making. Our approach involves the strategic fusion of multiple sensor modalities, each contributing complementary data that enhances the robot’s understanding of its environment and its ability to operate reliably in dynamic warehouse settings.</p>
+<p>We integrate a suite of sensors to support localization, perception, and safety. Each sensor contributes distinct yet complementary information:</p>
+<ul>
+<li><strong>2D LiDAR</strong> for SLAM and obstacle mapping.</li>
+<li><strong>Depth Camera</strong> for object and human detection.</li>
+<li><strong>IMU</strong> for pose stability during motion.</li>
+<li><strong>Ultrasonic Sensors</strong> for short-range obstacle alerts.</li>
+</ul>
+<p><strong>In code</strong>:<br />
+Sensor data is streamed through individual ROS2 nodes and fused using the robot_localization package to estimate pose. Filters like moving averages and EKFs are used for smoothing.</p>
+<p><strong>In testing</strong>:<br />
+We will visualize real-time sensor streams in RViz2, calibrate thresholds, and verify detection algorithms.</p>
+<p><strong>In final demonstration</strong>:<br />
+Sensor data will guide navigation, trigger reactive behaviors (e.g., avoid obstacle), and inform the GUI of real-time statuses and anomalies.</p>
+<p><img alt="realworldflowchart" src="../assets/real_world_workflow_chart.png" /></p>
+<h2 id="interaction-plan">Interaction Plan<a class="headerlink" href="#interaction-plan" title="Permanent link">&para;</a></h2>
+<p>Each sensor will be managed through dedicated ROS2 nodes, ensuring modularity, scalability, and real-time communication via ROS topics. We will influence robot behavior through both autonomous logic and manual controls:</p>
+<ul>
+<li><strong>GUI Interface</strong> (Python Qt + rqt):</li>
+<li>Displays live patrol map and status</li>
+<li>Visual alerts for anomalies or obstacles</li>
+<li>Manual override buttons (pause, replan, resume)</li>
+<li>
+<p>System logs (distance, battery, alerts)</p>
+</li>
+<li>
+<p><strong>User Overrides</strong>:</p>
+</li>
+<li>Keyboard input for debugging</li>
+<li>(Optional) Voice commands for commands like “start patrol” or “return to base”</li>
+</ul>
+<h2 id="control-and-autonomy">Control and Autonomy<a class="headerlink" href="#control-and-autonomy" title="Permanent link">&para;</a></h2>
+<p>The autonomous capabilities of the warehouse patrolling robot are achieved through a carefully structured, layered control system. This hierarchical architecture allows for robust and adaptable operation, enabling the robot to navigate complex warehouse environments, react to unforeseen circumstances, and execute its patrolling mission effectively.We implement a <strong>layered control architecture</strong>:</p>
+<ol>
+<li>
+<p>Low-Level Control: Precise Motion Execution
+At the foundational layer lies the low-level control system. This layer is responsible for the precise execution of motion commands sent by higher-level controllers. It directly interfaces with the robot's actuators, primarily the wheel motors.</p>
+</li>
+<li>
+<p>Wheel Velocity Commands: The primary function of this layer is to translate desired linear and angular velocities into individual wheel velocity commands. This involves kinematic models that account for the robot's geometry and wheel configuration.</p>
+</li>
+<li>
+<p>Odometry Feedback: To ensure accurate motion, the low-level controller relies on odometry feedback. Data from wheel encoders (or other internal sensors) is used to estimate the robot's current pose (position and orientation).</p>
+</li>
+<li>
+<p>Goal: The primary goal of the low-level control is to ensure smooth, accurate, and stable robot motion according to the commands received from the mid-level controller.</p>
+</li>
+<li>
+<p>Mid-Level Control: Reactive Navigation and Safety
+The mid-level control system builds upon the capabilities of the low-level layer, focusing on the robot's interaction with its immediate surroundings and ensuring safe navigation.</p>
+</li>
+<li>
+<p>Obstacle Avoidance: This is a critical function of the mid-level control. By processing real-time data from the robot's suite of sensors (LiDAR, depth camera, ultrasonic sensors), this layer detects obstacles in the robot's path.</p>
+</li>
+<li>
+<p>Reactive Behaviors: Based on the sensor data, the mid-level controller implements reactive behaviors to avoid collisions. These behaviors might include slowing down, stopping, turning, or maneuvering around obstacles. Algorithms like Vector Field Histogram (VFH), Dynamic Window Approach (DWA), or similar reactive planning techniques are typically employed.</p>
+</li>
+<li>
+<p>High-Level Autonomy: Intelligent Mission Execution
+The high-level autonomy system orchestrates the robot's overall mission, enabling it to perform complex tasks without continuous human intervention.</p>
+</li>
+<li>
+<p>Patrol Routing: This layer utilizes a pre-mapped representation of the warehouse, dividing it into logical zones or waypoints. Based on the desired patrol strategy (e.g., sequential zone coverage, prioritized areas), the high-level controller generates a sequence of target locations or paths for the robot to follow.</p>
+</li>
+<li>
+<p>Behavior Trees: Behavior trees provide a powerful and modular framework for defining the robot's high-level behaviors and decision-making processes. They allow for the representation of complex sequences, conditional actions, and parallel tasks involved in the patrolling mission (e.g., navigate to zone A, scan for anomalies, log data, proceed to zone B).</p>
+</li>
+<li>
+<p>ROS2 Navigation Stack Integration: The robot leverages the ROS2 Navigation stack, a robust and widely used framework for mobile robot navigation. This stack provides pre-built functionalities for path planning, obstacle avoidance, localization, and map management.</p>
+</li>
+<li>
+<p>Autonomous Decision-Making: The high-level system enables the robot to make autonomous decisions regarding patrol routes based on factors like time, priority, or previously detected anomalies.</p>
+</li>
+<li>
+<p>Dynamic Path Re-planning: If the mid-level control encounters an unforeseen obstacle that blocks the planned path, the high-level autonomy system can trigger path re-planning. Utilizing the current map and the robot's current location, the Navigation stack can compute a new, feasible path to reach the original goal or the next patrol waypoint.</p>
+</li>
+<li>
+<p>Anomaly Detection Integration: This layer will also integrate with the robot's perception system to process anomaly detection results. Upon detecting an anomaly, the high-level controller can deviate from the standard patrol route to investigate, log the event, and potentially trigger alerts.</p>
+</li>
+</ol>
+<p>In summary, the layered control and autonomy system allows the warehouse patrolling robot to:
+- Execute precise movements based on high-level commands (low-level control).
+- Navigate safely and reactively to dynamic environments by avoiding obstacles (mid-level control).
+- Intelligently plan and execute patrol missions based on pre-defined strategies and adapt to changing circumstances (high-level autonomy).
+- Leverage the power of ROS2 Navigation for robust path planning and navigation capabilities.</p>
+<p>This sophisticated control architecture ensures that the robot can effectively and efficiently perform its warehouse patrolling tasks, enhancing security, safety, and operational awareness within the facility.</p>
+<h2 id="preparation-needs">Preparation Needs<a class="headerlink" href="#preparation-needs" title="Permanent link">&para;</a></h2>
+<p>To execute this project successfully, we need a solid grasp of:</p>
+<ul>
+<li>ROS2 Navigation Stack configuration</li>
+<li>Multi-sensor data fusion techniques (especially IMU + LiDAR)</li>
+<li>Behavior Tree design for high-level autonomy</li>
+<li>GUI development using rqt and Python Qt</li>
+<li>Real-time debugging in ROS2</li>
+</ul>
+<p><strong>Topics we would like covered in class</strong>:</p>
+<ul>
+<li>Detailed walkthrough of the ROS2 Navigation Stack</li>
+<li>Practical debugging tools for real-time sensor streams</li>
+<li>Examples of robust behavior trees in ROS2</li>
+</ul>
+<h2 id="final-demonstration-plan">Final Demonstration Plan<a class="headerlink" href="#final-demonstration-plan" title="Permanent link">&para;</a></h2>
+<p>Our final demonstration is designed to showcase the full capabilities of the Autonomous Warehouse Patrolling Robot, developed using the TurtleBot4 platform and ROS2. The demo will simulate a realistic indoor warehouse environment using a scaled mockup constructed within a classroom. This hands-on trial will allow observers to evaluate the robot’s ability to autonomously patrol, avoid obstacles, detect anomalies, and present live system data through a custom-built graphical user interface (GUI).</p>
+<p><strong>Demo Description</strong></p>
+<p>During the demonstration, TurtleBot4 will autonomously navigate through a mock warehouse layout configured using tables, cardboard boxes, and tape-marked pathways. It will:</p>
+<ul>
+<li>Perform a patrol loop based on predefined waypoints.</li>
+<li>Use sensor data from LiDAR, depth camera, IMU, and ultrasonic sensors to perceive and react to the environment.</li>
+<li>Avoid obstacles (both static and dynamic) in real-time.</li>
+<li>Provide live telemetry and visualization on a projector-based GUI that displays:</li>
+<li>Real-time map (from RViz)</li>
+<li>Robot position and path</li>
+<li>Obstacle alerts</li>
+<li>Anomaly flags (e.g., unexpected objects or human detection)</li>
+</ul>
+<p>The demo will highlight key features such as localization accuracy, real-time responsiveness, safety, and user interaction.</p>
+<p><strong>Resources Needed:</strong></p>
+<ul>
+<li>TurtleBot4 with LiDAR, depth camera, IMU</li>
+<li>Classroom space with mock warehouse (tables, boxes, marked paths)</li>
+<li>Projector to display GUI</li>
+<li>Wi-Fi for robot-to-GUI communication</li>
+</ul>
+<p><strong>Classroom Setup:</strong></p>
+<ul>
+<li>Tables and cardboard boxes simulate shelves</li>
+<li>Marked patrol lanes with tape</li>
+<li>Defined “anomaly zones” using objects or people</li>
+<li>Central station (laptop) for GUI + RViz display</li>
+</ul>
+<p><strong>Handling Environmental Variability:</strong></p>
+<ul>
+<li>AMCL will adapt pose estimation in dynamic environments</li>
+<li>Dynamic costmaps will update routes in real-time if obstacles appear</li>
+<li>Redundant sensors help maintain perception during partial failure</li>
+</ul>
+<p><strong>Testing &amp; Evaluation Plan:</strong></p>
+<ul>
+<li><strong>Unit testing</strong> of individual sensor streams and nodes</li>
+<li><strong>Functional testing</strong> of integrated navigation + anomaly detection</li>
+<li><strong>Live metrics</strong>:</li>
+<li>Patrol coverage (zones visited)</li>
+<li>Anomaly detection rate vs ground truth</li>
+<li>Obstacle response time</li>
+<li>GUI responsiveness and feedback clarity</li>
+</ul>
+<p>Video recording and real-time logging will be used to analyze performance and validate mission success.</p>
+<h2 id="impact-statement">Impact Statement<a class="headerlink" href="#impact-statement" title="Permanent link">&para;</a></h2>
+<p>This project challenges us to integrate real-world robotics technologies under constraints of hardware, cost, and usability. It will deepen our knowledge of robotic system design, especially in areas of:</p>
+<ul>
+<li>Modular ROS2 software design</li>
+<li>Sensor data conditioning and fusion</li>
+<li>Real-time autonomy and safety layers</li>
+<li>Visual interface development</li>
+</ul>
+<p>It serves as a testbed for future coursework in robotics, simulation, and industrial automation—and could evolve into a deployable solution for safety inspection or inventory monitoring. And we try to push full autonomy (BT integration) by one week to refine SLAM + costmap tuning.</p>
+<h2 id="sensor-data-conditioning-filtering-and-utilization">Sensor Data Conditioning, Filtering, and Utilization<a class="headerlink" href="#sensor-data-conditioning-filtering-and-utilization" title="Permanent link">&para;</a></h2>
+<p>We implemented the following for sensor data:</p>
+<table>
+<thead>
+<tr>
+<th><strong>Sensor</strong></th>
+<th><strong>Strategy</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>LiDAR</strong></td>
+<td>Clipping to range [0.2m–3.5m], outlier rejection, smoothing via rolling mean</td>
+</tr>
+<tr>
+<td><strong>IMU</strong></td>
+<td>Filtered with ROS2 robot_localization EKF using /imu/data</td>
+</tr>
+<tr>
+<td><strong>Depth Camera</strong></td>
+<td>Depth masking to ignore floor reflections and reduce noise; regions-of-interest for anomaly detection</td>
+</tr>
+</tbody>
+</table>
+<p>All filtered sensor data feeds into:</p>
+<ul>
+<li><strong>local costmap</strong> (for obstacle avoidance)</li>
+<li><strong>global planner</strong> (for patrol path planning)</li>
+<li><strong>GUI</strong> (for live monitoring and safety)</li>
+</ul>
+<h2 id="sensor-fusion-for-low-level-and-high-level-decisions">Sensor Fusion for Low-Level and High-Level Decisions<a class="headerlink" href="#sensor-fusion-for-low-level-and-high-level-decisions" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Fusion Pipeline Overview</strong>:</li>
+</ul>
+<p><img alt="Sensor Fusion" src="../assets/sensor_fusion_flowchart.png" /></p>
+<ul>
+<li><strong>Low-Level</strong>: EKF → Odometry + IMU → Controls</li>
+<li><strong>High-Level</strong>: Depth anomalies + patrol planner → path updates and alerts</li>
+</ul>
+<h2 id="ros2-node-architecture-and-topic-mapping">ROS2 Node Architecture and Topic Mapping<a class="headerlink" href="#ros2-node-architecture-and-topic-mapping" title="Permanent link">&para;</a></h2>
+<p><strong>Node Overview</strong>:</p>
+<ul>
+<li>realsense2_camera_node → /camera/depth/image_raw</li>
+<li>rplidar_ros2_node → /scan</li>
+<li>micro_ros_node (ultrasonic) → /ultrasonic_range</li>
+<li>robot_localization EKF → /odom, /imu/data</li>
+<li>move_base_flex (nav stack)</li>
+<li>patrol_manager_node (custom)</li>
+<li>anomaly_detector_node (custom)</li>
+<li>gui_backend_node → /gui/logs, /gui/alerts, /gui/status</li>
+</ul>
+<p><img alt="Draft ROS2 Node Architecture" src="../assets/ros2_node_architecture_rqt_style.png" /></p>
+<h2 id="gui-real-time-sensor-data-live-demo-progress">GUI Real-Time Sensor Data (Live Demo Progress)<a class="headerlink" href="#gui-real-time-sensor-data-live-demo-progress" title="Permanent link">&para;</a></h2>
+<p>We’ve implemented GUI elements that:</p>
+<ul>
+<li>Plot live LiDAR scans</li>
+<li>Highlight current patrol zone on map</li>
+<li>Flag anomalies</li>
+<li>Log battery level, patrol duration, and distance</li>
+</ul>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/p81DixPODpc?si=Crmn_9kT5bnMjX4R" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+<p>Video Requirement: https://youtube.com/playlist?list=PL4e6DWX5mZvaRTcvywfToLrumtm3tlkBI&amp;si=JJDVAatZlTniiuUw   </p>
+<h2 id="simulation">Simulation<a class="headerlink" href="#simulation" title="Permanent link">&para;</a></h2>
+<p><img alt="Simulation 1" src="../assets/Simul3.jpg" /></p>
+<p><img alt="Simulation" src="../assets/simulationimage.jpg" /></p>
+<h2 id="navigation">Navigation<a class="headerlink" href="#navigation" title="Permanent link">&para;</a></h2>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/e1mFo_xL-tc" title="Warehouse Robot Demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen> </iframe>
+<p>https://youtu.be/e1mFo_xL-tc</p>
+<h2 id="advising">Advising<a class="headerlink" href="#advising" title="Permanent link">&para;</a></h2>
+<p><strong>Advisor</strong>: Dr. Aukes
+<strong>Requested Support</strong>:
+- Access to TurtleBot4 and lab space
+- Weekly mentoring sessions
+- Guidance on advanced ROS2 usage</p>
+<p><strong>Weekly Milestones (Weeks 7–16)</strong></p>
+<h1 id="weekly-milestones-table-simplified">📅 Weekly Milestones Table (Simplified)<a class="headerlink" href="#weekly-milestones-table-simplified" title="Permanent link">&para;</a></h1>
+<table>
+<thead>
+<tr>
+<th>Week</th>
+<th>Hardware Integration</th>
+<th>Interface Development</th>
+<th>Controls &amp; Autonomy</th>
+<th>Assignment Focus / Deliverable</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Week 7</td>
+<td>TurtleBot4 bring-up, sensor validation</td>
+<td>Set up GitHub Pages, basic project website</td>
+<td>Define system architecture</td>
+<td>🟢 <strong>Team Assignment 1</strong>: Concept, goals, UI mockup</td>
+<td>✅ Complete</td>
+</tr>
+<tr>
+<td>Week 8</td>
+<td>Depth camera, ultrasonic sensor setup</td>
+<td>RViz mockup, GUI layout draft</td>
+<td>SLAM stack intro</td>
+<td>🟢 TA1 continued: Planning + visuals</td>
+<td>✅ Complete</td>
+</tr>
+<tr>
+<td>Week 9</td>
+<td>Sensor fusion (LiDAR+IMU+Odom)</td>
+<td>GUI RViz integration</td>
+<td>Localization tested with fusion</td>
+<td>🟢 TA1 final touches, prepare for SLAM</td>
+<td>✅ Complete</td>
+</tr>
+<tr>
+<td>Week 10</td>
+<td>SLAM + map saving setup</td>
+<td>Real-time plots in GUI</td>
+<td>SLAM navigation working demo</td>
+<td>🟢 <strong>Team Assignment 2</strong>: SLAM results, depth integration</td>
+<td>✅ Complete</td>
+</tr>
+<tr>
+<td>Week 11</td>
+<td>Costmap layers setup</td>
+<td>GUI updates: status log, alerts</td>
+<td>Patrol logic implementation</td>
+<td>🟢 TA2 submission; begin full behavior testing</td>
+<td>✅ Complete</td>
+</tr>
+<tr>
+<td>Week 12</td>
+<td>Mode toggle prep (SLAM ↔ AMCL)</td>
+<td>Full GUI → ROS interaction</td>
+<td>Navigation tuning</td>
+<td>🟢 <strong>Team Assignment 3</strong>: Data filtering, GUI integration</td>
+<td>✅ Complete</td>
+</tr>
+<tr>
+<td>Week 13</td>
+<td>GUI live display (alerts, metrics)</td>
+<td>GUI control (pause/resume, alerts)</td>
+<td>Replanning &amp; manual override</td>
+<td>🟠 TA3 wrap-up; polish before dry-run</td>
+<td>🔄 In Progress</td>
+</tr>
+<tr>
+<td>Week 14</td>
+<td>TurtleBot full integration (real test)</td>
+<td>Export GUI logs, feedback polish</td>
+<td>SLAM vs AMCL toggle test</td>
+<td>🟠 Begin <strong>Team Assignment 4</strong>: Testing + autonomy</td>
+<td>🔄 In Progress</td>
+</tr>
+<tr>
+<td>Week 15</td>
+<td>Full autonomy dry run + backups</td>
+<td>Auto-logging, restart controls</td>
+<td>Behavior tree + fault handling</td>
+<td>🔘 TA4 final polish; prepare for live demo</td>
+<td>⬜ Not Started</td>
+</tr>
+<tr>
+<td>Week 16</td>
+<td>In-class demo setup</td>
+<td>Final GUI build and docs</td>
+<td>Final validation: autonomy + GUI monitoring</td>
+<td>🎯 Final deliverables submission + demo</td>
+<td>⬜ Not Started</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><strong>✅ Status Key:</strong></p>
+<ul>
+<li>✅ <strong>Complete</strong> (Weeks 7–12)</li>
+<li>🔄 <strong>In Progress</strong> (Weeks 13–14)</li>
+<li>⬜ <strong>Not Started</strong> (Weeks 15–16)</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      
+    
+  </body>
+</html>

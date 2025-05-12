@@ -1,0 +1,739 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../videos/">
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.13">
+    
+    
+      
+        <title>🧠 ROS2 Architecture - Autonomous Warehouse Patrolling Robot</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.342714a4.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#full-ros-2-architecture-warehouse_simulation-main" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Autonomous Warehouse Patrolling Robot" class="md-header__button md-logo" aria-label="Autonomous Warehouse Patrolling Robot" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Autonomous Warehouse Patrolling Robot
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              🧠 ROS2 Architecture
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Autonomous Warehouse Patrolling Robot" class="md-nav__button md-logo" aria-label="Autonomous Warehouse Patrolling Robot" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Autonomous Warehouse Patrolling Robot
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    🏠 Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../outputs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    📊 Project Outputs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../initialplan/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    🧭 Initial Project Plan
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../codewalkthrough/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    🧰 Code Walkthrough
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../launch/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    🚀 Launch Instructions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../videos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    🎥 Videos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    🧠 ROS2 Architecture
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    🧠 ROS2 Architecture
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#packages" class="md-nav__link">
+    <span class="md-ellipsis">
+      Packages:
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nodes-identified" class="md-nav__link">
+    <span class="md-ellipsis">
+      Nodes Identified
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#topics-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Topics Flow
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-the-system-flows" class="md-nav__link">
+    <span class="md-ellipsis">
+      How the System Flows
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#diagram-visual-ros2-graph" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Visual ROS2 Graph
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#packages" class="md-nav__link">
+    <span class="md-ellipsis">
+      Packages:
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nodes-identified" class="md-nav__link">
+    <span class="md-ellipsis">
+      Nodes Identified
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#topics-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Topics Flow
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-the-system-flows" class="md-nav__link">
+    <span class="md-ellipsis">
+      How the System Flows
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#diagram-visual-ros2-graph" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Visual ROS2 Graph
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="full-ros-2-architecture-warehouse_simulation-main">Full ROS 2 Architecture – <code>warehouse_simulation-main</code><a class="headerlink" href="#full-ros-2-architecture-warehouse_simulation-main" title="Permanent link">&para;</a></h1>
+<h3 id="packages">Packages:<a class="headerlink" href="#packages" title="Permanent link">&para;</a></h3>
+<ul>
+<li><code>custom_world_pkg</code> → launches Gazebo with warehouse models</li>
+<li><code>path_planner_pkg</code> → handles Nav2 stack and goal navigation</li>
+</ul>
+<hr />
+<h3 id="nodes-identified">Nodes Identified<a class="headerlink" href="#nodes-identified" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Node Name</th>
+<th>Source</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/gazebo</code></td>
+<td>Gazebo Simulator</td>
+<td>Physics &amp; visualization engine</td>
+</tr>
+<tr>
+<td><code>/robot_state_publisher</code></td>
+<td>Auto-started in Gazebo</td>
+<td>Publishes joint TF from URDF</td>
+</tr>
+<tr>
+<td><code>/mission_executor</code></td>
+<td><code>mission_executor.py</code> in <code>path_planner_pkg</code></td>
+<td>Sends goals to <code>/navigate_to_pose</code></td>
+</tr>
+<tr>
+<td><code>/map_server</code></td>
+<td>Nav2 (launched via <code>planner.launch.py</code>)</td>
+<td>Publishes static map</td>
+</tr>
+<tr>
+<td><code>/amcl</code></td>
+<td>Nav2 localization</td>
+<td>Computes robot pose on map</td>
+</tr>
+<tr>
+<td><code>/planner_server</code></td>
+<td>Nav2 plugin</td>
+<td>Plans global path</td>
+</tr>
+<tr>
+<td><code>/controller_server</code></td>
+<td>Nav2 plugin</td>
+<td>Executes local path</td>
+</tr>
+<tr>
+<td><code>/nav2_bt_navigator</code></td>
+<td>Nav2 behavior tree</td>
+<td>Orchestrates full navigation</td>
+</tr>
+<tr>
+<td><code>/rviz2</code></td>
+<td>Visualization</td>
+<td>GUI for maps, robot, goals</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="topics-flow">Topics Flow<a class="headerlink" href="#topics-flow" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Topic</th>
+<th>From → To</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/navigate_to_pose/_action/goal</code></td>
+<td><code>mission_executor</code> → <code>nav2_bt_navigator</code></td>
+<td>Sends goal coordinates</td>
+</tr>
+<tr>
+<td><code>/map</code></td>
+<td><code>map_server</code> → <code>amcl</code>, <code>rviz2</code></td>
+<td>Occupancy map for localization and display</td>
+</tr>
+<tr>
+<td><code>/scan</code></td>
+<td><code>gazebo</code> (LiDAR plugin) → <code>amcl</code></td>
+<td>Simulated 2D LiDAR</td>
+</tr>
+<tr>
+<td><code>/amcl_pose</code></td>
+<td><code>amcl</code> → <code>nav2_bt_navigator</code></td>
+<td>Robot pose estimate</td>
+</tr>
+<tr>
+<td><code>/plan_request</code></td>
+<td><code>nav2_bt_navigator</code> → <code>planner_server</code></td>
+<td>Global path request</td>
+</tr>
+<tr>
+<td><code>/path</code></td>
+<td><code>planner_server</code> → <code>controller_server</code></td>
+<td>Path handoff</td>
+</tr>
+<tr>
+<td><code>/cmd_vel</code></td>
+<td><code>controller_server</code> → <code>gazebo</code></td>
+<td>Robot wheel commands</td>
+</tr>
+<tr>
+<td><code>/tf</code></td>
+<td><code>robot_state_publisher</code> → <code>rviz2</code></td>
+<td>Robot transforms</td>
+</tr>
+<tr>
+<td><code>/feedback</code></td>
+<td><code>nav2_bt_navigator</code> → <code>rviz2</code></td>
+<td>Goal feedback</td>
+</tr>
+<tr>
+<td><code>/joint_states</code></td>
+<td><code>gazebo</code> → <code>robot_state_publisher</code></td>
+<td>Joint info for TF</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="how-the-system-flows">How the System Flows<a class="headerlink" href="#how-the-system-flows" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code>[mission_executor.py]
+     |
+     v
+[navigate_to_pose] --[BT]--&gt; [planner_server] --&gt; [controller_server] --&gt; [cmd_vel] --&gt; [gazebo]
+
+[amcl] &lt;-- [scan] + [map] &lt;-- [map_server]
+    |
+   [amcl_pose] --&gt; [nav2_bt_navigator]
+
+[tf], [map], [feedback] --&gt; [rviz2]
+</code></pre></div>
+<hr />
+<h2 id="diagram-visual-ros2-graph">Diagram: Visual ROS2 Graph<a class="headerlink" href="#diagram-visual-ros2-graph" title="Permanent link">&para;</a></h2>
+<p>📷 <img alt="ROS2 Architecture Diagram" src="../assets/ros2nodearch.png" /></p>
+<hr />
+<h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h2>
+<p>The simulation launches:
+- A robot inside a Gazebo warehouse
+- Sends goals from a custom node (<code>mission_executor</code>)
+- Uses the standard Nav2 stack to plan and navigate autonomously
+- RViz2 for visualization and debugging</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      
+    
+  </body>
+</html>
