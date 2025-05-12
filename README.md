@@ -32,7 +32,7 @@ This project demonstrates a scalable and low-cost robotic solution for structure
 ```bash
 mkdir -p ~/ros2_ws/src
 cd ~/ros2_ws/src
-git clone https://github.com/YOUR_USERNAME/warehouse_simulation-main.git
+git clone https://github.com/ASU-RAS598-2025-S-Team08/warehouse_simulation.git
 cd ..
 colcon build
 source install/setup.bash
@@ -55,6 +55,38 @@ ros2 run path_planner mission_executor
 
 ```bash
 rviz2
+```
+
+---
+
+## 🚀 How to Use the Webapp
+
+1. Clone and build the workspace:
+
+```bash
+mkdir ~/webapp/
+cd ~/webapp/
+git clone https://github.com/ASU-RAS598-2025-S-Team08/Webapp.git
+```
+
+2. Stream data:
+
+```bash
+ros2 launch rosbridge_server rosbridge_websocket_launch.xml
+```
+
+3. Run backend:
+
+```bash
+cd ~/webapp/backend/
+node server.js
+```
+
+4. Run frontend:
+
+```bash
+cd ~/webapp/frontend/
+npm run dev
 ```
 
 ---
